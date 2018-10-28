@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<article itemscope itemtype="http://schema.org/BlogPosting" class="sideline-container">
+
+  <header>
+    <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {{ page.date | date: date_format }}
+      </time>
+      </p>
+  </header>
+
+  <div itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+  <a href="{{ page.url | relative_url }}" hidden></a>
+</article>
