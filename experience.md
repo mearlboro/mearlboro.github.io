@@ -6,7 +6,7 @@ permalink: /experience/
 
 <br/>
 **bildungsroman**<br/>
-**/ˈbɪldʊŋzrəʊˌmɑːn/**<br/>
+**/ˈb&#618;ld&#650;&#331;zr&#601;&#650;&#716;m&#593;&#720;n/**<br/>
 n.<br/>
 A novel whose principal subject is the moral, psychological, and intellectual development of a usually youthful main character. From German, *bildung*, formation, education + *roman*, novel.
 <br/>

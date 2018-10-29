@@ -5,7 +5,7 @@ layout: home
 
 <br/>
 **madalina sas**<br/>
-/mədə'lɪna sɑ:s/<br/>
+**/m&#601;d&#601;'l&#618;na s&#593;:s/**<br/>
 n.<br/>
 I'm a computer engineer / artist / creative from Romania and based in the UK. I have a computer engineering master's at Imperial College London with a first class degree and a distinguished project. I currently live in Bath where I work for [Netcraft](https://netcraft.com). On the side I work on [SnowWall](https://snowwall.tech), a privacy-oriented networking tool for Windows, and I design for [Rat's Tales](https://ratstales.co.uk) and [ShepherdTone](https://shepherdtone.co.uk). 
 
