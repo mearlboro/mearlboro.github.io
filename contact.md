@@ -16,6 +16,6 @@ I prefer encrypted communication so here's [my public key](/assets/files/mis.asc
 
 
 # this site
-This site is built with [Jekyll](https://jekyllrb.com) and is a live work in progress. Because I always learn and always change, so does this site. For now, it looks differently every time you visit it. A more immersive and interactive experience is coming soon.
+This site is built with [Jekyll](https://jekyllrb.com) and is a live work in progress. Because I always learn and always change, so does this site. For now, it looks a little bit different every time you visit it. A more immersive and interactive experience is coming soon.
 
 To keep in touch with further developments of this site and more exciting projects, feel free to subscribe [via RSS](/feed.xml).

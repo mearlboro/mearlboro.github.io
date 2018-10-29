@@ -49,7 +49,7 @@ Check it out on [github](https://github.com/mearlboro/doodlr.js).
 <br/>
 
 
-# web design
+# design & web development
 <br/>
 <br/>
 
@@ -79,9 +79,10 @@ Check it out on [github](https://github.com/mearlboro/doodlr.js).
 	<p>&nbsp;</p>
 </div>
 <div class="col-1-of-2 text-center">
-	<a href="/assets/img/proj/pureeros.png" target="_blank"><img src="/assets/img/proj/pureeros.png"><br/>
+	<a href="/assets/img/proj/pureeros.png" target="_blank"><img src="/assets/img/proj/pureeros.png"></a><br/>
 	<p>&nbsp;</p>
 	<h3 class="text-center">Pureros</h3>
 	<p><a href="http://pureeros.com" target="_blank">pureeros.com</a></p>
 	<p>An e-boutique dedicated to the empowering of women and the expression of their sexuality.</p>
 	<p>&nbsp;</p>
+</div>
