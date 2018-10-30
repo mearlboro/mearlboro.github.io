@@ -11,6 +11,6 @@ I'm a computer engineer / artist / creative from Romania and based in the UK. I 
 
 I care about digital privacy, about simplicity and security in software, information theory and codes, cryptography, automation and distributed/decentralised technology, and ethical artificial intelligence. I love networks, visualisations, and natural language - writing it and processing it. I'm thirsty to learn something new every day, and to broaden the spectrum of my knowledge as well as my spirit.
 
-When I'm not working, I take [photographs](https://instagram.com/rant.art), I design, I read and I write. Things I love to read are novels and stories, philosophy of mind, and neuroscience. Things I love to [listen to](https://youtube.com/user/mearlboro) and look at are usually psychedelic, fractalicious and surreal. I prefer Koch to the Churchlands, Dali to Picasso, Dostoievski to Dickens. 
+When I'm not working, I take [photographs](https://instagram.com/rant.art), I design, I read and I write. Things I love to read are novels and stories, philosophy of mind, and neuroscience. Things I love to [listen to](https://youtube.com/user/mearlboro) and look at are usually psychedelic, fractalicious and surreal. I prefer Koch to the Churchlands, Dali to Picasso, Dostoievski to Dickens.
 
-You can read more about my [experience](/experience) or my [projects](/projects) on this site, and if you would like to work together please [get in touch](/connect).
+You can read more about my [experience](/experience) or my [projects](/projects) on this site, and if you would like to work together please [get in touch](/contact).
