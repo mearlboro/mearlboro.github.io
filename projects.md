@@ -75,7 +75,7 @@ Check it out on [github](https://github.com/mearlboro/doodlr.js).
 	<p>&nbsp;</p>
 	<h3 class="text-center">KCTU</h3>
 	<p><a href="http://ctu.co.uk" target="_blank">ctu.co.uk</a></p>
-	<p>The King’s Clinical Trials Unit is one of the largest and most efficient in the UK.</p>
+	<p>The King’s Clinical Trials Unit (KCTU) offers a range of services to support researchers conducting non-commercial trials</p>
 	<p>&nbsp;</p>
 </div>
 <div class="col-1-of-2 text-center">
