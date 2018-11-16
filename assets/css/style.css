@@ -1,13 +1,11 @@
 
 /* Layout
  * ----------------------------------------------
- */ 
+ */
 
 /* reset body */
 body {
-  margin: 0; 
-  /* background: url('/assets/img/bg.png') repeat; 
-  background-attachment: fixed; */
+  margin: 0;
 }
 
 .wrapper {
@@ -40,7 +38,7 @@ body {
 
 
 
-/* Graphical elements 
+/* Graphical elements
  * ----------------------------------------------
 */
 h1 {
@@ -76,7 +74,8 @@ h1 {
 }
 
 #logo h2 {
-  margin: 0;
+  margin: 10px 0;
+  float: left;
 }
 
 /* Typography
@@ -140,7 +139,7 @@ p a:hover, li a:hover, li span:hover, nav a:hover {
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 1px;
-} 
+}
 
 strong {
   font-weight: 900;
