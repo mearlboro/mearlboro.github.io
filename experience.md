@@ -21,7 +21,6 @@ A novel whose principal subject is the moral, psychological, and intellectual de
 ### Imperial College, London
 #### Master's of Engineering
 ##### 2013 - 2017
-A computer engineering degree which allowed me to gain profound experience into industry standard software engineering practices. Courses taken include the study of programming languages, operating systems, compilers, networks, security, information theory, software and web development, mathematics, logic, verification systems, Bayesian statistics, cryptography, and machine learning. Here I have worked on multiple projects which have given me experience to work on large codebases, coordinate with my team, and use agile methodologies:
 
 - Completed [PintOS](https://web.stanford.edu/class/cs140/projects/pintos/pintos_1.html) in a series of group courseworks, a version of the Standford operating systems exercise in C. Contributed with system calls, memory management, thread synchronisation and interruptions
 - Implemented an Enigma machine simulation in C++ [[GitHub]](https://github.com/mearlboro/enigma)
@@ -32,11 +31,10 @@ A computer engineering degree which allowed me to gain profound experience into 
 - Graduated with a first class degree and a distinguished master's project supervised by [Prof. William Knottenbelt](http://www.doc.ic.ac.uk/~wjk/) [[Read more]](/projects#snowwall) [[thesis]](/assets/files/snowwall.pdf)
 <br/>
 <br/>
-  
+ 
 ### Theodor Burada Arts and Crafts School, Constanta
 #### Professional Diploma in Photography
 ##### 2010 - 2012
-A two-year part-time course in fine art photography which I attended in parallel with high-school.
 - Participated in multiple photography trips and worked in a studio
 - Subjects include light and colour, dynamics and composition, optical physics, film and film developing
 - Studied art movements and how they influenced photography and the history of photographic art
@@ -59,28 +57,36 @@ A two-year part-time course in fine art photography which I attended in parallel
 ### Netcraft
 #### Internet services developer 
 ##### 2017 - present
-The work I do at [Netcraft](https://netcraft.com) is extensive and diverse. I currently work on improving and automating existing systems for countermeasures against phishing sites and malware. This is mostly in Perl, PHP, and Javascript.
-
-During my time here I have also worked on content filtering of phishing sites, fraud detection on the web or on social platforms and security scanning. Moreover, through many evening and night shifts, I had learned to be responsible for emergencies and operations, and due to the flat and agile structure of the company, I was able to experience a broader side of how a security business works, gain management skills, work alone as well as in a team, and have direct contact with customers.
+At [Netcraft](https://netcraft.com) I work on content filtering of phishing sites, fraud detection on the web or social platforms,
+automated countermeasures against internet fraud and occasionally security evaluation of
+networks. Through many evening and night shifts I have been responsible for handling emergencies
+and operations, gain management skills, work alone as well as in a team, and have direct contact
+with customers.
 <br/>
 <br/>
 
 ### The Maudsley Insitute of Psychiatry, Psychology and Neuroscience
 #### Junior Clinical Software Analyst
 ##### 2016
-The [King's College Clinical Trials Unit](http://ctu.co.uk) supports researchers conducting non-commercial trials and is known for its independent Randomisation system, for its high efficiency and automation, as well as ground-breaking research. After working part-time with them for eighteen months, the KCTU hosted my six-month industrial placement, during which I have been responsible for full-stack development of a complex network of systems for running clinical trials. I used the .NET MVC5 with Entity Framework and a SQL Server Backend. Furthermore I have received an accreditation for .NET Development, and I have learned to develop for iOS. Some of the most intriguing tasks I tackled with were reverse engineering and working on low-level operating system management in Windows, in order to unify and simplify our stack.
+Responsible with full-stack development of a complex network of systems for running clinical trials
+and automatically randomising treatment assigned to patients to maximise statistical power of the
+trial. Here I have received an accreditation for .NET Development and learned to develop for iOS. I
+have also completed Good Clinical Practice training, joined some trial management meetings and
+worked on validation of data and trial design. Some of the most intriguing tasks I tackled with were reverse engineering and working on low-level operating system management in Windows, in order to unify and simplify our stack.
 
-I have completed my good clinical practice training, was part of some trial management meetings and worked on validation of data and studied statistical trial design. My work in clinical trials, especially focusing on mental health, have stimulated my interest in neuroscience and psychiatric research. During this time I have become acquainted with the [Maudsley Psychedelic Society](https://www.facebook.com/maudsleypsychedelicsociety/) and have attended most of their talks.
+My work in clinical trials, especially focusing on mental health, have stimulated my interest in neuroscience and psychiatric research. During this time I have become acquainted with the [Maudsley Psychedelic Society](https://www.facebook.com/maudsleypsychedelicsociety/) and have attended most of their talks.
 <br/>
 <br/>
 
 ### Imperial College London
 #### Undergraduate Researcher
 ##### 2015
-
-With [Dr. Philippa Gardner](http://www.doc.ic.ac.uk/~pg/)'s research group we have researched methods of reasoning about concurrent data structures with an innovative new program logic, TaDA (a logic for Time and Data Abstraction), part of a family of modular and abstract concurrent separation logics. 
-
-Using the expressive power of this logic, we have attempted to prove that Concurrent Red-Black Trees are a sound data structure in the context of multiprocess reads and writes. For the purpose of this project we have created a technical specification of Red-Black Trees which guarantees correct behaviour as well as implemented a prototype of such a concurrent Red-Black Tree in Haskell.
+With [Dr. Philippa Gardner](http://www.doc.ic.ac.uk/~pg/)'s research group we have researched methods of reasoning about
+concurrent data structures with an innovative new program logic, TaDA and attempted to prove that
+Red-Black Trees are a sound data structure in the context of concurrent reads and writes. For the
+purpose of this project we have created a technical speci cation of Red-Black Trees which guarantees
+correct concurrent behaviour as well as implemented a prototype of such a concurrent data
+structure in Haskell.
 <br/>
 <br/>
 

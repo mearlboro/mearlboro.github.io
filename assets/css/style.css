@@ -23,6 +23,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   vertical-align: top;
+  margin-bottom: 50px;
 }
 
 @media screen and (max-width: 599px) {
@@ -35,6 +36,12 @@ body {
     width: 49%;
   }
 }
+
+.col-1-of-2 img {
+    width: 100%;
+}
+
+
 
 
 
@@ -77,6 +84,13 @@ h1 {
   margin: 10px 0;
   float: left;
 }
+#logo h2 a {
+  font-size: 18px;
+}
+
+header {
+  margin-bottom: 40px;
+}
 
 /* Typography
  * ----------------------------------------------
@@ -106,20 +120,13 @@ h3, h3 a {
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: 5px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 h5, h6, p, span, a, ul, ol, li {
-  font-family: Courier, monospace;
+  font-family: monospace;
   font-weight: 100;
-}
-
-h5 {
-  font-size: 18px;
-}
-
-p, li {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 main p a, main li a {
@@ -132,7 +139,7 @@ p a:hover, li a:hover, li span:hover, nav a:hover {
 }
 
 .main-menu a {
-  font-family: Courier, monospace;
+  font-family: monospace;
   font-weight: 400;
   line-height: 25px;
   text-decoration: none;
