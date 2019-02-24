@@ -11,6 +11,7 @@ n.<br/>
 A novel whose principal subject is the moral, psychological, and intellectual development of a usually youthful main character. From German, *bildung*, formation, education + *roman*, novel.
 <br/>
 <br/>
+<br/>
 
 
 
@@ -50,12 +51,12 @@ A novel whose principal subject is the moral, psychological, and intellectual de
 - Courses also included sciences (Chemistry, Biology), Literature Studies, English, introductions to Humanities/Social Sciences (Philosophy, Logic, Psychology, Economics)
 <br/>
 <br/>
-  
+
 # experience
 <br/>
 
 ### Netcraft
-#### Internet services developer 
+#### Internet services developer
 ##### 2017 - present
 At [Netcraft](https://netcraft.com) I work on content filtering of phishing sites, fraud detection on the web or social platforms,
 automated countermeasures against internet fraud and occasionally security evaluation of
@@ -65,7 +66,7 @@ with customers.
 <br/>
 <br/>
 
-### The Maudsley Insitute of Psychiatry, Psychology and Neuroscience
+### King's Clinical Trials Unit
 #### Junior Clinical Software Analyst
 ##### 2016
 Responsible with full-stack development of a complex network of systems for running clinical trials
@@ -97,7 +98,7 @@ structure in Haskell.
 <br/>
 <br/>
 
-### Maudsley Insitute of Psychiatry, Psychology and Neuroscience
+### King's Clinical Trials Unit
 #### Support Programmer
 ##### 2014 - 2016
 During the second and third year of university I have worked part-time for the KCTU as a support programmer in a small team with only two developers. I have started by building and designing the KCTU [website](http://ctu.co.uk), then progressed to test, debug, and help develop applications for the back end of clinical trials systems with the .NET MVC5 framework.
@@ -108,6 +109,6 @@ During the second and third year of university I have worked part-time for the K
 ### Google Munchen
 #### Software Engineering Intern
 ##### 2014
-During the summer I spent at Google Munchen we have worked in pairs to implement a set of dynamic web pages to change and update settings in the cloud, using the Guice dependency injection framework in Java for the backend and Soy templates and Clojure JS for the front-end. This has satisfied my passion for writing code functionally and taught me that the functional paradigm can be applied to any programming language. On the other hand, given the project I worked on ~~was debatably evil~~ never saw the light of day and was never spoken of again, this experience has taught me that ownership of work is one of my core principles and my place is in small companies or research positions where all team members can make their voice heard.
+During the summer I spent at Google Munchen we have worked in pairs to implement a set of dynamic web pages to change and update settings in the cloud, using the Guice dependency injection framework in Java for the backend and Soy templates and Clojure JS for the front-end.
 <br/>
 <br/>
