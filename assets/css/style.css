@@ -49,9 +49,9 @@ body {
  * ----------------------------------------------
 */
 h1 {
-  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(50%,#eee),color-stop(50%,transparent));
-  background-image: -webkit-linear-gradient(bottom,#eee 50%,transparent 50%);
-  background-image: linear-gradient(0deg,#eee 50%,transparent 50%);
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(50%,#222),color-stop(50%,transparent));
+  background-image: -webkit-linear-gradient(bottom,#222 50%,transparent 50%);
+  background-image: linear-gradient(0deg,#222 50%,transparent 50%);
 }
 
 @media screen and (max-width: 600px) {
@@ -150,14 +150,22 @@ h1, h1 a {
   /* text-shadow: 2px 4px 0 aqua; */
 }
 
-h1, h1 a, h2, h2 a, h3, h3 a {
-  color: #141213;
+h1, h1 a, h2, h2 a, h3, h3 a, h4, h4 a, h5, h5 a, h6, h6 a {
+  color: #fff;
 }
 
-p, a {
-  color: #24261e;
+p, a, li {
+  color: #eee;
 }
 
-header, footer {
-  background-color: #fff;
+body, header, footer {
+  background-color: #120f0b;
+}
+
+.site-header{
+  border-bottom: 1px solid #222;
+}
+
+.site-footer {
+  border-top: 1px solid #222;
 }
