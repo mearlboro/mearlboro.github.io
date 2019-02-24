@@ -2,9 +2,9 @@
 
 var randomColour = function() {
 
-	var r = Math.floor((Math.random() * 200) + 20); 
-	var g = Math.floor((Math.random() * 200) + 20);
-	var b = Math.floor((Math.random() * 200) + 20);
+	var r = Math.floor((Math.random() * 200) + 40); 
+	var g = Math.floor((Math.random() * 200) + 40);
+	var b = Math.floor((Math.random() * 200) + 40);
 
 	return "rgba(" + r + "," + g + "," + b + ", 1)";
 }
