@@ -54,15 +54,6 @@ h1 {
   background-image: linear-gradient(0deg,#eee 50%,transparent 50%);
 }
 
-.sideline-container {
-  /* padding: 20px 70px 20px 20px;
-  margin: 20px;
-  border-left: 10px solid #a82ede; */
-  background-color: #fff;
-  width: 100%;
-  box-sizing: border-box;
-}
-
 @media screen and (max-width: 600px) {
   .site-nav {
     border-radius: 0px;
