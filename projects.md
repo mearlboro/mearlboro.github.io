@@ -55,35 +55,39 @@ Check it out on [github](https://github.com/mearlboro/doodlr.js).
 <br/>
 
 
-<div class="col-1-of-2 text-center">
+<div class="col-1-of-3">
 	<a href="/assets/img/proj/shepherdtone.png" target="_blank"><img src="/assets/img/proj/shepherdtone.png"></a><br/>
-	<p>&nbsp;</p>
-	<h3 class="text-center">ShepherdTone</h3>
+</div>
+<div class="col-2-of-3">
+	<h3>ShepherdTone</h3>
 	<p><a href="http://shepherdtone.co.uk" target="_blank">shepherdtone.co.uk</a></p>
 	<p>A a group of artists and media professionals banded together to tell the most compelling stories.</p>
-	<p>&nbsp;</p>
 </div>
-<div class="col-1-of-2 text-center">
-<a href="/assets/img/proj/ratstales.png" target="_blank"><img src="/assets/img/proj/ratstales.png"></a><br/>
-	<p>&nbsp;</p>
-	<h3 class="text-center">Rat's Tales</h3>
+
+<div class="col-1-of-3">
+    <a href="/assets/img/proj/ratstales.png" target="_blank"><img src="/assets/img/proj/ratstales.png"></a><br/>
+</div>
+<div class="col-2-of-3">
+	<h3>Rat's Tales</h3>
 	<p><a href="http://ratstales.co.uk" target="_blank">ratstales.co.uk</a></p>
-	<p>An indie publishing house with an ethical twist.</p>
-	<p>&nbsp;</p>
+	<p>Did you know you’re never more than 10ft away from a rat, but more than 100ft away from a book? We want to rectify this by sellotaping books to rats. </p>
 </div>
-<div class="col-1-of-2 text-center">
+
+<div class="col-1-of-3">
 	<a href="/assets/img/proj/kctu.png" target="_blank"><img src="/assets/img/proj/kctu.png"></a><br/>
-	<p>&nbsp;</p>
-	<h3 class="text-center">KCTU</h3>
+</div>
+<div class="col-2-of-3">
+	<h3>KCTU</h3>
 	<p><a href="http://ctu.co.uk" target="_blank">ctu.co.uk</a></p>
 	<p>The King’s Clinical Trials Unit (KCTU) offers a range of services to support researchers conducting non-commercial trials</p>
-	<p>&nbsp;</p>
 </div>
-<div class="col-1-of-2 text-center">
+
+<div class="col-1-of-3">
 	<a href="/assets/img/proj/pureeros.png" target="_blank"><img src="/assets/img/proj/pureeros.png"></a><br/>
-	<p>&nbsp;</p>
-	<h3 class="text-center">Pureros</h3>
+</div>
+<div class="col-2-of-3">
+    <h3>Pureros</h3>
 	<p><a href="http://pureeros.com" target="_blank">pureeros.com</a></p>
 	<p>An e-boutique dedicated to the empowering of women and the expression of their sexuality.</p>
-	<p>&nbsp;</p>
 </div>
+
