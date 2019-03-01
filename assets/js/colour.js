@@ -2,9 +2,9 @@
 
 var randomColour = function() {
 
-	var r = Math.floor((Math.random() * 200) + 40); 
-	var g = Math.floor((Math.random() * 200) + 40);
-	var b = Math.floor((Math.random() * 200) + 40);
+	var r = Math.floor((Math.random() * 180) + 65); 
+	var g = Math.floor((Math.random() * 180) + 65);
+	var b = Math.floor((Math.random() * 180) + 65);
 
 	return "rgba(" + r + "," + g + "," + b + ", 1)";
 }
@@ -16,19 +16,25 @@ var changeColours = function() {
 		as[i].style.color = randomColour();
 	}
 
-	//as = document.getElementsByTagName('h1');
-	//for (var i = 0, len = as.length; i < len; i++) {
-	//	as[i].style.textShadow = "2px 4px 0 " + randomColour();
-	//}
+	as = document.querySelectorAll('.post h3');
+	for (var i = 0, len = as.length; i < len; i++) {
+		as[i].style.color = randomColour();
+	}
 
-	//as = document.getElementsByClassName('sideline-container');
-	//for (var i = 0, len = as.length; i < len; i++) {
-	//	as[i].style.borderLeft = "10px solid " + randomColour();
-	//}
+	as = document.querySelectorAll('.post h4');
+	for (var i = 0, len = as.length; i < len; i++) {
+		as[i].style.color = randomColour();
+	}
 
 	as = document.getElementsByClassName('site-header');
 	for (var i = 0, len = as.length; i < len; i++) {
 		as[i].style.borderTop = "5px solid " + randomColour();
+	}
+
+	// post menu keep subsections white
+	as = document.querySelectorAll('.post-menu li li a');
+	for (var i = 0, len = as.length; i < len; i++) {
+		as[i].style.color = '#fff';
 	}
 }
 

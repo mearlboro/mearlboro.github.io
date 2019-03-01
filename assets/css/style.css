@@ -1,5 +1,5 @@
 
-/* Layout
+ /* Layout
  * ----------------------------------------------
  */
 
@@ -20,9 +20,9 @@ article {
   text-align: center;
   margin: 5px auto;
 }
-
-.text-right {
-  text-align: right;
+span.text-center {
+  display: block;
+  text-align: center;
 }
 
 /* basic column layouts */
@@ -53,8 +53,6 @@ article {
 .col-1-of-2 img, .col-1-of-3 img, .col-2-of-3 img {
     width: 100%;
 }
-
-
 
 
 
@@ -129,7 +127,7 @@ h3, h3 a, h3 a.post-link {
   text-decoration: none;
 }
 
-h5, h6, p, span, a, ul, ol, li {
+h5, h6, p, span, a, ul, ol, li, pre, code {
   font-family: monospace;
   font-weight: 100;
   font-size: 14px;
@@ -158,6 +156,68 @@ strong {
   font-weight: 900;
 }
 
+
+/* Post styles
+ * ----------------------------------------------
+ */
+.post p, .post li, .post a {
+  font-size: 13px;
+}
+.post p {
+  text-align: justify;
+}
+
+.post h3 {
+  margin-top: 30px;
+}
+
+.post h4 {
+  margin-top: 10px;
+}
+.post a .not-link {
+  text-decoration: none;
+}
+@media (max-width: 900px) {
+  .post-menu-column {
+    display: none;
+  }
+  .post {
+    width: 100%;
+  }
+}
+.post-menu {
+  position: fixed;
+  padding-right: 20px;
+  padding-top: 30px;
+}
+.post-menu ul {
+  list-style-type: none;
+}
+.post-menu a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.post-menu li {
+  max-width: 100%;
+}
+
+.math {
+  padding: 8px 12px;
+  width: 100%;
+  display: block;
+}
+
+.picture-gallery .col-1-of-3 {
+  padding: 3px;
+  margin-bottom: 0;
+}
+.picture-gallery a img {
+  filter: opacity(0.8);
+}
+.picture-gallery a:hover img {
+  filter: opacity(1);
+}
+
 /* Colours
  * ----------------------------------------------
  */
@@ -169,7 +229,7 @@ h1, h1 a, h2, h2 a, h3, h3 a, h4, h4 a, h5, h5 a, h6, h6 a {
   color: #fff;
 }
 
-p, a, li {
+p, a, li, span {
   color: #eee;
 }
 

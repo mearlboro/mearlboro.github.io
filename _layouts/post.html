@@ -6,6 +6,7 @@ layout: default
 
   <header>
     <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+    <h4>{{ page.subtitle | escape }}</h4>
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -15,7 +16,27 @@ layout: default
   </header>
 
   <div itemprop="articleBody">
+    <div class="col-1-of-3 post-menu-column">
+      <div class="post-menu">
+        <ul>
+        {% for s in page.sections %}
+            <li><a href="{{ s.url }}">{{ s.title }}</a>
+        {% if s.nested %}
+            <ul>
+        {% for n in s.nested %}
+              <li><a href="{{ n.url }}">{{ n.title }}</a></li>
+        {% endfor %}
+            </ul>
+        {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-2-of-3 post" markdown="1">
     {{ content }}
+    </div>
   </div>
 
   {%- if site.disqus.shortname -%}
