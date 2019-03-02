@@ -29,8 +29,8 @@ sections:
    url: '#future-work'
  - title: Your first Haskell simulation
    url: '#annex-your-first-haskell-simulation'
- - title: Bibliography
-   url: '#bibliography'
+ - title: References
+   url: '#references'
 ---
 
 
@@ -46,7 +46,8 @@ In fairness, I didn't even care at the time - our assignment has been to run a t
 With the help of another friend, professor at Uni of Bath, I managed to get my hands onto an entire book on the subject. Moreover, as I dived into some studies about complexity science, I was happy to see a bunch of their models (say, the forest fire, and the sandpile) can also be expressed as cellular automata. My plan is thus to implement a generic framework to run such models, and this series of posts should document my journey through the complex realms of the meaning of _life_.
 
 In the rest of this post I'll be introducing the problem and solve the elementary automata in naive Haskell, as well as quickly present a form of graphical output.
-
+<br/>
+<br/>
 
 #### Haskell is a harsh mistress_
 
@@ -58,13 +59,14 @@ One last thing. This post is dedicated to my friend Zeme, a true Haskell monk an
 
 ### Cellular automata 
 
-Cellular automata is the name given to range of discrete models studied over a bunch of disciplines, including but not limited to maths, computing, physics, theoretical biology and complexity science. At the core, a CA is simply a system of very basic, identical agents, that are somehow distributed in space, and follow some rules of evolution over discrete time steps. In most cases they interact with each-other based on their topology, that is, the state of one cell is only influenced by the state of neighbouring cells. 
+Cellular automata (CA) is the name given to range of discrete models studied over a bunch of disciplines, including but not limited to maths, computing, physics, theoretical biology and complexity science. At the core, a CA is simply a system of very basic, identical agents, that are somehow distributed in space, and follow some rules of evolution over discrete time steps. In most cases they interact with each-other based on their topology, that is, the state of one cell is only influenced by the state of neighbouring cells.
 
 CAs are also called tesselation structures. The reason for this is because cells may be other shape than square. Covering a surface with more complex shaped cells whilst also maintaining the homogeneity of the grid has become an art of its own. But for now, let's fall back to square lattices. 
 
 CA were first discovered and discussed by Stanislaw Ulam in the 40s for the purpose of studying crystal growth at the Los Alamos lab. At about the same time his colleague, the polymath John von Neumann, researching automation and self-replication, was able to apply the same idea and create, or discover, the first artificial system capable of replicating itself. This evolved into the [von Neumann automata](https://en.wikipedia.org/wiki/John_von_Neumann#Cellular_automata,_DNA_and_the_universal_constructor){:target="_blank"}, of which more later.
 
-Interestingly enough, one-dimensional or [elementary automata](https://en.wikipedia.org/wiki/Elementary_cellular_automaton){:target="_blank"} came much later, with Stephen Wolfram's paper in 1986, describing a system of rules and classifications for celular automata in only one dimension. Wolfram was fascinated by the idea that rules so simple can generate so complex and unpredictable a behaviour, lurking with fractals, randomness, and even Turing-completeness. Wolfram dedicated a thousand pages to these systems. I humbly dedicate them this article.
+Interestingly enough, one-dimensional or [elementary automata](https://en.wikipedia.org/wiki/Elementary_cellular_automaton){:target="_blank"} came much later, with Stephen Wolfram's paper in 1983, describing a system of rules and classifications for celular automata in only one dimension. Wolfram was fascinated by the idea that rules so simple can generate so complex and unpredictable a behaviour, lurking with fractals, randomness, and even Turing-completeness. Wolfram dedicated a thousand pages to these systems. I humbly dedicate them this article.
+<br/>
 <br/>
 
 
@@ -138,7 +140,7 @@ Now I'll get serious, turn the list comprehension into a `map`, and get rid of t
 
 {% highlight haskell %}
 wolframRule :: Word8 -> [Bool]
-wolframRule x = map (testBit x) [0..(finiteBitSize x-1)]
+wolframRule x = map (testBit x) [0..finiteBitSize x-1]
 {% endhighlight %}
 
 Now that we have a way to generate all the rules, before we can apply them, let's start looking at the data structure representing the world.
@@ -227,14 +229,14 @@ Conceptually, we want something that takes a rule number `x` (of type `Word8`) a
 {% highlight haskell %}
 wolframRule :: Word8 -> W Bool -> Bool
 wolframRule x w = testBit x $ cellsToNum w
-	where
-		cellsToNum w = lc + 2 * cc + 4 * rc
-		lc = fromEnum $ extract $ left  w
+    where
+        cellsToNum w = lc + 2 * cc + 4 * rc
+        lc = fromEnum $ extract $ left  w
         rc = fromEnum $ extract $ right w
         cc = fromEnum $ extract w
 {% endhighlight %}
 
-Ugh. Verbose. Ugly. A lot of repetition. Uneccessary stuff to convert the binary representations to integers just because they're lists of Booleans. Not to mention the sum should be written as a _fold_. My mate Z. pointed my at [`Data.Bits.Bitwise`](hackage.haskell.org/package/bitwise-1.0.0.1/docs/Data-Bits-Bitwise.html), where I found `fromListBE :: [Bool] -> Int` which does exactly what our binary expansion sum combined with `fromEnum` do.
+Ugh. Verbose. Ugly. A lot of repetition. Uneccessary stuff to convert the binary representations to integers just because they're lists of Booleans. Not to mention the sum should be written as a _fold_. My mate Z. pointed me at [`Data.Bits.Bitwise`](hackage.haskell.org/package/bitwise-1.0.0.1/docs/Data-Bits-Bitwise.html), where I found `fromListBE :: [Bool] -> Int` which does exactly what our binary expansion sum combined with `fromEnum` do.
 
 {% highlight haskell %}
 wolframRule x w = testBit x $ fromListBE (map extract [left w])
@@ -248,7 +250,7 @@ Now suppose we create some world `w`, and try to create 100 generations of _Rule
 
 Whatever you do, don't try to run this code yet! Or try, and remain paralysed by the meaning of forever (until you run out of memory unless of course you Ctrl-C and it stops abusively printing 0s on your screen). Recall I mentioned infinite lists. 
 
-![The Paralysed Horse](https://vignette.wikia.nocookie.net/bravestwarriors/images/9/9b/Beth%27s_Horse1.png/revision/latest?cb=20130308020806
+![The Paralysed Horse was struck by the meaning of forever](https://vignette.wikia.nocookie.net/bravestwarriors/images/9/9b/Beth%27s_Horse1.png/revision/latest?cb=20130308020806
 )
 
 
@@ -338,7 +340,7 @@ Here's mine (had to zoom out of my terminal a lot):
 
 ![rule30-terminal-output](/assets/img/posts/hascell/rule30-terminal.png)
 
-Huh? you're not impressed? Fine. Then have a look at the mathematics again. No? Have a look at the code again. It's basically 30 lines excluding comments and imports, and it's not even the best Haskell can be. Still not impressed? Then have a look at this shell, _Conus Textile_. Just. Fucking. Look at it. This is called _beauty_. Inhale and say it, after me: _beauuutiful_.
+Huh? you're not impressed? Fine. Then have a look at the mathematics again. No? Have a look at the code again. It's basically 30 lines excluding comments and imports, and it's not even the best Haskell can be. Still not impressed? Then have a look at this shell, _Conus Textile_. Just. Look at it. This is called _beauty_. Inhale and say it, after me: _beauuutiful_.
 
 ![conus-textile](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Textile_cone.JPG/1200px-Textile_cone.JPG)
 <br/>
@@ -381,10 +383,7 @@ showPixel True  = PixelRGB8 0x00 0x00 0x00
 showPixel False = PixelRGB8 0xff 0xff 0xff
 
 imgRun :: Word8 -> W Bool -> Int -> Int -> DynamicImage
-imgRun r w n d = ImageRGB8 $ gener    where
-        list (W ls x rs) = reverse ls ++ [x] ++ rs
-        truncateD d (W ls x rs) = W (take d ls) x (take d rs)
-ateImage getPixel (d * 2+1) n
+imgRun r w n d = ImageRGB8 $ generateImage getPixel (d * 2+1) n
     where
         getPixel x y = showPixel $ generations !! y !! x
         generations  = run (wolframRule r) w n d
@@ -505,5 +504,36 @@ Open a file, dump the code in it, save it as `Hascell.hs` or whatever, and then 
 This command compiles it into a binary that you can run, `Simulate`.
 
 Otherwise, if you like to play with it interactively, run `ghci Hascell.hs` in your terminal / `WinGHCi`.
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 
+
+### References
+
+* Edwin Abbott, [Flatland: A romance in many dimensions](http://www.geom.uiuc.edu/~banchoff/Flatland/)
+* Stephen Wolfram, [Statistical mechanics of cellular automata](https://www.stephenwolfram.com/publications/academic/statistical-mechanics-cellular-automata.pdf), Rev. Mod. Phys. 55, 601 – Published 1 July 1983
+* Stephen Wolfram, [A new kind of science](https://www.wolframscience.com/nks/), Wolfram Media, 2002.
+* Learn You a Haskell for Great Good, [Functors, Applicative Functors and Monoids](http://learnyouahaskell.com/functors-applicative-functors-and-monoids)
+* Learn You a Haskell for Great Good, [Zippers](http://learnyouahaskell.com/zippers)
+* StackBuilders, [Image processing with Juicy Pixels and Repa](https://www.stackbuilders.com/tutorials/haskell/image-processing/)
+
+
+#### Packages
+* [Data.Bits](https://hackage.haskell.org/package/base-4.2.0.1/docs/Data-Bits.html)
+* [Data.Bits.Bitwise](https://hackage.haskell.org/package/bitwise-0.1.1.1/docs/Data-Bits-Bitwise.html)
+* [JuicyPixels](https://hackage.haskell.org/package/JuicyPixels)
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
