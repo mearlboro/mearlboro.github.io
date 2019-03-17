@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "Hascell: Episode 1"
+title: "Hascell: Cellular automata in Haskell"
 subtitle: "Part 2: Conway's Comonadic Conundrum"
+description: I wrote a more efficient Haskell implementation of Wolfram's elementary cellular automata using Comonadic Arrays. I also extended it to 2D worlds and played with Conway's game of life.
+hidetitle: "display:block"
 sections:
  - title: Intro
    url: '#intro'
@@ -49,10 +51,10 @@ sections:
 #### Recap_
 This is a continuation of my previous post, [Wolfram's Wonderful World](/2019/02/20/hascell-episode-1){:target="_blank"}. 
 
-In the previous post we used a list zipper to implement a world with a focused element, and defined all the 256 rules for Wolfram's ECA. Additionally, the code can save a number of iterations for each rule to PNG files. The disadvantages of this
-* the current implementation is a naive reinvention of the wheel code were as follows:
+In the previous post I used a list zipper to implement a world with a focused element and defined all the 256 rules for Wolfram's ECA. Additionally, the code can save a number of iterations for each rule to PNG files. The disadvantages of this
+* the current implementation is a naive reinvention of the wheel
 * no support for toroidal worlds
-* list indexing with `!!` is `O(n)`, creating needless computational complexity
+* list indexing with `!!` is `O(n)` creates needless computational complexity
 * cell values could be computed in parallel
 * all code is in one module called `Main`
 
@@ -83,7 +85,7 @@ Let's begin!
 ### Comonads
 
 #### The maths
-Let's start with a few observations what type of functions the type `W` uses:
+I'll start with a few observations what type of functions the type `W` uses:
 
 {% highlight haskell %}
 fmap :: (a -> a) -> W a -> W a
@@ -92,11 +94,9 @@ double :: W a -> W (W a)
 evolve :: (W a -> a) -> W a -> W a
 {% endhighlight %}
 
-The world `W a` is an instance of the `Functor` typeclass. Practically, it implements an `fmap` function that given a **computational context** holding some values it takes the values out of the context, transforms them, and returns them wrapped again into the context. That's what happens when a function is mapped over a list: each list element is transformed but the context is returned - a list with the updated elements is returned. And of course lists are Functors. 
+The world `W a` is an instance of the `Functor` typeclass. Practically, it implements an `fmap` function that given a **computational context** holding some values it takes the values out of the context, transforms them, and returns them again wrapped inside the context. That's also what happens when a function is mapped over a list: each list element is transformed but what is returned is still a list of the updated elements. Plot twist: lists are Functors.
 
-On top of `fmap`, our world defines `extract`, `double` and `evolve`, which all look kind of fundamental. Stay with me, okay?
-
-`extract` and `double` are inverses with respect to worlds, i.e. composing them yields an identity function over worlds. `evolve` is interesting because of the same observation, defined as an `fmap` of `extract` over a `double` of a given world, it gives back a world. Which tells us that `fmap extract . double` also yields an identity function over worlds. 
+On top of `fmap`, the world defines `extract`, `double` and `evolve`, which all look kind of fundamental. `extract` and `double` are inverses with respect to worlds: composing them yields an identity function over worlds.
 
     :t extract . double
     W a -> W a
@@ -112,11 +112,11 @@ For comparison, here's a `Monad`.
     return :: a -> m a
     fail :: String -> m a
 
-A monad is also a context, but on top of allowing functions to be mapped over the elements inside the context, it also supports a few more operations that allow us to work directly with contexts without having to always take the elements out, modify them, and put them back again:
+So, a monad is also a context, but on top of allowing functions to be mapped over the elements inside the context, it also supports a few more operations that allow us to work directly with contexts without having to always take the elements out, modify them, and put them back again:
 - wrapping an element into a context with a function called `return` (which is like the reverse of `extract`!)
 - applying a function that takes an element and returns something wrapped in a context to elements inside a context without getting a double context back: that's bind `>>=`, and allows monadic computations to be chained one after the other in an almost "imperative" fashion! This is a bit like our `evolve`, but the function is the other way around and `>>=` takes the context first and then the function, while `evolve` takes the rule first and then the world.
 
-It kinda seems to be related to what we wrote for `W a`, but something doesn't click. So I asked comrade Jules.
+It seems to be related to what I wrote for `W a`, but something doesn't click. So I asked comrade Jules.
 
 *The most common formulation of monads in category theory is not the standard one used in Haskell, although they are equivalent, the one used in Haskell is better adapted for use in computation. The formulation in category theory, for a monad `m`, has two operators:*
 
@@ -151,7 +151,7 @@ extract . return = id
 duplicate . join = id
 {% endhighlight %}
 
-I like this explanation because it presents the mathematical intuition. `join` is precisely the opposite of `double`. `extract` is exactly the opposite of `return`. How beautiful. This is what in category theory is called a **dual**, so a **comonad** is the dual of a **monad**.
+This is a great explanation so I have included it here as it is. Thank you comrade! I now know that `join` is the inverse of `double` and `extract` is the inverse of `return`. How beautiful. This is what in category theory is called a **dual**, so a **comonad** is the dual of a **monad**.
 <br/>
 <br/>
 
@@ -187,7 +187,7 @@ The code in the previous post indexes lists in `O(n)` in order to create the ima
 
 `getPixel` must be `O(1)`. This is when the disadvantage of the zipper kicks in. It was copacetic to not have an index and think all `left` and `right` dance moves on my infinite _Lineland_, but now I must to come back from the clouds and use `Array`s (which, in Haskell too like in C, can be indexed in `O(1)`).
 
-So, if I turn the list of `generations` in `imgRun` into an array, the operation itself will be `O(h * w)`. But then each call of `getPixel` can use `!` instead of `!!` which is `O(1)`, thus causing `getPixel` to be `O(1)` too. Then `imgRun` becomes `O(2 * h * w)`. Glorious!
+So, if I turn the list of `generations` in `imgRun` into an array, the operation itself will be `O(h * w)`. But then each call of `getPixel` can use `!` instead of `!!` which is `O(1)`, thus causing `getPixel` to be `O(1)` too. Then `imgRun` becomes `O(2 * h * w)`. Much better.
 
 {% highlight haskell %}
 getPixel x y = showPixel $ image ! y ! x
@@ -223,7 +223,7 @@ data Array i e = Array (i,i) [(i,e)]
 - a tuple (pair) of index-like values (which in Haskell are part of the typeclass `Ix`), which delimit the lower and upper bounds of the array (signified by the type `i` in the array definition above)
 - a list of tuples in which each index is paired with each array element (and values are signified by type `e`)
 
-Yet, the `Array` constructor is not exported by the module. I imagine that's what it looks like, but in Haskell you can only use the `array` function to create an array.
+Yet, the `Array` constructor is not exported by the module. I imagine that's what it looks like, but turns out you can only use the `array` function to create an array.
 
 As a computer engineer I have stumbled many times upon the 0-vs-1 debate about where arrays should begin. Ancient giants such as Cobol, APL, Fortran, Smalltalk as well as mathematical linguas like Matlab and Wolfram/Mathematica go for 1. Which makes sense... I guess? C-like and this century's languages go for 0. But wait a minute, in Haskell you can have arrays start whenever the hell you want. So take an array that keeps the letters 'm', 'a', 'd' on indexes from 100 to 102:
 
@@ -273,9 +273,9 @@ instance Ix i => Comonad (W i) where
     extend f w        = map f $ duplicate w
 {% endhighlight %}
 
-The index of the element in focus parametrises the comonad, so what before was `W a` is now `W i e`. `extract :: W i e -> e` and `extend :: W i e -> (W i e -> e) -> W i e` look as expected.
+`extract :: W i e -> e` and `extend :: W i e -> (W i e -> e) -> W i e` look as expected.
 
-Let's quickly unwrap `duplicate :: W i e -> W i (W i e)` : it should create a new world whose array is an array of worlds iterating through all the possible focus elements. `range $ bounds a` does the iteration. The data constructor for `W` takes the index first otherwise it can't be parametrised in the comonad. Because of that, we need to `flip` the arguments of the data constructor, so `W` takes the world first and index last, so we can then iterate the constructor `W a` over all indexes `i` in `range $ bounds a` with the same array `a`. The iteration is done with app `<*>` which is basically like an `fmap` and that's all you need to know.
+How I got to `duplicate :: W i e -> W i (W i e)` : it should create a new world whose array is an array of worlds iterating through the range of indexes. `range $ bounds a` does this iteration. The data constructor for `W` takes the index first otherwise it can't be parametrised in the comonad. Because of that, I need to `flip` the arguments of the data constructor, so `W` takes the world first and index last, so the constructor `W a` can be iterated over all indexes `i` in `range $ bounds a` with the same array `a`. The iteration is done with app `<*>` which is basically like an `fmap` and that's all I'm going to say.
 
 And that's it. Those five lines of code basically implement the whole world. 
 <br/>
@@ -283,18 +283,18 @@ And that's it. Those five lines of code basically implement the whole world.
 
 
 #### The world is your torus 
-Unlike lists, `Arrays` are finite. Thus, if we were to create evolution rules that take a cell's neighbours, the first and last cell would only have one. Instead, we can consider the first element to be the last's element right neighbour, and the last element to be the first element's left neighbour respectively. This turns our linear world into something more like a ring. If the same thing is done over 2 dimensions, then the topmost elements will have the elements on the bottom line as neighbours and so on, which would make the world look like a torus.
+Unlike lists, `Array`s are finite. So if I created evolution rules that take a cell's neighbours, the first and last cell would only have one. Instead, the first element can be the last's element right neighbour and the last element could be the first element's neighbour. This turns our linear world into something more like a ring. If the same thing is done over 2 dimensions, then the topmost elements will have the elements on the bottom line as neighbours and so on, which would make the world look like a torus.
 
 For simplicity I chose to implement the `left` and `right` functions similarly to what I had with the zipper, so the actual indexing is done under the hood, and in the case a rule needs to be written `left` and `right` would handle the logic:
 
 {% highlight haskell %}
-left, right :: (Ix i, Num i) => V i a -> V i a
-left  (V i a)
-    | i == 0    = V (snd . bounds $ a) a
-    | otherwise = V (i-1) a
-right (V i a)
-    | i == (snd . bounds $ a) = V 0     a
-    | otherwise               = V (i+1) a
+left, right :: (Ix i, Num i) => W i a -> W i a
+left  (W i a)
+    | i == 0    = W (snd . bounds $ a) a
+    | otherwise = W (i-1) a
+right (W i a)
+    | i == (snd . bounds $ a) = W 0     a
+    | otherwise               = W (i+1) a
 {% endhighlight %}
 <br/>
 
@@ -308,40 +308,39 @@ module Main where
 
 import Codec.Picture
 import Control.Comonad
-import Control.Monad.Par
 import Data.Array
 import Data.Bits
 import Data.Bits.Bitwise (fromListBE)
 import Data.Word
 
 --- Data Type
-data V i a = V i (Array i a) deriving (Functor, Show)
+data W i a = W i (Array i a) deriving (Functor, Show)
 
-instance Ix i => Comonad (V i) where
-    extract (V i a)   = a ! i
-    duplicate (V i a) = V i $ listArray (bounds a) (flip V a <$> (range $ bounds a))
-    extend f v        = parMap f $ duplicate v 
+instance Ix i => Comonad (W i) where
+    extract (W i a)   = a ! i
+    duplicate (W i a) = W i $ listArray (bounds a) (flip W a <$> (range $ bounds a))
+    extend f v        = fmap f $ duplicate v
 
-left, right :: (Ix i, Num i) => V i a -> V i a
-left  (V i a)
-    | i == 0    = V (snd . bounds $ a) a
-    | otherwise = V (i-1) a
-right (V i a)
-    | i == (snd . bounds $ a) = V 0     a
-    | otherwise               = V (i+1) a
+left, right :: (Ix i, Num i) => W i a -> W i a
+left  (W i a)
+    | i == 0    = W (snd . bounds $ a) a
+    | otherwise = W (i-1) a
+right (W i a)
+    | i == (snd . bounds $ a) = W 0     a
+    | otherwise               = W (i+1) a
 
-arr :: Ix i => V i a -> Array i a
-arr (V _ a) = a
+arr :: Ix i => W i a -> Array i a
+arr (W _ a) = a
 
-run :: Ix i => (V i a -> a) -> V i a -> Int -> [V i a]
+run :: Ix i => (W i a -> a) -> W i a -> Int -> [W i a]
 run rule w n = take n $ iterate (extend rule) w
 
 -- Wolfram rules
-wolframWorld :: Int -> V Int Bool
-wolframWorld d = V d $ listArray (0, 2*d) 
+wolframWorld :: Int -> W Int Bool
+wolframWorld d = W d $ listArray (0, 2*d)
     $ (take d $ repeat False) ++ [True] ++ (take d $ repeat False)
 
-wolframRule :: Word8 -> V Int Bool -> Bool
+wolframRule :: Word8 -> W Int Bool -> Bool
 wolframRule x w = testBit x $ fromListBE (fmap extract [left w, w, right w])
 
 wolframRun :: Word8 -> Int -> Int -> IO ()
@@ -350,15 +349,15 @@ wolframRun r n d = mapM_ putStrLn generations
         generations = stringShow $ run (wolframRule r) (wolframWorld d) n 
 
 -- Show as string
-stringShow :: [V Int Bool] -> [String]
+stringShow :: [W Int Bool] -> [String]
 stringShow ws = map (concat . map showCell . list) ws
     where 
         showCell True  = "██"
         showCell False = "  "
-        list (V i a) = elems a
+        list (W i a) = elems a
 
 -- Show as image
-imageShow :: [V Int Bool] -> Int -> Int -> DynamicImage
+imageShow :: [W Int Bool] -> Int -> Int -> DynamicImage
 imageShow ws h w = ImageRGB8 $ generateImage getPixel h w
     where
         getPixel x y = showPixel $ pixelArray ! x ! y
@@ -391,35 +390,31 @@ It's time to move on from the one-dimensional _Lineland_ to a new and exciting t
 
 The best part of Haskell arrays is that the index doesn't have to be a number. It could also be a _tuple_. This means I can use a pair `(i,j)` to parametrise the comonad, and `a ! (i,j)` to get the element at position `(i,j)` in the array, instead of creating an array of arrays, which is pretty neat!
 
-There's no change required to the data type and `Comonad` instance. The main difference between _Lineland_ and _Flatland_ is that a cell has eight neighbours instead of just two. So `left` and `right` must be replaced with functions that change the focus element into one of the 8 possible "cardinal points". I have represented those with an enum, `Move`, and added a function `neighbour` which takes a cardinal point and a world and returns the new world with the new focus element:
+There's no change required to the data type and `Comonad` instance. The main difference between _Flatland_ and _Lineland_ is that a cell has eight neighbours instead of just two. So `left` and `right` must be replaced with functions that change the focus element into one of the 8 possible "cardinal points". I have represented those with an enum, `Move`, and added a function `neighbour` which takes a cardinal point and a world and returns the new world with the new focus element. (Note: the World has been renamed to `U`)
 
 {% highlight haskell %}
 data Move = N | NE | E | SE | S | SW | W | NW deriving (Bounded, Enum, Eq, Show)
-
-height, width :: (Integral i, Ix i) => U (i, i) a -> i
-height (U _ a) = fst . snd . bounds $ a 
-width  (U _ a) = snd . snd . bounds $ a 
 
 neighbour :: (Integral i, Ix i) => U (i, i) a -> Move -> U (i, i) a
 neighbour u@(U (i, j) a) move = case move of
     N  -> U (i,               (j + 1) `mod` w) a
     NE -> U ((i + 1) `mod` h, (j + 1) `mod` w) a
-    E  -> U ((i + 1) `mod` h,  j)              a   
+    E  -> U ((i + 1) `mod` h,  j)              a
     SE -> U ((i + 1) `mod` h, (j - 1) `mod` w) a
     S  -> U (i,               (j - 1) `mod` w) a
     SW -> U ((i - 1) `mod` h, (j - 1) `mod` w) a
-    W  -> U ((i - 1) `mod` h,  j)              a   
+    W  -> U ((i - 1) `mod` h,  j)              a
     NW -> U ((i - 1) `mod` h, (j + 1) `mod` w) a
     where
         h = height u + 1 
         w = width  u + 1 
 {% endhighlight %}
 
-The usage of `mod` implements the toroidal property - say we have a 6x6 grid. The cells on the 6<sup>th</sup> row will have a southern neighbour on the 1<sup>st</sup> row. The cells on the 6<sup>th</sup> column will have a western neighbour on the 1<sup>st</sup> column, and so on. Graphically, the transformation looks like this:
+The usage of `mod` implements the torus. Take a 6x6 grid. The cells on the 6<sup>th</sup> row will have a southern neighbour on the 1<sup>st</sup> row. The cells on the 6<sup>th</sup> column will have a western neighbour on the 1<sup>st</sup> column, and so on. Graphically, the transformation looks like this:
 
 ![](/assets/img/posts/hascell/torus.jpg)
 
-The functions `height` and `width` get the dimensions of the grid in order to calculate the modulus. The dimensions are encoded in the array's bounds, which look like this: `((0,0),(h-1, w-1))`.
+The functions `height` and `width` get the dimensions of the grid in order to calculate the modulus. The dimensions are encoded in the array's bounds, which look like this: `((0, 0), (h-1, w-1))`.
 
 {% highlight haskell %}
 height, width :: (Integral i, Ix i) => U (i, i) a -> i
@@ -431,7 +426,7 @@ width  (U _ a) = snd . snd . bounds $ a
 
 
 #### Conway's Game of Life
-Since it deserves a post of its own, I'll only use Conway's Game of Life (aka Life) as a quick example. Life supports two states, Alive and Dead (which we shall represent by `True` and `False`) and only defines a single transformation rule. The transformation rule is as follows (thanks Wikipedia)
+Since it deserves a post of its own, I'll only use Conway's Game of Life (aka Life) as a quick example. Life supports two states, Alive and Dead (`True` and `False`?) and only defines a single transformation rule. The transformation rule is as follows (thanks Wikipedia)
 
 - Any live cell with fewer than two live neighbours dies, as if by underpopulation.
 - Any live cell with two or three live neighbours lives on to the next generation.
@@ -445,11 +440,11 @@ numNeighbours :: U (Int, Int) Bool -> Int
 numNeighbours u = length $ filter id $ fmap extract $ map (neighbour u) [N ..] 
 {% endhighlight %}
 
-With the occasion I found out about a little bit of Haskell syntactic sugar; 
+With the occasion I found out about a little bit of Haskell syntactic sugar
 - since `N` is the first element, `[N ..]` iterates through all the elements in the `Move` enum
-- `filter id` is the same as `filter (==True)`; we filter by the identity function, so we can grab the neighbours that are alive from the list of neigbours values (which we obtain by applying `extract` to the list of all neighbours)
+- `filter id` uses the identity function to check is the cell is `True` or `False`. The identity function simply returns the cell value, and `filter` only selects the values for which the function `id` is `True`, thus it can be used to count the alive cells
 
-Then, the transformation above codes into:
+Then the transformation rule codes into:
 
 {% highlight haskell %}
 gameOfLife :: U (Int, Int) Bool -> Bool
@@ -481,7 +476,7 @@ glider =  U (0, 0) xs
 
 
 #### Final code
-For now I'll only implement a print to terminal, and clear it between generations. This can be done with `rawSystem "clear" []` from `System.Process`. The full code is below. You can import it into an interactive shell and write `runConway glider`. Pressing any key shows the next generation.
+For now I'll only implement a print to terminal and clear it between generations to display it like an animation. This can be done with `rawSystem "clear" []` from `System.Process`. The full code is below. You can import it into an interactive shell and write `runConway glider`. Pressing any key shows the next generation.
 
 {% highlight haskell %}
 {-# LANGUAGE DeriveFunctor #-}
@@ -563,7 +558,7 @@ runConway u = do
 
 ### Future work
 
-The correct way to represent this into an image would be to create a GIF. I'll do all that in the next post, together with exploring more configurations. Moreover, I'll switch to parallel arrays so we can compute the next cell in parallel.
+The correct way to represent this into an image would be to create a GIF. I'll do all that in the next post, together with exploring more configurations. Moreover, I'll switch to parallel arrays because I can.
 <br/>
 <br/>
 
@@ -572,7 +567,6 @@ The correct way to represent this into an image would be to create a GIF. I'll d
 
 ### Bibliography
 
-Cellular automata in Haskell:
 - Edwin Abbott, [Flatland: A romance in many dimensions](http://www.geom.uiuc.edu/~banchoff/Flatland/), 1884
 - Dan Piponi, Sigfpe Blog, [Evaluating Cellular Automata is Comonadic](http://blog.sigfpe.com/2006/12/evaluating-cellular-automata-is.html){:target="_blank"}, December 2006
 - Philip Zucker, [Cellular Automata in Haskell](http://www.philipzucker.com/cellular-automata-haskell/){:target="_blank"}, September 2017
