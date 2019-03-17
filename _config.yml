@@ -18,7 +18,7 @@ author: Madalina Sas (mis)
 email: madalina.sas@pm.me
 description: >- # this means to ignore newlines until "baseurl:"
   Computer engineer. Anarcho-artist. Psychonaut. Aspiring polymath.
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://mis.pm" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  mearlboro
 youtube_username: mearlboro
