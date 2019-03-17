@@ -2,6 +2,7 @@
 layout: post
 title: "Hascell: Episode 1"
 subtitle: "Part 1: Wolfram's Wonderful World"
+description: I wrote a beautiful but naive Haskell implementation of Wolfram's elementary cellular automata (ECA) in 30 lines. It can generate the evolution of all 256 rules from a default starting configuration and (slowly) save them to PNG images.
 sections:
  - title: Motivation
    url: '#motivation'
