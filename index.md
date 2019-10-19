@@ -7,11 +7,13 @@ layout: home
 **madalina sas**<br/>
 **/m&#601;d&#601;'l&#618;na s&#593;:s/**<br/>
 n.<br/>
-I'm a computer engineer / artist / creative from Romania and based in the UK. I have a computer engineering master's at Imperial College London, and I currently live in Bath where I work for [Netcraft](https://netcraft.com). On the side I work on [SnowWall](https://snowwall.tech), a privacy-oriented networking tool for Windows, and I design for [Rat's Tales](https://ratstales.co.uk) and [ShepherdTone](https://shepherdtone.co.uk).
+I'm a computer scientist / artist / creative from Romania and based in the UK. I have a computer engineering master's from Imperial College London, and I currently live in London where I work for [Netcraft](https://netcraft.com){:target="_blank" rel="noopener noreferrer"}. On the side I work on [SnowWall](https://snowwall.tech){:target="_blank" rel="noopener noreferrer"}, a privacy-oriented networking tool for Windows, and spend an increasing amount of time dwelling in complexity science.
 
-I care about digital privacy, about simplicity and security in software, information theory and codes, cryptography, automation and distributed/decentralised technology, and ethical artificial intelligence. I love networks, visualisations, and natural language - writing it and processing it.
+My technical interests are in digital privacy and security, information theory, cryptography, automation, functional programming, decentralised systems and ethical artificial intelligence.
+Sometimes I also play with electronics (I'm a ham radio enthusiast) and I always wear my tin foil hat. My tools of the trade are a [Purism](https://puri.sm){:target="_blank" rel="noopener noreferrer"} laptop running PureOS with i3wm, a Sony A7S and a Nokia phone.
 
-When I'm not working, I take [photographs](https://instagram.com/rant.art), I read and I write. Things I love to read are novels and stories, philosophy of mind, and neuroscience. Things I love to [listen to](https://youtube.com/user/mearlboro) and look at are usually psychedelic, fractalicious and surreal. I prefer Koch to the Churchlands, Dali to Picasso, Dostoievski to Dickens.
+When I'm not staring into a computer screen, I take [photographs](https://instagram.com/rant.art){:target="_blank" rel="noopener noreferrer"}, I read and I write. I also enjoy discussing literature and previously I ran a storytelling workshop in Bath.
+Things I love to read are novels and stories, philosophy of mind, and neuroscience. Things I love to [listen to](https://youtube.com/user/mearlboro){:target="_blank" rel="noopener noreferrer"} and look at are usually psychedelic, fractalicious and surreal. I prefer Koch to the Churchlands, Dali to Picasso, Dostoievski to Dickens.
 
 You can read more about my [experience](/experience) or my [projects](/projects) on this site, and if you would like to work together please [get in touch](/contact).
 
