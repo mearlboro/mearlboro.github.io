@@ -20,13 +20,14 @@ A novel whose principal subject is the moral, psychological, and intellectual de
 
 ### Netcraft
 #### Internet services developer
-##### 2017 - present
-My work at [Netcraft](https://netcraft.com){:target="_blank" rel="noopener noreferrer"} branches into many fields of internet security. I have started with content filtering, then moved on to working in automated countermeasures against internet fraud.
-Sometimes I follow up where the automated systems are limited, tracking down institutions or people all over the internet in order to let them know their website has been compromised.
+##### 2017 - 2020
+My work at [Netcraft](https://netcraft.com){:target="_blank" rel="noopener noreferrer"} tackled many fields
+of internet security. I have started with content filtering, then moved on to phishing site detection on the
+web or social platforms, automated security examination of networks, and automated countermeasures against
+internet fraud. Sometimes I would follow up where the automated systems were limited, doing detective work
+to track down institutions or people all over the internet in order to let them know their website has been compromised.
 
-I also worked in phishing site detection on the web or social platforms and automated security examination of networks.
-
-Currently I'm running and interpreting the Netcraft web server survey which collects statistics about all websites on the internet.
+I have also been one of the runners of the Netcraft Web Server Survey, which collects statistics about all websites on the internet.
 <br/>
 <br/>
 
@@ -35,20 +36,23 @@ Currently I'm running and interpreting the Netcraft web server survey which coll
 ##### 2016
 Responsible with full-stack development of a complex network of systems for running clinical trials
 and automatically randomising treatment assigned to patients to maximise statistical power of the
-trial. Here I have received an accreditation for .NET Development and learned to iOS development in Swift.
+trial. Here I have received an accreditation for .NET Development and learned iOS development in Swift.
+Some of the most intriguing technical tasks I tackled were reverse engineering and
+low-level operating system management in Windows.
 
 I have also completed Good Clinical Practice training, joined some trial management meetings and
-worked on validation of data and trial design. Some of the most intriguing tasks I tackled with were reverse engineering and working on low-level operating system management in Windows, in order to unify and simplify our stack.
-
-My work in clinical trials, especially focusing on mental health, have stimulated my interest in neuroscience and psychiatric research. During this time I have become acquainted with the [Maudsley Psychedelic Society](https://www.youtube.com/channel/UCRh1HFc0_bZZh4MA4d-BqoA){:target="_blank" rel="noopener noreferrer"} and have attended most of their talks.
+worked on validation of data and trial design. My work in clinical trials, especially focusing on
+mental health, have stimulated my interest in neuroscience and psychiatric research. During this time
+I have become acquainted with the [Maudsley Psychedelic Society](https://www.youtube.com/channel/UCRh1HFc0_bZZh4MA4d-BqoA){:target="_blank" rel="noopener noreferrer"} and have attended most of their talks.
 <br/>
 <br/>
 
 ### Imperial College London
 #### Undergraduate Researcher
 ##### 2015
-With [Dr. Philippa Gardner](http://www.doc.ic.ac.uk/~pg/){:target="_blank" rel="noopener noreferrer"}'s research group we have researched methods of reasoning about
-concurrent data structures with an innovative new program logic for Time and Data Abstraction (TaDA) and attempted to prove that
+With [Dr. Philippa Gardner](http://www.doc.ic.ac.uk/~pg/){:target="_blank" rel="noopener noreferrer"}'s research
+group we have investigated methods of reasoning about concurrent data structures with
+an innovative new program logic for Time and Data Abstraction (TaDA) and attempted to prove that
 Red-Black Trees are a sound data structure in the context of concurrent reads and writes. For the
 purpose of this project we have created a technical specification of Red-Black Trees which guarantees
 correct concurrent behaviour as well as implemented a prototype of such a concurrent data
