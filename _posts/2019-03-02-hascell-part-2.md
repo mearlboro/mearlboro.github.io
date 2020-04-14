@@ -4,6 +4,8 @@ title: "Hascell: Cellular automata in Haskell"
 subtitle: "Part 2: Conway's Comonadic Conundrum"
 description: I wrote a more efficient Haskell implementation of Wolfram's elementary cellular automata using Comonadic Arrays. I also extended it to 2D worlds and played with Conway's game of life.
 hidetitle: "display:block"
+permalink: "hascell-conway"
+categories: numbers, pixels
 sections:
  - title: Intro
    url: '#intro'
@@ -43,13 +45,13 @@ sections:
         url: '#final-code'
  - title: Future work
    url: '#future-work'
-  
+
 ---
 
 
 ### Introduction
 #### Recap_
-This is a continuation of my previous post, [Wolfram's Wonderful World](/2019/02/20/hascell-episode-1){:target="_blank"}. 
+This is a continuation of my previous post, [Wolfram's Wonderful World](/hascell-wolfram){:target="_blank"}. 
 
 In the previous post I used a list zipper to implement a world with a focused element and defined all the 256 rules for Wolfram's ECA. Additionally, the code can save a number of iterations for each rule to PNG files. The disadvantages of this
 * the current implementation is a naive reinvention of the wheel
