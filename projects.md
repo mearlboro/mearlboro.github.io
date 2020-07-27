@@ -13,11 +13,17 @@ place devoted to the imagination. There are various types of imaginaria, centers
 <br/>
 <br/>
 
+# Ongoing projects
 
-# Software projects
+{% for p in site.posts %}
+<h3><a href="{{ p.url }}" target="_blank" style="{{ p.hidetitle }}"><br/>{{ p.title }}</a></h3>
+<p><a href="{{ p.url }}" target="_blank">{{ p.subtitle }}</a><br/></p>
+<p>{{ p.description }}</p>
+{% endfor %}
 <br/>
 
-### SnowWall
+
+### [SnowWall]()
 #### privacy-oriented visual network monitoring
 Motivated by privacy concerns and the lack of research on privacy on the Windows operating system, SnowWall is a networking tool designed to provide insights and control into the networking activity on a Windows-based system. SnowWall interacts with the operating system, intercepts every inbound and outbound connection, provides information on the connection’s state, lifetime, owning process, and most importantly, remote end point, such as geolocation and ownership information. SnowWall is a powerful tool designed to be user-friendly, which allows anyone to block unwanted connections with high-level firewall rules, such as blocking by country or by owning organization name.
 
@@ -28,7 +34,7 @@ Currently SnowWall is aiming to become a distributed geolocation network which w
 <br/>
 
 
-### Seek
+### [Seek]()
 #### information extraction
 Built in a group project, it's an information retrieval tool capable of analysis with statistical natural language processing techniques on large corpora. It uses latent semantic indexing, similar to many search engines, as well as latent Dirichlet allocation to extract topics from text. The tool is also able to extract relational information from text based on Noam Chomsky's work on transformational grammars.
 
@@ -36,16 +42,6 @@ The tool has been trained on multiple corpora provided by the Stanford NLP team,
 
 Check it out on [github](https://github.com/mearlboro/seek-legacy).
 <br/>
-<br/>
-
-### Doodlr.js
-#### real-time web application
-A Javascript application with real-time collaborative digital painting features. Doodlr.js displays a gigantic board or wall of drawings where users can pick a specific canvas and join in collaborative drawing. Doodlr.js is run on top of Meteor streams, which allowed the users on the same canvas to pass messages in a peer-to-peer fashion to allow real-time drawing. The Parse database platform has been used due to its capacity to store images as objects.
-
-The drawing is done in HTML5 canvases and features supported are a pencil tool and textured brushes, selection with cutting, copying and pasting, drawing shapes, and colour picking in a very simple interface. It also supports colour manipulation and controls such as contrast, hue, saturation. Furthermore, it supports drawing with graphic tablets, which makes it suitable for all types of users: from artists who’d use it to brand their portfolio to friends scribbling during a video chat or a real-time maths tutorial. Drawing can be done either on the ’walls’ of a private ’room’ or on a public ‘metawall’, which allows great possibility for large artistic collaborations.
-
-Check it out on [github](https://github.com/mearlboro/doodlr.js).
-
 <br/>
 <br/>
 
