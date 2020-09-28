@@ -7,7 +7,7 @@ layout: home
 **madalina sas**<br/>
 **/m&#601;d&#601;'l&#618;na s&#593;:s/**<br/>
 n.<br/>
-I'm a computer scientist / creative from Romania based in South-East London. I have a computer engineering master's from Imperial College, where I'm also about to start a PhD in complex systems. On the side I work on [SnowWall](https://snowwall.tech){:target="_blank" rel="noopener noreferrer"}, a privacy-oriented networking tool for Windows, and harangue whoever would listen about security and privacy.
+I'm a computer scientist / creative from Romania based in South-East London. I have a computer engineering master's from Imperial College, and am currently pursuing a PhD in complex systems at Imperial's [Centre for Complexity Science](https://www.imperial.ac.uk/complexity-science){:target="_blank" rel="noopener noreferrer"}. On the side I work on [SnowWall](https://snowwall.tech){:target="_blank" rel="noopener noreferrer"}, a privacy-oriented networking tool for Windows, and harangue whoever would listen about security and privacy.
 
 My technical interests are in information theory, cryptography, functional programming, decentralised systems, and ethical artificial intelligence.
 Sometimes I also play with electronics (I'm a ham radio enthusiast) and I always wear my tin foil hat. My tools of the trade are a [Purism](https://puri.sm){:target="_blank" rel="noopener noreferrer"} laptop running PureOS with i3wm, a Sony A7S and a Nokia dumbphone.
