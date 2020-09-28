@@ -95,6 +95,7 @@ During the summer I spent at Google Munchen we have worked in pairs to implement
 ##### 2013 - 2017
 
 I've graduated a four-year degree with a first class and honours. During my time at Imperial I had built many things, alone or in teams, of which the most notable:
+
 - An assembler and emulator for ARM architecture in a team project. Fully implemented in C, the system was meant for interacting with a Raspberry Pi. Generated the assembly necessary to encode a sequence of characters into a sequence of blinks on a set of LEDs using the [Dotsies](http://dotsies.org/){:target="_blank" rel="noopener noreferrer"} alphabet [[GitHub]](https://github.com/mearlboro/ARM11){:target="_blank" rel="noopener noreferrer"}
 - Completed [PintOS](https://web.stanford.edu/class/cs140/projects/pintos/pintos_1.html){:target="_blank" rel="noopener noreferrer"} in a series of group courseworks, a version of the Standford operating systems exercise in C. Contributed with system calls, memory management, thread synchronisation and interruptions
 - An Enigma machine simulation in C++ [[GitHub]](https://github.com/mearlboro/enigma){:target="_blank" rel="noopener noreferrer"}
@@ -109,9 +110,6 @@ I've graduated a four-year degree with a first class and honours. During my time
 ### Theodor Burada Arts and Crafts School, Constanta, Romania
 #### Professional Diploma in Photography
 ##### 2010 - 2012
-- Participated in multiple photography trips and worked in a studio
-- Subjects include light and colour, dynamics and composition, optical physics, film and film developing
-- Studied art movements and how they influenced photography and the history of photographic art
 - Wrote a dissertation on "The Symbolic and Psychological Use of Colour in Photography" and exhibited my dissertation photographs in Constanta Expo (June 2012)
 <br/>
 <br/>
@@ -119,9 +117,6 @@ I've graduated a four-year degree with a first class and honours. During my time
 ### Ovidius High School, Constanta, Romania
 #### Baccalaureate 9.61/10 GPA (Maths, Computing, Language & Literature)
 ##### 2009 - 2013
-- Mathematics topics covered: Algebra, Calculus, Statistics, Group Theory, Complex Numbers, Trigonometry
-- Programming topics covered: Programming, Algorithms, Data Structures in C, C++, C#
-- Courses also included sciences (Chemistry, Biology), Literature Studies, English, introductions to Humanities/Social Sciences (Philosophy, Logic, Psychology, Economics)
 - Participated in local and national competitions:
     - County Informatics Olympiad 2011 (OJI) - First Prize
     - National Applied Informatics Contest 2011 (CIA) - Ranked #6
