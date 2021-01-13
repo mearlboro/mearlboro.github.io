@@ -22,7 +22,6 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://mis.pm" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  mearlboro
 youtube_username: mearlboro
-instagram_username: rant.art
 linkedin_username: madalina-sas
 
 # Build settings
