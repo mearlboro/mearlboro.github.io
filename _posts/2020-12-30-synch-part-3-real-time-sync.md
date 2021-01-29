@@ -2,9 +2,8 @@
 layout: post
 title: "Synch.Live"
 subtitle: "Part 3: Real-Time Clock Sync"
-description: We add a real time clock module to the headset prototype, and implement precisely timed blinking behaviour on using an asynchronous programming paradigm
-hidetitle: "display:none"
-categories: numbers
+description: We add a real time clock module to the headset prototype, and implement precisely timed blinking behaviour on two headsets
+hidetitle: "display:block"
 tags: raspberrypi, linux, python
 permalink: "synch-live-part-3"
 sections:
