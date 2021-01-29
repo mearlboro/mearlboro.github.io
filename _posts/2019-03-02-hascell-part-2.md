@@ -3,9 +3,9 @@ layout: post
 title: "Hascell: Cellular automata in Haskell"
 subtitle: "Part 2: Conway's Comonadic Conundrum"
 description: I wrote a more efficient Haskell implementation of Wolfram's elementary cellular automata using Comonadic Arrays. I also extended it to 2D worlds and played with Conway's game of life.
-hidetitle: "display:block"
+hidetitle: "display:none"
 permalink: "hascell-conway"
-categories: numbers, pixels
+categories: [complexity, programming]
 sections:
  - title: Intro
    url: '#intro'

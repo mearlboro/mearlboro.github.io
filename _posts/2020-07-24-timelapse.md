@@ -3,8 +3,7 @@ layout: post
 title: "PiLapse"
 subtitle: "Drive a timelapse with a Raspberry Pi and gphoto2"
 description: I ran a 7-day timelapse, every five minutes, to capture the growth of a new leaf of my Monstera plant, using a Raspberry Pi 3 and the gphoto2 library to drive my Sony A7S, darktable to export them, and ffmpeg to animate them.
-categories: numbers, pixels
-tags: foss, linux, raspberry pi, photography
+categories: [raspberrypi, photography]
 permalink: pi-timelapse
 sections:
   - title: Of plants and men

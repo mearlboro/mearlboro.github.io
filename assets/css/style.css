@@ -120,6 +120,7 @@ h2, h2 a, h4, h4 a {
 
 h3, h3 a, h3 a.post-link {
   font-family: Baskerville, serif;
+  margin-top:10px;
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: 5px;
