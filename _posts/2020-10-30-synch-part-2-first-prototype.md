@@ -69,14 +69,14 @@ For the purpose of tracking the players when filming them from above, we require
 
 ![](/assets/img/posts/synch/ws2801-lights.jpg)
 
-The [WS2801B LED strip](https://www.amazon.co.uk/BTF-LIGHTING-WS2801-Addressable-Individual-Non-Waterproof/dp/B0713MQ7R6/) has 32 RGB LEDs lights per meter, with a distance between them of about 3cm. They usually come on a strip with pretty good adhesive and can be attached to pretty much anything. The kit also includes a 4-pin connector cable. The variant we use is also waterproof!
+The [WS2801B LED strip](https://www.amazon.co.uk/BTF-LIGHTING-WS2801-Addressable-Individual-Non-Waterproof/dp/B0713MQ7R6/){:target="_blank" rel="noopener noreferrer"} has 32 RGB LEDs lights per meter, with a distance between them of about 3cm. They usually come on a strip with pretty good adhesive and can be attached to pretty much anything. The kit also includes a 4-pin connector cable. The variant we use is also waterproof!
 
 There are many manufacturers making these, and it doesn't matter as long as they use the WS2801 integrated circuit, which is needed to drive each light. These can be connected in series making each LED individually addressible.
 The strip needs only two data pins to connect to the Pi, which will also reduce the amount of wiring and soldering. Other variants, such as 2812, or 2811, may have different wiring and use different integrated circuits.
 
 ![](/assets/img/posts/synch/ws2801.jpg)
 
-Moreover, the software package for it, made by [Adafruit](https://adafruit.com), allows us to specify colours in 8-bit per channel RGB for each individual LED!
+Moreover, the software package for it, made by [Adafruit](https://adafruit.com){:target="_blank" rel="noopener noreferrer"}, allows us to specify colours in 8-bit per channel RGB for each individual LED!
 
 ### Building the first prototype
 
@@ -87,7 +87,7 @@ The below guide focuses on a headless setup, namely, one that doesn't ever requi
 
 1) **Install OS, enable SSH**
 
-We download and install [Raspbian](https://www.raspberrypi.org/software/) onto a MicroSD card.
+We download and install [Raspbian](https://www.raspberrypi.org/software/){:target="_blank" rel="noopener noreferrer"} onto a MicroSD card.
 
 Before putting the card into the RPi, I always enable Secure SHell (`ssh`). This allows me to connect to the RPi from my own computer and perform the initial configuration remotely.
 After the installation is complete, two drives will appear on the SD card. To enable `ssh`, simply create an empty file named `ssh` in the `/boot` drive.
@@ -168,7 +168,7 @@ The lights have four pins:
 
 6) **Power delivery**
 
-Each individual LED consumes about 60mA at DC5V. Times 20, that's 1.2A. The GPIO of Raspberry Pi can usually deliver about 18mA by GPIO per pin, so we shouldn't try to drive the lights, or any relevant peripherals in general, through the RPi's power supply. A discussion about this can be found [here](https://raspberrypi.stackexchange.com/questions/9298/what-is-the-maximum-current-the-gpio-pins-can-output).
+Each individual LED consumes about 60mA at DC5V. Times 20, that's 1.2A. The GPIO of Raspberry Pi can usually deliver about 18mA by GPIO per pin, so we shouldn't try to drive the lights, or any relevant peripherals in general, through the RPi's power supply. A discussion about this can be found [here](https://raspberrypi.stackexchange.com/questions/9298/what-is-the-maximum-current-the-gpio-pins-can-output){:target="_blank" rel="noopener noreferrer"}.
 
 Since in general the RPi's internal power management cannot drive all the LEDs safely, we are feeding power to both the RPi and the LEDs in parallel from the same 2A rail of the power bank. Ground/earth must also be done in parralel. Now the maximum load is up to the USB output of the battery pack and not to the limits of the GPIO 5V rail.
 
@@ -215,7 +215,7 @@ To check if its enabled, the `lsmod` command lists the kernel modules the system
 $ sudo lsmod | grep spi_
 ```
 
-The output should list something like `spi_bcm` and a four digit number. To troubleshoot, a number of alternative ways of turning SPI on are listed [here](https://www.raspberrypi-spy.co.uk/2014/08/enabling-the-spi-interface-on-the-raspberry-pi/).
+The output should list something like `spi_bcm` and a four digit number. To troubleshoot, a number of alternative ways of turning SPI on are listed [here](https://www.raspberrypi-spy.co.uk/2014/08/enabling-the-spi-interface-on-the-raspberry-pi/){:target="_blank" rel="noopener noreferrer"}.
 
 8) **Install libraries**
 

@@ -189,7 +189,6 @@ strong {
   position: fixed;
   padding-right: 30px;
   padding-top: 30px;
-  width: inherit;
   box-sizing: border-box;
 }
 .post-menu ul {
@@ -231,6 +230,10 @@ strong {
     .floating-img {
         width: 100%;
     }
+}
+
+.video {
+    width: 100%;
 }
 
 /* Colours

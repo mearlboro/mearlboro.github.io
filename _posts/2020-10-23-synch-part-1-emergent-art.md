@@ -54,7 +54,7 @@ So what exactly is Synch.Live? Hillary explains it on her website as _"an IRL ga
 
 _The game takes inspiration from emergent systems in nature like flocks of birds or swarms of ants in which novel patterns emerge from collective effort. In these self-organizing systems, no single agent can do alone what the group can do together."_
 
-<iframe src="https://player.vimeo.com/video/485764739?app_id=122963&amp;wmode=opaque" allow="autoplay; fullscreen" allowfullscreen="" title="Synch.Live" id="yui_3_17_2_1_1608314592212_74" width="640" height="480" frameborder="0"></iframe>
+<iframe src="https://player.vimeo.com/video/485764739?app_id=122963&amp;wmode=opaque" allow="autoplay; fullscreen" allowfullscreen="" title="Synch.Live" id="yui_3_17_2_1_1608314592212_74" width="640" height="480" class="video" frameborder="0"></iframe>
 
 _"Here's how we expect the experience will work: we gather a group of strangers to play the game in an open field, equip them with specially designed headlights, and invite them to solve a group challenge – without using words. The rules are simple: no talking, stay 2 meters apart, match your blinking lights with your neighbours, and keep moving. A cutting-edge algorithm calculates the extent of emergence in the group, as it's happening in real time, and adjusts the frequency of the lights in response to the group's behaviour._
 
@@ -110,7 +110,7 @@ We can clearly observe emergent patterns with the naked eye, but measuring them 
 Complexity science is concerned with such dynamical systems consisting of many interconnected components which exhibit emergent behaviour. As novel patterns emerge from collective effort, complexity science strives to provide the tools to identify their causal nature.
 
 Exciting new work in complexity science and information theory strives to ['reconcile emergences'](https://arxiv.org/abs/2004.08220){:target="_blank" rel="noopener noreferrer"} into a general framework. The researchers propose a criterion for the presence of emergence which takes into account causal relationships between the individual features of the system's components and the macroscopic patterns that the system displays as the system evolves over time.
-For example, in theoretical model for flocks of birds, if the individual features of the system are the spatial positions of each bird, there is a [causal relationship](https://www.mitpressjournals.org/doi/pdfplus/10.1162/artl.2010.16.2.16204){:target="_blank" rel="noopener noreferrer"} between their position and the center of mass of the flock, treated as macroscopic feature.
+For example, in a theoretical model for flocks of birds, if the individual features of the system are the spatial positions of each bird, there is a [causal relationship](https://www.mitpressjournals.org/doi/pdfplus/10.1162/artl.2010.16.2.16204){:target="_blank" rel="noopener noreferrer"} between their position and the center of mass of the flock, treated as macroscopic feature.
 For Synch.Live, we aim to implement an algorithm which uses this same criterion to quantify emergence in the group motion of the players.
 
 
@@ -136,6 +136,19 @@ By introducing only two more spatial rules to the above model, we obtain the con
 * alignment, of their flight direction to that of their neighbours
 * aggregation, or how much they tend to fly towards the center of the flock
 * avoidance, or maintaining a distance from their closest neighbour
+
+Simulations based on this model have been used for the [wildebeests in Lion King](https://www.lionking.org/text/FilmNotes.html){: target="_blank" rel="noopener noreferrer"} and also the bats in Batman Returns.
+
+<div class="picture-gallery">
+<div class="col-1-of-2">
+<img src="/assets/img/posts/synch/wildebeests.gif">
+</div>
+<div class="col-1-of-2">
+<img src="/assets/img/posts/synch/batman-returns.gif">
+</div>
+</div>
+
+<br/>
 
 The Reynolds model shows complex behaviour for a certain parameter range. If alignment and aggregation parameters are fixed, the avoidance parameter acts as a tuning parameter, akin to the amount of perturbation in Vicsek's particles.
 
@@ -213,7 +226,7 @@ Finally, we will need to find solutions for deploying a large number of devices 
 
 Nothing like this has been done before, not with humans, and not in the open source community. We are thrilled but anxious to see it work, and we expect many challenges in both implementation and execution.
 
-One of the difficulties posed by measuring emergence of real world systems is identifying the right emergent macroscopic features of the system. In our case, the constraint of maintaining a distance from the other players recalls the _avoidance_ parameter in the Reynolds model, so we could begin investigating the center of mass as an emergent feature, as well as direction of average velocity. This is a big theoretical unknown of this project and exciting new science may result from exploring solutions.
+One of the difficulties posed by measuring emergence of real world systems is identifying the right emergent macroscopic features of the system. In our case, the constraint of maintaining a distance from the other players recalls the _avoidance_ parameter in the Reynolds model, so we could begin by investigating macroscopic features that have emerged from that model, such as the center of mass, as well as direction of average velocity. This is a big theoretical unknown of this project and exciting new science may result from exploring solutions.
 
 Another challenge is deciding how exactly the non-verbal communication occurs, and figuring out if it is enough to drive the game. Here, we take inspiration from swarms of synchronising fireflies. We are interested to see if the players will be able to guide themselves based on the delay or frequency of the blinking lights in order to move as one.
 
@@ -229,7 +242,7 @@ Aristotle's _Metaphysics VII_ (350 B.C.E.) is available [here](http://bactra.org
 
 The research about ant consensus comes from Nigel and Ana Franks' lab at Bristol Uni. For example, _Speed versus accuracy in collective decision making_ (2003), [doi:10.1098/rspb.2003.2527](https://doi.org/10.1098/rspb.2003.2527){:target="_blank" rel="noopener noreferrer"}. It will be rather interesting to explore in the future whether any blockchain consensus has been inspired by this work.
 
-Craig Reynolds, creator of the boids model, has aggregated a large amount or resources related to flocking systems, _Boids, Background and Update_, available [here](http://www.red3d.com/cwr/boids/){:target="_blank" rel="noopener noreferrer"}. The original paper is _Flocks, herds and schools: A distributed behavioral model_ (1987), [doi:10.1145/37401.37406](https://dl.acm.org/doi/10.1145/37401.37406){:target="_blank" rel="noopener noreferrer"}. Simulations based on the boids model have been used for the wildebeests in Lion King and also the bats in Batman Returns.
+Craig Reynolds, creator of the boids model, has aggregated a large amount or resources related to flocking systems, _Boids, Background and Update_, available [here](http://www.red3d.com/cwr/boids/){:target="_blank" rel="noopener noreferrer"}. The original paper is _Flocks, herds and schools: A distributed behavioral model_ (1987), [doi:10.1145/37401.37406](https://dl.acm.org/doi/10.1145/37401.37406){:target="_blank" rel="noopener noreferrer"}. 
 
 The realistic adaptive model for flocking starlings is in Hildenbrandt et al, _Self-organized aerial displays of thousands of starlings: a model_ (2010), [doi:10.1093/beheco/arq149](https://academic.oup.com/beheco/article/21/6/1349/333856){:target="_blank" rel="noopener noreferrer"}
 
