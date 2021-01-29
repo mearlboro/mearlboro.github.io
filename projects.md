@@ -15,8 +15,9 @@ place devoted to the imagination. There are various types of imaginaria, centers
 
 # Ongoing projects
 
-{% for p in site.posts %}
-<h3><a href="{{ p.url }}" target="_blank" style="{{ p.hidetitle }}"><br/>{{ p.title }}</a></h3>
+{% assign sorted = site.posts | sort: 'title' | reverse %}
+{% for p in sorted %}
+<h3 style="{{ p.hidetitle }}"><br/><a>{{ p.title }}</a></h3>
 <p><a href="{{ p.url }}" target="_blank">{{ p.subtitle }}</a><br/></p>
 <p>{{ p.description }}</p>
 {% endfor %}

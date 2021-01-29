@@ -19,3 +19,9 @@ I have approximate knowledge of many things, so if you ever feel like talking ab
 * PGP key: [download](/assets/files/mis.asc)
 * RSS: [feed](/feed.xml)
 </div>
+
+**Testimonials**
+
+* _Do you ever do anything legal?_ - her PhD Supervisor
+* _You stood up all night drinking with the Karamazov brothers again?!_ - her Partner
+* _She's 90% liver_ - a Consultant

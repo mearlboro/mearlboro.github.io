@@ -4,7 +4,7 @@ title: "Is Google down?"
 subtitle: When all your eggs are in the Google basket
 description: "Thank Google it's not friday"
 hidetitle: "display:block"
-categories: numbers
+categories: [blog]
 permalink: "is-google-down"
 sections:
  - title: investigation
@@ -47,7 +47,7 @@ I finally found a good [downtime map](https://downdetector.com/status/google/map
 
 ### Alternatives
 
-So what to do, what to do? In case you are based in Europe and have all your eggs in the Google basket, run and get a VPN. I use [Protonmail](https://protonmail.com), but I would actually recommend [Mullvad](https://mullvad.net/) even more, as they are supporting a new VPN protocol, Wireguard, which is more fast and more secure than the currently most popular VPN protocol, OpenVPN. Fwiw, Protonmail also economically supports Wireguard, but their VPN still does not implement it.
+So what to do, what to do? In case you are based in Europe and have all your eggs in the Google basket, run and get a VPN. I use [ProtonVPN](https://protonvpn.com), but I would actually recommend [Mullvad](https://mullvad.net/) even more, as they are supporting a new VPN protocol, Wireguard, which is more fast and more secure than the currently most popular VPN protocol, OpenVPN. Fwiw, Protonmail also economically supports Wireguard, but their VPN still does not implement it.
 
 Otherwise, here are a few alternatives I use...
 
@@ -58,3 +58,24 @@ Otherwise, here are a few alternatives I use...
 So are we witnessing the end of the dreaded Google? Most likely not, but it was quite cathartic to see they are not omnipotent today, just like in the old days of the world-wide-wild-west.
 
 Stay tuned, for now I'm keen to research more funky downtime stories, but I have deadlines to meet now!
+
+### Updates
+
+This continued escalating in a crazy fashion. Later on Dec 16, at 2AM GMT, I received an email from Protonmail:
+
+```
+Starting at around 4:30PM New York (10:30PM Zurich), Gmail suffered a global outage.
+
+A catastrophic failure at Gmail is causing emails sent to Gmail to permanently fail and bounce back. The error message from Gmail is the following:
+550-5.1.1 The email account that you tried to reach does not exist.
+
+This is a global issue, and it impacts all email providers trying to send email to Gmail, not just ProtonMail.
+```
+Later the emails started working again, but this was quite shocking nontheless. An email provider to get such a big issue that is causing cascading errors to other providers.
+
+The incidents are documented in the [Google status updates](https://www.google.com/appsstatus#hl=en&v=issue&sid=1&iid=a8b67908fadee664c68c240ff9f529ab).
+
+
+### Alternatives part 2
+
+

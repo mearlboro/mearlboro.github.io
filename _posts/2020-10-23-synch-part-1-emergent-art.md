@@ -3,9 +3,8 @@ layout: post
 title: "Synch.Live"
 subtitle: "Part 1: Emergent art"
 description: Synch.Live is an art experience designed to mobilize our hard-wired human instinct to cooperate
-hidetitle: "display:none"
-categories: numbers
-tags: complexity, emergence
+hidetitle: "display:block"
+categories: [complexity, raspberrypi]
 permalink: "synch-live-part-1"
 sections:
  - title: Synch.Live

@@ -3,9 +3,8 @@ layout: post
 title: "Synch.Live"
 subtitle: "Part 2: First prototype"
 description: Building an LED headset with WS2801 and Raspberry Pi
-hidetitle: "display:block"
-categories: numbers
-tags: raspberrypi, linux, python
+hidetitle: "display:none"
+categories: [complexity, raspberrypi]
 permalink: "synch-live-part-2"
 sections:
  - title: Overview
