@@ -79,16 +79,22 @@ Moreover, the software package for it, made by [Adafruit](https://adafruit.com){
 
 ### Building the first prototype
 
-The below guide focuses on a headless setup, namely, one that doesn't ever require directly using the Pi with a mouse, keyboard or screen. All of this set up can be done in many different ways, but my goal is to be able to reproduce this on many different devices, so I always chose the way that can be done non-interactively in the terminal as that can be put together into a setup script.
-
-
 #### Quickstart a Raspberry Pi
+
+There are plenty of different ways of doing the same piece of setup and configuration on the Pi. For example, one can run the configuration program `raspi-config`, which has both a GUI and a terminal UI. But what this program does under the hood is to modify system files, which we could modify ourselves directly.
+You can also run `raspi-config` in the command line, by passing the flag `nonint` for "no interactive". Unfortunately this is not as well documented as the UI version.
+
+In this tutorial, I will aim to present the simplest graphical way, as well as a terminal alternative that could be put into a script, for the purposes of automating it later.
+
+Note that some configuration requires a reboot.
+
+<br/>
 
 1) **Install OS, enable SSH**
 
 We download and install [Raspbian](https://www.raspberrypi.org/software/){:target="_blank" rel="noopener noreferrer"} onto a MicroSD card.
 
-Before putting the card into the RPi, I always enable Secure SHell (`ssh`). This allows me to connect to the RPi from my own computer and perform the initial configuration remotely.
+Before putting the card into the RPi, first enable Secure SHell (`ssh`). This allows remote connections to the RPi, so we don't need to plug in a screen, mouse and keyboard to do initial setup.
 After the installation is complete, two drives will appear on the SD card. To enable `ssh`, simply create an empty file named `ssh` in the `/boot` drive.
 
 Now remove the card from the PC, put it in the RPi, turn it on, and you're ready to go.
@@ -101,40 +107,34 @@ To be able to remotely log into the newly setup Pi, it first needs to be connect
 Thankfully the RPi 2 has an ethernet port so we simply plug the Pi into the LAN and a wired connection requires no password.
 Now to `ssh` into it from another machine, this machine needs to be in the same network. We also need to know its IP address, username, and password. The default username and password are usually `pi` and `raspberry`.
 
-IP address is usually dynamically allocated by the router so we have to check.
-The IP address we are interested in is in the local network, so it will most likely begin with `192.168`.
-Probably easiest way is to login to your router in the browser (usually by visiting `192.168.1.1` or similar, check with your router manufacturer), and find the RPi and its IP in the list of connected devices.
+IP address is usually dynamically allocated by the router. The IP address we are interested in is in the local network, so by convention it's likely begin with `192.168`.
+You can find it by visiting your router's home page in the browser and looking for the list of connected devices.
 
-Perhaps overkill, but I used `nmap` for this, which allows me to list all devices in a network with their hostnames and what services they are running.
+I prefer to use `nmap` to list all devices in the network, as it is agnostic to the router manufacturer. `nmap` is free and available for Linux, Windows and Mac.
 
 ```console
 $ nmap 192.168.1.1/24
 ```
 
-Which reveals my RPi's IP address is `192.168.1.101`, and it has an open port for the SSH service, confirming that I can connect to it by running `ssh pi@192.168.1.101`.
+`nmap` reveals my RPi's IP address is `192.168.1.101`, and it has an open port for the SSH service, confirming that we can connect to it via SSH. `ssh pi@192.168.1.101`.
+Normally you'd be asked to change the password on first login, and I recommend you do so. Make sure you don't forget it!
+
+The project will be using WiFi exclusively, so as a first step, we connect to WiFi. We can do graphically by running `sudo raspi-config`. Select `2 Network Options > N2 Wireless LAN`, hit Enter, then enter the name of your wireless network (SSID) and then the password. You should be able to unplug ethernet now and still connect to the RPi from any computer in the same wireless network using the username, password and IP.
 
 
 3) **Set hostname**
 
-The default hostname for every RPi after initial setup is `raspberrypi`. In the future, we wish to deploy new Pis and keep track of IP addresses and hostnames, which will be difficult with multiple devices with the same default hostname.
+The default hostname for every RPi after initial setup is `raspberrypi`. Let's give our RPi a new name.
 
-While still remotely logged in to the RPi, we change the hostname by editing `/etc/hosts` and `/etc/hostname` files and replacing `raspberrypi` with the desired hostname. I named ours `player0`:
+To do so graphically, run the command `sudo raspi-config`. Select `2 Network Options > N1 Hostname`, enter a new hostname, and hit Enter.
 
-```console
-$ sudo sed -i 's/raspberrypi/player0/g' /etc/hosts
-$ sudo sed -i 's/raspberrypi/player0/g' /etc/hostname
-```
-
-After changing the files, run the following commands to make the changes persistent, and the hostname should update to `player0` and should remain the same after rebooting.
+Under the hood, the system files `/etc/hosts` and `/etc/hostname` are being edited with the new hostname. I set it to be `player0`. The non-interactive command is:
 
 ```console
-$ sudo systemctl restart systemd-logind.service
-$ sudo hostnamectl --static --transient --pretty set-hostname player0
+$ sudo raspi-config nonint do_hostname player0
 ```
 
-To check, type `hostname` in the terminal. Restart the Pi and check again.
-
-In an ideal universe, the IP addresses should remain static and the hostnames are allocated incrementally as each new device is setup: `player1`, `player2` and so on. For this we will require to setup some sort of nameserver. But not today.
+To check if it worked, type `hostname` in the terminal. If it hasn't updated, restart the Pi and check again.
 
 <br/>
 
@@ -192,7 +192,7 @@ Our prototype headset looks like this:
 
 <br/>
 
-Incorrect wiring or power delivery could fry the lights, the RPi, or both, so we have used a voltmeter to check before turning it on.
+Incorrect wiring or power delivery could fry the lights, the RPi, or both, so we have used a voltmeter to check continuity before turning it on.
 
 
 <br/>
@@ -201,24 +201,28 @@ Incorrect wiring or power delivery could fry the lights, the RPi, or both, so we
 
 7) **Enable SPI**
 
-To control the lights the SPI interface needs to be enabled in the OS kernel. Add the following line `dtparam=spi=on` at the end of the config file `/boot/config.txt`, then reboot.
+To control the lights the SPI interface needs to be enabled in the OS kernel. Run `sudo raspi-config`, then select `5 Interfacing Options > P4 SPI` and hit Enter when `Yes` is selected.
+
+Under the hood, the program adds the line `dtparam=spi=on` to the config file `/boot/config.txt`.
+
+To do it non-interactively, run:
 
 ```console
-$ sudo sed -i "$ a dtparam=spi=on" /boot/config.txt
-$ sudo reboot
+$ sudo raspi-config nonint do_spi 0
 ```
+and note that if something is enabled it will be set to 0, and 1 otherwise (weird?).
 
-To check if its enabled, the `lsmod` command lists the kernel modules the system can detect. Something called `spi` should be listed there, and we can use `grep` to find it:
+You need to reboot for this change to take effect. Afterwards, check if it worked, the `lsmod` command lists the kernel modules the system can detect. Something called `spi` should be listed there, and we can use `grep` to find it:
 
 ```console
 $ sudo lsmod | grep spi_
 ```
 
-The output should list something like `spi_bcm` and a four digit number. To troubleshoot, a number of alternative ways of turning SPI on are listed [here](https://www.raspberrypi-spy.co.uk/2014/08/enabling-the-spi-interface-on-the-raspberry-pi/){:target="_blank" rel="noopener noreferrer"}.
+The output should list something like `spi_bcm` followed by some number. This means the SPI module has been enabled.
 
 8) **Install libraries**
 
-We should always begin by pulling the latest software updates, then we install the Python package manager `pip` and the required `spidev` packages for the SPI interface. The SPI packages should be already there for the current Raspbian, but in case you encounter issues, the same instructions linked above should help.
+We should always begin by pulling the latest software updates, then we install the Python package manager `pip` and the required `spidev` packages for the SPI interface. The SPI packages should be already there for the version of Raspbian we are using, but let's install it anyway just in case.
 
 The `adafruit` package provides an interface for controlling the LEDs.
 
@@ -250,7 +254,7 @@ Now we can use the function `set_pixel`, which takes two parameters, an index fo
 
 To turn of all LEDs, you can use `pixels.clear()`
 
-To make the lights blink twice in blue, red, and green repeatedly, while waiting a little bit in between, we can use the following code. Remember to `import time` at the top so we can wait during the blinks and in between blinks using the function `time.sleep(seconds)`
+To recreate the effect in the image at the beginning of this article, (make the lights blink twice in blue, red, and green repeatedly, while waiting a little bit in between), we can use the following code. Remember to `import time` at the top so we can wait during the blinks and in between blinks using the function `time.sleep(seconds)`
 
 ```python
 def blink(leds, col):
@@ -300,9 +304,25 @@ As this is only a prototype, we can observe some issues with it right away. The 
 
 Moreover, we will need to consider software for setting up and deploying a whole fleet of such headsets. From managing their hostnames to their software updates.
 
-I'll shall now leave you with a last headlight delight:
+<br/>
+
+### Bibliography
+
+Plenty of information and instructions for this project come from the folks at [tutorials-raspberrypi.com](https://tutorials-raspberrypi.com/how-to-control-a-raspberry-pi-ws2801-rgb-led-strip/){:target="_blank" rel="noopener noreferrer"}, as well as the code which inspired the GIF below.
+
+Other resources and tutorials, such as the various ways to enable the SPI interface, are available at [raspberrypi-spy.co.uk](https://www.raspberrypi-spy.co.uk/2014/08/enabling-the-spi-interface-on-the-raspberry-pi/){:target="_blank" rel="noopener noreferrer"}
+
+A beautiful web interface for the pinouts of many types RPi is available [here](https://pinout.xyz/pinout/){:target="_blank" rel="noopener noreferrer"}
+
+About `raspi-config noint` there is little documentation, but I was able to find some hints on [StackOverflow](https://raspberrypi.stackexchange.com/questions/28907/how-could-one-automate-the-raspbian-raspi-config-setup){:target="_blank" rel="noopener noreferrer"}.
+
+<br/>
+
+I shall now leave you with a last headlight delight:
 
 ![](/assets/img/posts/synch/headset2.gif)
+
+
 
 <br/>
 <br/>
