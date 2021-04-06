@@ -70,13 +70,15 @@ So in a way, fireflies are like out-of-phase oscillators, which synchronise thei
 
 <iframe src="https://www.youtube.com/embed/fhP1J96hekM" frameborder="0" allowfullscreen width="100%" height="480"></iframe>
 
-Our goal is to implement a similar behaviour in our headsets. Just like fireflies, we have autonomous devices that blink using their own internal clocks. Unlike the fireflies, our headsets do not look at their neighbours in order to synchronise, but synchronise using an external parameter, whose value is controlled externally.
+Our goal is to implement a similar behaviour in our headsets. Just like fireflies, we have autonomous devices that blink using their own internal clocks.
+
+Our headsets do not interact with each-other as of now, unlike the fireflies. Our first goal is to see if we can get them to synchronise at all. We have already build a headset in [part 2 of this series](/synch-live-part-2), and we aim to build another with better hardware and see if we can get their lights to blink in sync.
 
 <br/>
 
 ### The Kit
 
-Just like the fireflies in a swarm, we wish that each headset is independent and autonomous. To ensure that synchronisation is possible, we first must make sure that all RPis running the headsets must be able to synchronise clocks and measure time without drifting. For this, we chose to add a Real Time Clock (RTC) module to our design. RTC maintains the correct time even as the Pis are off.
+To ensure that synchronisation is possible, we first must make sure that all RPis running the headsets must be able to synchronise clocks and measure time without drifting. For this, we chose to add a Real Time Clock (RTC) module to our design, which is a type of hardware clock powered by a separate battery. RTC maintains the correct time even as the Pis are off.
 
 For the improved headset, we use the following parts:
 - a [Raspberry Pi Zero Wh](https://thepihut.com/products/raspberry-pi-zero-wh-with-pre-soldered-header){:target="_blank" rel="noopener noreferrer"} with a [case](https://thepihut.com/products/unipicase-pi-zero-case-tall-stock-faceplate){:target="_blank" rel="noopener noreferrer"}
@@ -110,20 +112,17 @@ The lights on the hat have two purposes, depending on the angle they are meant t
 
 #### Software
 
-Let's revisit the two rules that drive the behaviour of real fireflies, and consider how to reproduce the behaviour in code with two parameters: a *period* or *frequency* (which we set at 3 seconds) and a *phase*.
+Let's revisit the two rules that drive the behaviour of real fireflies, and consider how to reproduce the behaviour in code with two parameters: a *period* or *frequency* and a *phase*. If the period is the same, then the lights should synchronise when the phase is the same as well.
 
-Unlike the real fireflies, our headsets do not interact with each-other. Instead, they receive information from the control center in the form of a parameter which controls the amount of randomness in the time interval between blinks.
-If the system is setup right, and all devices have exactly the same date and time, they should be able to independently synchronise as soon as the randomness parameter drops to 0.
+To test this behaviour, as well as if the hardware allows good enough synchronisation, we implement sofware on each hat which controls the LEDs and makes them turn on and off, with a fixed period and variable, random phase.
 
-The parameter becomes smaller and smaller as the emergent behaviour of the group becomes more apparent, until it reaches 0 and all headsets are in sync.
+After we synchronise the clocks, we start the script on each hat at the exact same time.
+As the phase becomes less random, we expect the lights to blink closer and closer to each-other until they are synchronised.
+In the final project, the phase needs to be controlled externally over the network, but for the purposes of the current work, we shall simulate this using a local parameter.
 
 Despite the task appearing simple, there have been a lot of hiccups, and, following the usual Catch-22 narrative of software development, I had to try a few solutions, explore the intricate ways in which they don't work, and move on to new ones until the right balance is met.
 
-The firefly-like behaviour requires _periodicity_. When the parameter is zero, which is our simplest case, we want the lights to turn on for a certain amount of time, then to turn back off again, and to make sure there is no drift.
-
-The most difficult part was finding a solution for an accurate periodic timer, which will be explored at large for the interested geeks in [another article]().
-
-We will also deal with networking the Pis in the [next article in the series](synch-live-part-4), so instead we will be simulating an external input from the network by using a script which starts with the maximum value allowed for the drift parameter and slowly decreases its value to 0.
+The firefly-like behaviour requires _periodicity_. Is our simplest case with a fixed phase of 0, we want the lights to turn on for a certain amount of time, then to turn back off again, and to make sure there is no drift, but even implementing an accurate periodic timer turned out to be non-trivial in Python. This will be explored at large for the interested geeks in [another article]().
 
 
 <br/>
@@ -134,9 +133,9 @@ We will also deal with networking the Pis in the [next article in the series](sy
 
 For a faster quickstart, we clone the card from the previous prototype.
 
-For this we use the `dd` tool, which takes everything on a given drive and saves it to `iso`. `dd` can be quite annoying as it doesn't show progress by default. A lot of hacks are available to improve this, but my favourite is using a tool called `pv`, which displays the progress.
+On Linux, the `dd` command-line tool can clone any drive to an `iso` file. Combining `dd` with a tool called `pv` will display a progress bar as well. Using `dd` requires knowing disk and partition names.
 
-With the SD card of the RPi plugged into my laptop, to find out the name of the drive with the Pi, I use `fdisk -l`, which lists all the disks mounted into the system. The disk of a RPI is normally called `mmcblk0` and the `fdisk` output should look something like this:
+With the SD card of the RPi plugged in, the commnd `sudo fdisk -l` lists all the disks mounted into the system. The disk of a RPI is normally called `mmcblk0` and the `fdisk` output should look something like this:
 
 ```console
 Disk /dev/mmcblk0: 14.5 GiB, 15552479232 bytes, 30375936 sectors
@@ -154,12 +153,11 @@ Device         Boot  Start      End  Sectors  Size Id Type
 The command below copies the whole disk image to the file `pi.iso`. As you can see there is also a neat progress bar.
 
 ```console
-$ pv /dev/mmcblk0 | dd of pi.iso
+$ pv /dev/mmcblk0 | sudo dd of=pi.iso
 1.24GiB 00:00:12 [200MiB/s] [===========>        ] 61% ETA 0:00:45
 ```
 
-We use `dd` to dump the image to the new SD card. The result will be two cards with two identical systems.
-The `fdisk -l` command should show the disk name of the new card, in my case it's `/dev/sdc/`.
+After the copying is done, we plug in the blank SD card, and use `dd` to dump the image to the new SD card. `fdisk -l` shows the disk name of the new card is `/dev/sdc/`. Be **very careful** not to overwrite the wrong disk!
 
 ```
 pv pi.iso | sudo dd of=/dev/sdc
@@ -222,12 +220,9 @@ Below, a look at the final prototype, with the lights setup onto the brim of the
 
 **4) Enable interface and kernel module**
 
-The official setup instructions are on the vendor's [site](https://www.abelectronics.co.uk/kb/article/30/rtc-pi-on-raspbian-buster-and-stretch){:target="_blank" rel="noopener noreferrer"} and can be followed step-by-step for a successful setup.
+This setup requires a little more than just running `raspi-config` and is documented extensively on the website of ABelectronics, from whom we bought the RTC Pi module. Some kernel modules need to be enabled as well and others removed if present.
 
-Below are the commands I ran to make this setup, which may be useful in the future for devising a headless, automated setup for the devices.
-
-----
-<br/>
+The whole setup can be done with running the commands below.
 
 ```bash
 sudo -s
@@ -238,36 +233,23 @@ sed -i "$ a dtoverlay=i2c-rtc,ds1037" /boot/config.txt
 sed -i "$ a rtc-ds1307" /etc/modules
 # remove other I2C modules in case they are enabled
 sed -i '/i2c-bcm2708//' /etc/modules
-# install software to interface with I2C
-apt-get install i2c-tools
-# reboot for changes to take effect
-reboot
 ```
 
-**5) Verify correct setup**
+You should then restart the system, and check that the right modules have been enabled,
+ for example by printing the file `/etc/modules`, and making sure the following lines are present
 
-After reboot, by listing enabled kernel modules in  `/etc/modules`:
-
-```console
-$ cat /etc/modules
-# /etc/modules: kernel modules to load at boot time.
-#
-# This file contains the names of kernel modules that should be loaded
-# at boot time, one per line. Lines beginning with "#" are ignored.
-
+```
 i2c-dev
 rtc-ds1307
 ```
-By listing modules directly and searching for the ones on the I2C bus:
+
+**5) install software to interface with I2C**
 
 ```console
-$ lsmod | grep i2c
-i2c_bcm2835            16384  0
-regmap_i2c             16384  1 rtc_ds1307
-i2c_dev                16384  0
+apt-get install i2c-tools
 ```
 
-Or by using `i2cdetect` after installing `i2c-tools`. A table should be printed where the line corresponding to `60` and the column corresponding to `8` is marked in some way. This is because the address with which the RPi communicates with the module is `0x68`.
+After installing, the `i2cdetect` tool becomes available and can be run to check if the RTC is working. A table should be printed where the line corresponding to `60` and the column corresponding to `8` is marked in some way. This is because the address with which the RPi communicates with the module is `0x68`.
 
 ```console
 $ sudo i2cdetect -y 1
@@ -287,7 +269,7 @@ The following error may occur:
 Error: Could not open file `/dev/i2c-1` or `/dev/i2c/1':
 No such file or directory
 ```
-In my case it was due to missing configuration - I had not run all the steps outlined above correctly. Two forum threads on the RPi forums were particularly helpful in troubleshooting: [115080](https://www.raspberrypi.org/forums/viewtopic.php?t=115080){:target="_blank" rel="noopener noreferrer"} [74763](https://www.raspberrypi.org/forums/viewtopic.php?t=74763){:target="_blank" rel="noopener noreferrer"}
+One should be able to get everything working using the above, but in case not, see the bibliography at the bottom of this post for some pointers. 
 
 **6) Enable the hardware clock**
 
@@ -313,7 +295,7 @@ Now to test if this worked, make sure your RPi is not connected to the internet,
 
 #### Programming the headset
 
-**8) Install Python libraries**
+**7) Install Python libraries**
 
 ```
 pip3 install adafruit-ws2801 logging
@@ -321,7 +303,7 @@ pip3 install adafruit-ws2801 logging
 
 We won't use the newly added RTC module in any way in the code, but we will rely on it when using the `time` library to measure three second intervals, as well as for scheduling the experiment to begin at a specific time.
 
-**9) Logging**
+**8) Logging**
 
 To aid with debugging, I am using the `logging` library and writing down the exact time, including miliseconds, of each event to a log file named by the current hostname and current date. We wish to log the precise time of each event as to measure any kind of potential drift and help development of synchrony.
 
@@ -352,9 +334,10 @@ The code uses thee Python files:
 
 ```python
    def crown_blink_wait(self, rand: float) -> None:
-        """
-        """
-        r = random.uniform(0, rand)
+        if rand > 0:
+            r = random.uniform(0, rand)
+        else:
+            r = 0
 
         logging.info(f'Waiting {round(r,3)}')
         time.sleep(r)
@@ -370,7 +353,7 @@ Since the latter is only a mockup that simulates the behaviour we are looking fo
 The code runs a loop which calls the `crown_blink_wait` function periodically, and uses a Python generator to spit out time intervals corrected for any kind of drift, then makes the system sleep for the correct amount of time before turning the lights on and off again.
 
 
-The code is available [on github](github.com/mearlboro/synch.live/tree/led-control).
+The code is available [on github](https://github.com/mearlboro/synch.live/tree/led-control){:target="_blank" rel="noopener noreferrer"}.
 
 
 ### Synchronisation test
@@ -404,8 +387,12 @@ Alas, the result is still exciting, and makes me wonder how even more impressive
 
 ### Bibliography
 
-[1] Andrew Moiseff and Jonathan Copeland. _Firefly Synchrony: A Behavioral Strategy to Minimize Visual Clutter_. Science, July 2010: Vol. 329. no. 5988, p. 181 DOI: [10.1126/science.1190421](https://science.sciencemag.org/content/329/5988/181.full){:target="_blank" rel="noopener noreferrer"}
+Andrew Moiseff and Jonathan Copeland. _Firefly Synchrony: A Behavioral Strategy to Minimize Visual Clutter_. Science, July 2010: Vol. 329. no. 5988, p. 181 DOI: [10.1126/science.1190421](https://science.sciencemag.org/content/329/5988/181.full){:target="_blank" rel="noopener noreferrer"}
 
-[2] Nicky Case. _Fireflies_. [ncase.me/fireflies/](https://ncase.me/fireflies/)
+Nicky Case. _Fireflies_. [ncase.me/fireflies/](https://ncase.me/fireflies/)
 
-[3]  RTC Pi on Raspbian Buster and Stretch, [ABElectronics](https://www.abelectronics.co.uk/kb/article/30/rtc-pi-on-raspbian-buster-and-stretch){:target="_blank" rel="noopener noreferrer"}.
+An [article](https://www.abelectronics.co.uk/kb/article/1090/i2c-part-1---introducing-i2c){:target="_blank" rel="noopener noreferrer"} about the I2C interface, what is it used for, and how to set it up, is made available by the vendor of the RTC Pi module, [ABelectronics](https://www.abelectronics.co.uk/){:target="_blank" rel="noopener noreferrer"}
+
+The setup instructions for the RTC module in this post are based also on the [article](https://www.abelectronics.co.uk/kb/article/30/rtc-pi-on-raspbian-buster-and-stretch){:target="_blank" rel="noopener noreferrer"} by ABelectronics.
+
+These two forum threads on the RPi forums are particularly helpful in troubleshooting any issues with I2C: [115080](https://www.raspberrypi.org/forums/viewtopic.php?t=115080){:target="_blank" rel="noopener noreferrer"} [74763](https://www.raspberrypi.org/forums/viewtopic.php?t=74763){:target="_blank" rel="noopener noreferrer"}
