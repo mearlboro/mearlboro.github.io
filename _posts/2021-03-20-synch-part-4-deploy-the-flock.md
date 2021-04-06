@@ -3,7 +3,7 @@ layout: post
 title: "Synch.Live"
 subtitle: "Part 4: deploying the flock"
 description: we build 10 headsets for the Synch.Live project and use Ansible to configure the hardware, set up the software, and run tests.
-hidetitle: "display:block"
+hidetitle: "display:none"
 categories: numbers
 tags: raspberrypi, linux, orchestration
 permalink: "synch-live-part-4"
@@ -62,8 +62,6 @@ For a few days, our house became the brightly-lit den of a cyberpunk secret soci
 All this, so we can build ten headsets for the Synch.Live project. For our initial pilot experiment, ten copies of the prototype designed in [the previous post](/synch-live-part-3). And now we wish to install some operating system on the SD cards, add required software packages, make configurations, and deploy our software to each and every one of them.
 
 In this article, we document the process of setting up the whole flock and how to best automate this process, using pre-configured files and orchestration software Ansible.
-
-We also run a few tests to see if we can get them to synchronise and discuss how the system scales from this point of view.
 
 This article is part of a series describing my collaboration with [Hillary Leone](https://hillaryleone.com) on [Synch.Live](https://www.synch.live).
 To summarise, Synch.Live is a _game in which of groups of strangers try to solve a group challenge, without using words.  We will use a specially-designed headlamp, simple rules and a just-published algorithm to create the conditions for human emergence._
