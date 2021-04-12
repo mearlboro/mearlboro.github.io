@@ -10,6 +10,9 @@ permalink: "synch-live-part-4"
 sections:
  - title: introduction
    url: '#introduction'
+   nested:
+    - title: Instructions
+      url: '#instructions'
  - title: Network setup
    url: '#network-setup'
    nested:
@@ -50,7 +53,7 @@ sections:
 
 ### Introduction
 
-Around the beginning of February, our intercom became restless. For a few days, deliveries came in a frenzy. Boxes over boxes: Raspberry Pis, batteries, spools of solder, meters and meters of LED lights conquered our living room, which soon became a mess of circuit boards, cables, boxes and antistatic packaging, chargers like an octopus spreading its cables, and of course, lights, cameras and tripods to document the whole pursuit.
+Around the beginning of February, our intercom became restless. For a few days, deliveries came in a frenzy. Boxes over boxes: Raspberry Pis, routers, batteries, spools of solder and dozens of metres of LED lights conquered our living room, which soon became a mess of circuit boards, cables, boxes and antistatic packaging, chargers like an octopus spreading its cables, and of course, lights, cameras and tripods to document the whole pursuit.
 
 <div class="col-1-of-3"><img src="assets/img/posts/synch/boxes.jpg  "/></div>
 <div class="col-1-of-3"><img src="assets/img/posts/synch/charger.jpg"/></div>
@@ -59,9 +62,7 @@ For a few days, our house became the brightly-lit den of a cyberpunk secret soci
 
 ![](assets/img/posts/synch/lain-tech.jpg)
 
-All this, so we can build ten headsets for the Synch.Live project. For our initial pilot experiment, ten copies of the prototype designed in [the previous post](/synch-live-part-3). And now we wish to install some operating system on the SD cards, add required software packages, make configurations, and deploy our software to each and every one of them.
-
-In this article, we document the process of setting up the whole flock and how to best automate this process, using pre-configured files and orchestration software Ansible.
+All this, so we can build, and then deploy, ten headsets for the Synch.Live project for our pilot experiment: an attempt to see if humans can move as one, without language.
 
 This article is part of a series describing my collaboration with [Hillary Leone](https://hillaryleone.com) on [Synch.Live](https://www.synch.live).
 To summarise, Synch.Live is a _game in which of groups of strangers try to solve a group challenge, without using words.  We will use a specially-designed headlamp, simple rules and a just-published algorithm to create the conditions for human emergence._
@@ -69,9 +70,23 @@ A discussion about emergence and the goals of the project is in a [previous arti
 
 <br/>
 
+#### Instructions
+
+The network configuration is discussed in the next section. The process of deploying a hat is now mostly automated, using pre-configured files, a shell script, and orchestration software Ansible, and consists of three main steps:
+
+1. Building the player hat based on the prototype designed in [the previous post](/synch-live-part-3).
+2. Setting up the OS on the card - [instructions & code](https://github.com/mearlboro/Synch.Live/blob/dev-setup/setup/)
+3. Deploying configuration and software using Ansible - [instructions & code](https://github.com/mearlboro/Synch.Live/tree/main/ansible)
+
+If you would like to know more about how everything works and how we achieved this fast and slick setup, and better understand the tools we use to deploy Synch.Live, then continue reading. Otherwise, for a quick setup, see the README files in the code repository.
+
+
+
+<br/>
+
 ### Network setup
 
-Let's start by talking about how the headset computers will be connected, and how they will be talking to each-other. Our system will consist of 10 Raspberry Pi connected to the same local network, configured for this purpose on subnet `192.168.100.1/24`.
+Let's start by talking about how the headset computers will be connected, and how they will be talking to each-other. Our system will consist of 10 Raspberry Pi connected to the same local network, configured for this purpose on subnet `192.168.100.0/24`. The router should be at `192.168.100.1`.
 
 We have 10 players, and for convenience, we'd like some sort of consitency between the hostnames, `player1` to `player10` and the IP addresses, for example `192.168.100.101`
 to `192.168.100.110`.
@@ -101,12 +116,12 @@ Still, look at those beastly antennas! It even has a dual-core processor and run
 
 #### Router configuration
 
-We and configure a WPA/PSK network with our desired name and password. PSK (Pre-Shared Key) is an authentication method for WiFi designed for home and small office networks where every user has the same passphrase. This same name and passphrase will be added to the `wpa_supplicant.conf` file in the following steps and will be used by all the Synch.Live player headsets to connect to WiFi.
+We configure a WPA/PSK network with our desired name and password. PSK (Pre-Shared Key) is an authentication method for WiFi designed for home and small office networks where every user has the same passphrase. This same name and passphrase will be added to the `wpa_supplicant.conf` file in the following steps and will be used by all the Synch.Live player headsets to connect to WiFi.
 
-This is a tri-band router, and we configure the network name and password to be the same for all bands so our devices only need to store a single set of credentials. Moreover, this allows us to use improved load-balancing.
+As this is a tri-band router, we set the network name and password to be the same for all bands so our devices only need to store a single set of credentials. Moreover, this allows us to use improved load-balancing.
 See this [screenshot](/assets/img/posts/synch/combined-router-settings.png){:target="_blank"} for clarifications.
 
-We also configure the router subnet to be `192.168.100.1/24`, and finally, to make sure that no other devices are allocated a player IP address by DHCP, we only allow DHCP to allocate addresses in a specific range, that is, `192.168.100.1` to `192.168.100.99`, like below:
+We also configure the router subnet to be `192.168.100.0/24`, and finally, to make sure that no other devices are allocated a player IP address by DHCP, we only allow DHCP to allocate addresses in a specific range, that is, `192.168.100.1` to `192.168.100.99`, like below:
 
 ![](assets/img/posts/synch/router-dhcp.png)
 
@@ -130,23 +145,24 @@ We first generate a public/key pair by using [`ssh-keygen`](https://www.ssh.com/
 The command below will create two files, `synchlive` and `synchlive.pub` which are your private and public key.
 
 ```shell
-$ ssh-keygen -t rsa -N "passphrase" -C "user@host" -f .ssh/synchlive
+$ ssh-keygen -t ed25519 -N "passphrase" -C "user@host" -f .ssh/synchlive
 ```
 
-The `-N` flag allows you to provide a password to encrypt the private key. `-C` is a comment that helps identify your key. I prefer to use `user@host`, so I remember what is the user and the hostname this key is for, so for example `pi@player`. [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)){:target="_blank" rel="noopener noreferrer"} refers to a famous 1977 cryptosystem by Rivest, Shamir, and Adleman which is still in use today.
+The `-N` flag allows you to provide a password to encrypt the private key. `-C` is a comment that helps identify your key. I prefer to use `user@host`, so I remember what is the user and the hostname this key is for, so for example `pi@player`.
+`ed25519` refers to a fast and secure signature scheme using an [elliptic curve](https://en.wikipedia.org/wiki/Curve25519){:target="_blank" rel="noopener noreferrer"}, a standard which requires much shorter keys than other schemes.
 
-In the following section, where we describe how to get started each player headset, we will make use of the public key generated above, so make sure you configure your router and generate your keys before starting with the steps below.
+In the following section, where describe explicitly how to get started each player headset, and make use of the public key generated above.
 
 <br/>
 
 ### Player setup
 
-The steps below are the minimum necessary to get the operating system for the RPi up and running on an SD card. At the end of each section, we present a script that automates all the steps described.
+The steps below are the minimum necessary to get the operating system for the RPi up and running on an SD card. A script that automates all the steps described is also available.
 
 1) **OS installation**
 
 In the previous articles, we've been using Raspbian (now renamed to Raspberry Pi OS) as the operating system for our headsets. But RPi OS is an educational tool which comes with plenty of programs and libraries we do not need, so instead, we use the [Lite](https://www.raspberrypi.org/software/operating-systems/){:target="_blank" rel="noopener noreferrer"} version.
-An alternative to this could be [DietPi](https://dietpi.com/),{:target="_blank" rel="noopener noreferrer"} which we may use in the future if we need an even slimmer distro.
+An alternative to this could be [DietPi](https://dietpi.com/){:target="_blank" rel="noopener noreferrer"} which we may use in the future if we need an even slimmer distro.
 We image the SD cards using `dd` (command line) or Balena Etcher (GUI disk imaging software).
 
 A few more setup steps are required before we can put the card into the RPi. After these steps are completed, one should be able not only to login remotely into the RPi wia SSH, but also to use Ansible to automatically install software and configure the kernel modules and other setup we need for our hardware (the clock module and the lights).
@@ -399,10 +415,9 @@ Here they are! They're ready to shine and to dance! It's time we deploy software
 
 ![](/assets/img/posts/synch/5-player-hats.jpg)
 
-We write the following playbooks to deploy the players:
+We focus on the following playbooks required to deploy the players:
 * to copy config files and enable the interfaces used by the Real Time Clock and the LED lights - this will only need to be done once
 * to install and update software packages - this may be done every time there is an update to the softare
-* finally, to copy off our Python files. In the future, as the software side approaches a minimum viable product, the Python files should be packaged using `pip` so we could perform the installation through Ansible as well.
 
 #### Hardware Config
 
@@ -525,11 +540,23 @@ and the `pip` module is used to install Python packages
 
 Upgrading `pip` and `setuptools` together has saved me a lot of trouble and has successfully upgraded pip, something which my system's Python doesn't always manage to do.
 
-The two Ansible playbooks and config files are available on [github](https://github.com/mearlboro/Synch.Live/blob/dev-ansible/ansible/).
+The two Ansible playbooks and config files are available on [github](https://github.com/mearlboro/Synch.Live/tree/main/ansible/). We also include a script that reboots all devices.
 
-And finally, we copy off any other code files using the `copy` module, and we can schedule for example for all the LEDs to turn on at the same time using the `cron` module.
 
-The next step is to write Ansible playbooks that synchronise the clock for all players, runs battery and stress tests, and can mock the random blinking behaviour of the players becoming more synchronised.
+And finally, we can use Ansible to copy off any other code files using the `copy` module, and we can schedule for example for all the LEDs to turn on at the same time using the `cron` module.
+
+The next step is to write Ansible playbooks that synchronise the clock for all players, runs battery and stress tests, and can mock the random blinking behaviour of the players becoming more synchronised. We will play with clock syncrhonisation protocols, and we will have so much fun...
+
+             ____________________
+            /                    \
+            | until next time... |
+            \                    /
+             --------------------
+                    \   ^__^
+                     \  (oo)\_______
+                        (__)\       )\/\
+                            ||----w |
+                            ||     ||
 
 <br/>
 
