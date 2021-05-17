@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Synch.Live"
-subtitle: "Part 3: Real-Time Clock Sync"
+subtitle: "Part 3: Real-Time Clock"
 description: We add a real time clock module to the headset prototype, and implement precisely timed blinking behaviour on two headsets
 hidetitle: "display:none"
 categories: [complexity, raspberrypi]
