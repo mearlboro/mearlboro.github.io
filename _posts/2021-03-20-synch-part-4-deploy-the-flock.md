@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Synch.Live"
-subtitle: "Part 4: deploying the flock"
-description: we build 10 headsets for the Synch.Live project and use Ansible to configure the hardware, set up the software, and run tests.
+subtitle: "Part 4: Deploying the Flock"
+description: we build 10 LED headsets for and use Ansible to configure the hardware, install the necessary software, and run tests
 hidetitle: "display:none"
 categories: numbers
 tags: raspberrypi, linux, orchestration
@@ -103,7 +103,7 @@ A crucial step in the initial setup, after the operating system is installed ont
 
 #### Router model
 First, we bought a beast of a router: [Netgear Nighthawk X6](https://www.netgear.co.uk/home/products/networking/wifi-routers/R8000.aspx){:target="_blank" rel="noopener noreferrer"}.
-A tri-band router boasting speeds that reach Gigabits (plural, Gigabits), can automatically load-balance between different bands to make sure none gets overloaded, covers a larger area than any router should really cover, and as the specs brag, supports up to 55 devices.
+A tri-band router boasting speeds that reach Gigabits (plural, Gigabits), can automatically load-balance between different bands to make sure none gets overloaded, covers a larger area than any router should really cover, and as the [specs brag](https://www.netgear.com/media/R8000P_tcm148-55903.pdf), supports up to 55 devices.
 
 ![](assets/img/posts/synch/nighthawk-f117.jpg)
 
@@ -394,6 +394,11 @@ For example, to update package cache in `apt` for all our players, the `apt` mod
 $ ansible players -m apt -a update_cache=true --become --ask-become-pass
 ```
 
+and to install `vim` everywhere
+
+```shell
+$ ansible players -m apt -a package=vim --become --ask-become-pass
+```
 
 4) **Plays and playbooks**
 
