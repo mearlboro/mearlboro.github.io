@@ -306,7 +306,7 @@ For what it's worth, Ansible is also the orchestration software with the largest
 
 1) **Inventory**
 
-After installing Ansible on the control tower, the first step is to create an inventory. An [inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_getting_started.html#selecting-machines-from-inventory){:target="_blank" rel="noopener noreferrer"} is a file that contains information about the machines that should be controlled remotely, either by their IP address or hostname.
+After installing Ansible on the control node (in my case, my laptop), the first step is to create an inventory. An [inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_getting_started.html#selecting-machines-from-inventory){:target="_blank" rel="noopener noreferrer"} is a file that contains information about the machines that should be controlled remotely, either by their IP address or hostname.
 
 On Linux, an example inventory file should be present in `/etc/ansible/hosts`. One may create their own `hosts` file in their working directory, in which case the one in `/etc` would be ignored. Actually, Ansible has a prespecified order in which it looks for inventory and configuration files, first by interrogating environment variables, then in the current working directory, then in the home directory, and only afterwards in `/etc/ansible`.
 
