@@ -192,11 +192,11 @@ Now that we have a better understading of levels of consciousness and [how to me
 
 Now how can we practically build Synch.Live? After a few meetings and brainstorming sessions, we had established a number of goals for the project.
 
-To create the Synch.Live experience, we require a system which includes individual LED headsets worn by players, as well as a control centre which measures the players' dynamics in some way and applies the emergence criterion. When emergence seems to increase, the players need to be informed through the behaviour of the lights.
+To create the Synch.Live experience, we require a system which includes individual LED headsets worn by players, as well as a device which acts as observer, recording player motion, measuring the players' dynamics in some way, and applying the emergence criterion. When emergence seems to increase, the players need to be informed through the behaviour of the lights.
 
 Another very important goal besides creating the experience is creating a system that can be used for new science. We need the conditions for the game and future related experiments to be reproducible by other researchers. Therefore it is crucial that the system is as open and easy to deploy as possible. Therefore, we aim for the hardware solution to revolve around Raspberry Pis, and the software solution to be as much as possible tied to Python, as it has a very large community of scientists using it and a less steep learning curve than many other programming languages.
 
-Since we want players to move freely, we need the headsets to connect to the network via Wi-Fi. To compute emergence and modify the behaviour of the lights in real-time, we require the control tower to communicate with the individual headsets, and potentially also the headsets to communicate back, and in future iterations potentially communicate to each-other.
+Since we want players to move freely, we need the headsets to connect to the network via Wi-Fi. To compute emergence and modify the behaviour of the lights in real-time, we require the observer to communicate with the individual headsets, and potentially also the headsets to communicate back.
 
 Moreover, since the synchronisation of their lights is vital to the experience, we also need to make sure that each headset runs its own clock which does not drift for the duration of the experiment.
 
@@ -209,7 +209,11 @@ For each headset, we aim to use:
 - portable battery and a USB power cable
 - hat
 
-For the control center, we require a camera to record the players moving, and a computer to perform analysis and communicate over the network. To maintain the project as open as possible, we decided to use a Raspberry Pi camera module, which allows using interchangeable lens with the CCTV lens mount, as well as sports a decently sized sensor made by Sony (several times larger than a phone sensor). We shall use this camera as direct input to a Raspberry Pi 4, the most performant Pi yet, and extract information from the video stream to compute emergence.
+For the observer, we require a camera to record the players moving, and a computer to extract information from the video stream, to compute emergence, and to communicate with the hats over the network. To maintain the project as open as possible, we decided to use:
+- a Raspberry Pi camera module, which allows using interchangeable lens with the CCTV/8mm lens mount, as well as sports a decently sized sensor made by Sony (several times larger than a phone sensor)
+- a set of two lens, a wide-angle 6mm and a 16mm
+- a Raspberry Pi 4, the most performant Pi yet, which we will equip with a proper cooling fan to to best optimise it
+
 
 The WiFi router needs to support tens of devices, as well as have a generous range, and high bandwidth. We decided on a sexy tri-band Netgear Nighthawk X6S, which supports up to 55 devices over a range of a few hundred square meters.
 
