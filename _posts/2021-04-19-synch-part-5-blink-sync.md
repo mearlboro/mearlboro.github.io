@@ -27,8 +27,8 @@ sections:
       url: '#the-daemons-of-time'
     - title: The Time Server
       url: '#the-time-server'
- - title: Scheduling
-   url: '#scheduling'
+ - title: Precision Scheduling
+   url: '#Precision-scheduling'
  - title: Bibliography
    url: '#bibliography'
 ---
@@ -64,7 +64,7 @@ A discussion about emergence and the goals of the project is in a [previous arti
 1. Build the player hat based on the prototype designed in [the previous post](/synch-live-part-3).
 2. Set up the OS on the card - [instructions & code](https://github.com/mearlboro/Synch.Live/blob/dev-setup/setup/)
 3. Deploy configuration and software using Ansible - [instructions & code](https://github.com/mearlboro/Synch.Live/tree/dev-ansible/ansible)
-4. Configure a time server on the router
+4. Configure a time server on the router. A database of [documentation]() for various router make and models may help with your router model.
 5. Synchronise the clocks on the players using Ansible
 
 If you would like to know more about how everything works, all the tools we've tried, and how we specifically configured the time server on the router, then continue reading. Otherwise, for a quick setup, see the README files in the code repository.
@@ -75,13 +75,13 @@ If you would like to know more about how everything works, all the tools we've t
 
 As our headsets run Raspberry Pi OS, a Linux distribution, the first step is to get familiar with how timekeeping works on Linux.
 
-Linux has two types of clocks: hardware clocks and software clocks. The former is a battery-powered device which which runs independently of the operating system, in our case the RTC module, and can be configured in local time or universal time. We choose to set it to universal time so we don't have issues with timezones.
+Linux has two types of clocks: hardware clocks and software clocks. The former is a battery-powered device which which runs independently of the operating system, in our case the RTC module, and can be configured in local time or universal time. We set it to universal time so we don't have issues with timezones.
 
 As the hardware clock is normally battery-powered, it will keep time even when the RPi is shut down.
 
 The software clock, on the other hand, also known as the system or kernel clock, keeps track of time at the software level independently from the hardware clock. The kernel clock is normally updated from the hardware clock at every boot. Note that many RPis do not use a hardware clock module, so the kernel instead reads from a "fake" hwclock. In [part 3](/synch-live-part-3) of this series, we have removed the lines from `/etc/udev/hwclock` which do that. (How this fake hwclock works is arcane and beyond the scope of this foray into clocks)
 
-The kernel clock alwas shows universal time, and uses the timezone specified at the OS level. You can see this by running the command below
+The kernel clock alwas shows universal time, and uses the timezone specified at the OS level.
 
 ```
 $ timedatectl status
@@ -93,16 +93,16 @@ System clock synchronized: yes
               NTP service: active
           RTC in local TZ: no
 ```
-Local and universal time above come from the kernel clock, as you can see the RTC time matches the universal time, and the local time is correct with respect to the timezone.
+Local and universal time above come from the kernel clock, the RTC time matches the universal time, and the local time is correct with respect to the timezone.
 
 To write or read the kernel clock, the command used in Linux is `date`, whilst for the hardware clock it's `hwclock`.
 
-To copy the time from the hardware clock to the software clock, we use
+To copy the time from the hardware clock to the software clock
 ```console
 $ sudo hwclock -s
 ```
 
-To copy the time from the software clock to the hardware clock, we use
+To copy the time from the software clock to the hardware clock
 ```console
 $ sudo hwclock -w
 ```
@@ -115,10 +115,10 @@ Unless one uses an [atomic clock](https://www.ebay.co.uk/itm/GPS-Disciplined-Clo
 
 #### The DS1307 RTC module
 
-The timekeeping module we use for the headsets, the RTC Pi, uses a [DS1307](https://www.abelectronics.co.uk/docs/pdf/maxim-ds1307.pdf) crystal-based circuit. The crystal, as specified by the [circuit diagram](https://www.abelectronics.co.uk/docs/pdf/schematic-rtcpi-v3.pdf), is CRYSTALTC26H.
+The timekeeping module we use for the headsets, the RTC Pi, uses a [DS1307](https://www.abelectronics.co.uk/docs/pdf/maxim-ds1307.pdf) crystal-based circuit. The crystal is not specified by the [circuit diagram](https://www.abelectronics.co.uk/docs/pdf/schematic-rtcpi-v3.pdf), but word around the internet is that it's has a 20ppm accuracy.
 The accuracy of the clock depends on that of the crystal. Moreover, environmental conditions, such as temprature, will also cause frequency drift.
 
-Clock accuracy is usually defined in terms of ppm, or parts per million. if a day has 86400 seconds, an accuracy of 100ppm will mean a drift of 8.64 seconds in a day. The spec sheet states an accuracy of 20ppm, so we expect about +-1.782 seconds of drift per day. As each circuit has its own idiosyncracies, we cannot expect the exact same amount of drift in all 10 devices. Ergo, running the experiment in two consecutive days without resynchronising the clocks will definitely result in desynchronised behaviour.
+Clock accuracy is usually defined in terms of ppm, or parts per million. If a day has 86400 seconds, an accuracy of 100ppm will mean a drift of 8.64 seconds in a day. Thus for 20ppm, we expect about +-1.782 seconds of drift per day. As each circuit has its own idiosyncracies, we cannot expect the exact same amount of drift in all 10 devices. Ergo, running the experiment in two consecutive days without resynchronising the clocks will definitely result in desynchronised behaviour.
 
 Therefore, not only does the system clock need to get synchronised to the hardware clock, but before each experiment, the hardware clock needs to be synchronised to the system clock.
 
@@ -132,7 +132,7 @@ Before this becomes a terrifying circular problem, the local (or global) network
 #### Time protocols
 The most well-known time protocols are the Network Time Protocol (NTP), the Simple Network Time Protocol (SNTP) and the Precision Time Protocol (PTP). Each of them was created with different use-cases in mind, with NTP being the oldest and most generic.
 
-NTP can usually maintain time to within tens of milliseconds over the public Internet, and can achieve better than one millisecond accuracy in local area networks under best conditions. NTP makes use of hierarchical strata of time servers, located in various areas in the world, and classified according to the network degree of separation from the clocks which are the source of time signals.
+**NTP** can usually maintain time to within tens of milliseconds over the public Internet, and can achieve better than one millisecond accuracy in local area networks under best conditions. NTP makes use of hierarchical strata of time servers, located in various areas in the world, and classified according to the network degree of separation from the clocks which are the source of time signals.
 
 ![](/assets/img/posts/synch/ntp-strata.jpg)
 
@@ -149,13 +149,12 @@ To synchronise the system clock on a Linux system, for example with the UK strat
 $ sudo ntpdate 0.uk.pool.ntp.org
 ```
 
-SNTP was created in the 90s as an lightweight alternative to NTP, but thankfully computers today no longer have the hardware limitations that once constrained the use of NTP. Both protocols can be used over wired or wireless networks and rely on the same hierarchical infrastructure.
+**SNTP** was created in the 90s as an lightweight alternative to NTP, but thankfully computers today no longer have the hardware limitations that once constrained the use of NTP. Both protocols can be used over wired or wireless networks and rely on the same hierarchical infrastructure.
 
-PTP, introduced in 2002, relies on the same stratum 0 clocks and stratum 1 devices, but a separate hierarchy emerges. In contrast, PTP is a lot more precise than both NTP and SNTP, but normally requires a wired connection and is [not supported on RPi](https://www.raspberrypi.org/forums/viewtopic.php?p=1462916) even using ethernet, as the controller does not support hardware timestamping.
+**PTP**, introduced in 2002, relies on the same stratum 0 clocks and stratum 1 devices, but a separate hierarchy emerges. In contrast, PTP is a lot more precise than both NTP and SNTP, but normally requires a wired connection and is [not supported on RPi](https://www.raspberrypi.org/forums/viewtopic.php?p=1462916) even using ethernet, as the controller does not support hardware timestamping.
 
 #### The daemons of time
 
-The first thing to figure out was how exactly one controls the time on a Linux device, specifically one running Raspberry Pi OS.
 As time is serious system business, it is handled by a daemon - a piece of software which runs in the background and manages operating system functions. There are several daemons that deal with both fetching and setting system time, dark and mysterious enough that reading about them competes with a treatise on daemonology.
 
 ![](/assets/img/posts/synch/timedaemons.png)
@@ -199,7 +198,7 @@ TODO:
 
 I heard the community complain a lot about the firmware of this router, and apparently changing the timeserver causes issues. I don't care what timeserver is used, as long as the same time is set on all my devices. Problematically, though, sometimes when the router is unplugged (which is likely with a system like this, which will be moved around to wherever we run the experiment), the time seems to be set to 1 Jan 1970. I haven't had a chance to find a workaround, nor to reproduce this consistently. So far it remains a Heisenbug.
 
-That aside, let's say the NTP server on the router is enabled and running at the router's IP address, `192.168.100.1`. We can now install `chrony` on the headsets
+That aside, let's say the NTP server on the router is enabled and running at the router's IP address, `192.168.100.1`. We install `chrony` on the headsets
 
 ```console
 $ sudo apt install chrony
@@ -245,7 +244,7 @@ rtcsync
 makestep 1 -1
 ```
 
-The most important lines here are the `server` line, which set the router's NTP server as the server for the Chrony client on the RPi, the `rtcsync` line, which enables kernel syncrhonisation, every 11 minutes, of the real-time clock, and `makestep 1 -1`, which allows us to make any number of adjustments to the system clock even if the adjustment is larger than a second. The latter configuration is useful because we have established to always sync the time before an experiment, and this may require 'jumps' or steps in time that are larger than a few miliseconds to be made at once.
+The most important lines here are the `server` line, which set the router's NTP server as the server for the Chrony client on the RPi, the `rtcsync` line, which enables kernel syncrhonisation, every 11 minutes, of the real-time clock, and `makestep 1 -1`, which lets Chrony make any number of adjustments to the system clock until it's in sync with the server, even if the adjustment is larger than a second. The latter configuration is useful because we have established to always sync the time before an experiment, and this may require 'jumps' or steps in time that are larger than a few miliseconds to be made at once.
 The other settings are defaults.
 
 We use Ansible to install `chrony`, copy off the `chrony.conf` file, and start the Chrony daemon on each headset. More on Ansible in [part 4](/synch-live-part-4#sensible-ansible) of this series.
@@ -299,7 +298,8 @@ And ta-da! Now all clocks should be in sync!
 
 How do we check?
 
-My favourite little hack for this is a tool called [`clusterssh`](https://www.putorius.net/cluster-ssh.html). This tool allows opening simultaneous connections to multiple devices and typing in the same command into all of them at once. The tool can be preconfigured using a file `/etc/clusterssh/config` or locally, in the home folder in `.clusterssh/`. We are particularly interested in the `clusters` file where we can define a cluster called `players` for all our headsets using only their hostnames (assuming these are defined in `/etc/hosts`).
+We could write some scripts that write the date to a file at certain times and then collect the logs and compare them, but a faster hack for this is a tool called [`clusterssh`](https://www.putorius.net/cluster-ssh.html).
+This tool allows opening simultaneous fast SSH connections to multiple devices and typing in the same command into all of them at once. The tool can be preconfigured using a file `/etc/clusterssh/config` or locally, in the home folder in `.clusterssh/`. We are particularly interested in the `clusters` file where we can define a cluster called `players` for all our headsets using only their hostnames (assuming these are defined in `/etc/hosts`).
 
 ```shell
 mkdir ~/.clusterssh
@@ -340,7 +340,9 @@ And ta-da! It worked!
 
 ![](/assets/img/posts/synch/hats-in-sync.gif)
 
+The code ran by the hats in `mockloop.py` from the previous [article](/synch-live-part-5). We know the hats are now capable of synchronisation. The next step is to setup the observer with a Raspberry Pi Camera, and implement object detection and tracking for the pilot lights on the players.
 
+<br/>
 
 ### Further reading
 
