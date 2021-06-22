@@ -123,12 +123,14 @@ Generally speaking, there are two large paradigms for modelling and reasoning ab
 
 Within this approach, the individuals in the system are treated as 'particles'. The models are usually very simple, with the particles following local rules and evolving in discrete time steps.
 
-Such a model that may inspire Synch.Live is the self-propelled particles model proposed by [Vicsek](https://en.wikipedia.org/wiki/Vicsek_model){:target="_blank" rel="noopener noreferrer"}. Each particle moves with the same absolute velocity, starting from a random position, and in a random direction. Every time step, each particle changes direction according to its neigbours, by following in their average direction at the next time step. A small random perturbation is added to each average direction to introduce chaos in the system. Depending on this pertubation parameter, the system may either stay disorganised, or become extremely organised. Emergence occurs at the threshold between disorder and order:
+Such a model that may inspire Synch.Live is the self-popelled particles model proposed by [Vicsek](https://en.wikipedia.org/wiki/Vicsek_model){:target="_blank" rel="noopener noreferrer"}. Each particle moves with the same absolute velocity, starting from a random position, and in a random direction. Every time step, each particle changes direction according to its neigbours, by following in their average direction at the next time step. A small random perturbation is added to each average direction to introduce chaos in the system. Depending on this pertubation parameter, the system may either stay disorganised, or become extremely organised. Below, the perturbation is slowly increased for a system of fixed density, absolute velocity and radius, and the behaviour of the particles becomes increasingly more chaotic.
+Emergence occurs at the threshold between order and disorder:
 
 <div class="picture-gallery">
-<div class="col-1-of-3"><img src="/assets/img/posts/synch/vicsek-1.gif"></div>
-<div class="col-1-of-3"><img src="/assets/img/posts/synch/vicsek-2.gif"></div>
-<div class="col-1-of-3"><img src="/assets/img/posts/synch/vicsek-3.gif"></div>
+<div class="col-1-of-2"><img src="/assets/img/posts/synch/vicsek_eta0.1_rho4.0.gif"></div>
+<div class="col-1-of-2"><img src="/assets/img/posts/synch/vicsek_eta0.4_rho4.0.gif"></div>
+<div class="col-1-of-2"><img src="/assets/img/posts/synch/vicsek_eta0.6_rho4.0.gif"></div>
+<div class="col-1-of-2"><img src="/assets/img/posts/synch/vicsek_eta1.0_rho4.0.gif"></div>
 </div>
 
 By introducing only two more spatial rules to the above model, we obtain the conditions for a somewhat realistic simulation of flocking birds. [Reynold's flocking model](http://www.red3d.com/cwr/boids/){:target="_blank" rel="noopener noreferrer"} consists of bird-like objects (or 'boids') that move according to the following parametric rules:
