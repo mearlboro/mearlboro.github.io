@@ -14,7 +14,7 @@ source "https://rubygems.org"
 
 ruby '2.7.2'
 
-gem 'jekyll', '~> 4.0'
+gem 'jekyll', '~> 3.5'
 gem 'kramdown', ">= 2.3.0"
 
 
