@@ -1,0 +1,55 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: mis
+author: Madalina Sas (mis)
+email: madalina.sas@pm.me
+description: >- # this means to ignore newlines until "baseurl:"
+  Computer engineer. Anarcho-scientist. Cyber-artist. Psychonaut. Aspiring polymath.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://mis.pm" # the base hostname & protocol for your site, e.g. http://example.com
+linkedin_username: madalina-sas
+twitter_username: miscomplexity
+gitlab_username: miscodes
+github_username: mearlboro
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Collections
+# Add .md files for each collection item in collection subfolders
+collections_dir: work
+collections:
+    articles:
+        output: true
+        permalink: /articles/:path/
+    projects:
+        output: true
+        permalink: /projects/:path/
+    talks:
+        output: true
+        permalink: /talks/:path/
+
+# more settings
+kramdown:
+  hard_wrap: false
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+

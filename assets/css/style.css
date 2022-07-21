@@ -1,0 +1,272 @@
+
+ /* Layout
+ * ----------------------------------------------
+ */
+
+/* reset body */
+body {
+  margin: 0;
+}
+
+article {
+  min-height: 650px;
+}
+
+.wrapper {
+  max-width: 1100px;
+}
+
+.text-center {
+  text-align: center;
+  margin: 5px auto;
+}
+span.text-center {
+  display: block;
+  text-align: center;
+}
+
+/* basic column layouts */
+.col-1-of-2, .col-1-of-3, .col-2-of-3 {
+  display: inline-block;
+  padding-right: 20px;
+  box-sizing: border-box;
+  margin: 0;
+  vertical-align: top;
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 599px) {
+  .col-1-of-2, .col-1-of-3, .col-2-of-3 {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 600px) {
+  .col-1-of-2 {
+    width: 49%;
+  }
+  .col-1-of-3 {
+    width: 32%;
+  }
+  .col-2-of-3 {
+    width: 65%;
+  }
+}
+.col-1-of-2 img, .col-1-of-3 img, .col-2-of-3 img {
+    width: 100%;
+}
+
+
+
+/* Graphical elements
+ * ----------------------------------------------
+*/
+h1 {
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(50%,#222),color-stop(50%,transparent));
+  background-image: -webkit-linear-gradient(bottom,#222 50%,transparent 50%);
+  background-image: linear-gradient(0deg,#222 50%,transparent 50%);
+}
+
+@media screen and (max-width: 600px) {
+  .site-nav {
+    border-radius: 0px;
+   }
+}
+
+@media screen and (max-width: 600px)
+.site-nav .page-link {
+    margin-left: 0;
+  }
+}
+
+#logo {
+  line-height: 54px;
+  float: left;
+}
+
+#logo h2 {
+  margin: 10px 0;
+  float: left;
+}
+#logo h2 a {
+  font-size: 18px;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+
+/* Typography
+ * ----------------------------------------------
+ */
+
+ h1,h2,h3,h4,h5,h6 {
+  display: table;
+  margin-top: 5px;
+  margin-bottom: 5px;
+ }
+
+h1, h1 a {
+  font-family: Courier, monospace;
+  text-transform: uppercase;
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+
+h2, h2 a, h4, h4 a {
+  font-family: Courier, monospace;
+  font-weight: 900;
+}
+
+h3, h3 a, h3 a.post-link {
+  font-family: Baskerville, serif;
+  margin-top:10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 5px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+h5, h6, p, span, a, ul, ol, li, pre, code {
+  font-family: monospace;
+  font-weight: 100;
+  font-size: 14px;
+}
+
+h5 {
+  float: right
+}
+
+main p a, main li a {
+  text-decoration: underline;
+}
+
+p a:hover, li a:hover, li span:hover, nav a:hover {
+  text-decoration: none;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.main-menu a {
+  font-family: monospace;
+  font-weight: 400;
+  line-height: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+strong {
+  font-weight: 900;
+}
+
+
+/* Post styles
+ * ----------------------------------------------
+ */
+.post p, .post li, .post a {
+  font-size: 13px;
+}
+.post p {
+  text-align: justify;
+}
+
+.post h3 {
+  margin-top: 30px;
+}
+
+.post h4 {
+  margin-top: 10px;
+}
+.post a .not-link {
+  text-decoration: none;
+}
+@media (max-width: 900px) {
+  .post-menu-column {
+    display: none;
+  }
+  .post {
+    width: 100%;
+  }
+}
+.post-menu {
+  position: fixed;
+  padding-right: 30px;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+.post-menu ul {
+  list-style-type: none;
+}
+.post-menu a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.post-menu li {
+  max-width: 100%;
+}
+
+.math {
+  padding: 8px 12px;
+  width: 100%;
+  display: block;
+}
+
+.picture-gallery .col-1-of-3, .picture-gallery .col-1-of-2 {
+  padding: 3px;
+  margin-bottom: 0;
+}
+.picture-gallery a img {
+  filter: opacity(0.8);
+}
+.picture-gallery a:hover img {
+  filter: opacity(1);
+}
+
+.floating-img {
+    width: 40% !important;
+    float: right;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .floating-img {
+        width: 100%;
+    }
+}
+
+.video {
+    width: 100%;
+}
+
+/* Colours
+ * ----------------------------------------------
+ */
+h1, h1 a {
+  /* text-shadow: 2px 4px 0 aqua; */
+}
+
+h1, h1 a, h2, h2 a, h3, h3 a, h4, h4 a, h5, h5 a, h6, h6 a {
+  color: #fff;
+}
+
+p, a, li, span {
+  color: #eee;
+}
+
+body, header, footer {
+  background-color: #120f0b;
+}
+
+.site-header{
+  border-bottom: 1px solid #222;
+}
+
+.site-footer {
+  border-top: 1px solid #222;
+}
+
+.grey, h5 {
+  color: #999;
+}
