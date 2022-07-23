@@ -17,12 +17,13 @@ title: mis
 author: Madalina Sas (mis)
 email: madalina.sas@pm.me
 description: >- # this means to ignore newlines until "baseurl:"
-  Computer engineer. Anarcho-artist. Psychonaut. Aspiring polymath.
+  Computer engineer. Anarcho-scientist. Cyber-artist. Psychonaut. Aspiring polymath.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://mis.pm" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  mearlboro
-youtube_username: mearlboro
 linkedin_username: madalina-sas
+twitter_username: miscomplexity
+gitlab_username: miscodes
+github_username: mearlboro
 
 # Build settings
 markdown: kramdown
@@ -31,6 +32,17 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# Collections
+# Add .md files for each collection item in collection subfolders
+collections_dir: work
+collections:
+    projects:
+        output: true
+        permalink: /projects/:path/
+    talks:
+        output: true
+        permalink: /talks/:path/
+
 # more settings
 kramdown:
   hard_wrap: false
@@ -38,14 +50,3 @@ kramdown:
   auto_ids: true
   syntax_highlighter: rouge
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/

@@ -1,0 +1,47 @@
+---
+layout: page
+---
+
+<img src="{{ page.img }}" width="100%">
+
+<h1>{{ page.title }}</h1>
+{% if page.authors %}
+<h4>{{ page.authors }}</h4>
+{% endif %}
+
+<p> </p>
+{% if page.slides %}
+    <a href="{{ page.slides }} " target="_blank">SLIDES</a> &nbsp; &nbsp;
+{% endif %}
+{% if page.talk %}
+    <a href="{{ page.talk }} " target="_blank">TALK</a> &nbsp; &nbsp;
+{% endif %}
+{% if page.video %}
+    <a href="{{ page.video }}" target="_blank">VIDEO</a> &nbsp; &nbsp;
+{% endif %}
+{% if page.web %}
+    <a href="{{ page.web }}  " target="_blank">WEBSITE</a> &nbsp; &nbsp;
+{% endif %}
+{% if page.paper %}
+    <a href="{{ page.paper }}" target="_blank">PAPER</a> &nbsp; &nbsp;
+{% endif %}
+{% if page.thesis %}
+    <a href="{{ page.thesis }}" target="_blank">THESIS</a> &nbsp; &nbsp;
+{% endif %}
+<p> </p>
+
+
+{{ page.content }}
+
+{% if page.event or page.location %}
+<p class="text-center">
+<b>When:</b> {{ page.date | date: "%d %b %Y, %H:%M"}}<br/>
+<b>Where:</b> {% if page.event %}{{ page.event }}, {% endif %} {{ page.location }}<br/>
+</p>
+{% endif %}
+
+</br>
+</br>
+</br>
+</br>
+

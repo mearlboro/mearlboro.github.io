@@ -13,39 +13,65 @@ place devoted to the imagination. There are various types of imaginaria, centers
 <br/>
 <br/>
 
-# Ongoing projects
 
-{% assign sorted = site.posts | sort: 'title' | reverse %}
-{% for p in sorted %}
-<h3 style="{{ p.hidetitle }}"><br/><a>{{ p.title }}</a></h3>
-<p><a href="{{ p.url }}" target="_blank">{{ p.subtitle }}</a><br/></p>
-<p>{{ p.description }}</p>
+# Science
+{% for proj in site.projects %}
+{% if proj.tags contains "science" %}
+<div class="col-1-of-3">
+<img src="{{ proj.img }}">
+<h3><a href="{{ proj.permalink }}">{{ proj.title }}</a></h3>
+<p>{{ proj.subtitle }}</p>
+</div>
+{% endif %}
 {% endfor %}
+
+
+# Security & Privacy
+{% for proj in site.projects %}
+{% if proj.tags contains "security" or proj.tags contains "privacy" %}
+<div class="col-1-of-3">
+<img src="{{ proj.img }}">
+<h3><a href="{{ proj.permalink }}">{{ proj.title }}</a></h3>
+<p>{{ proj.subtitle }}</p>
+</div>
+{% endif %}
+{% endfor %}
+
+{% for p in site.posts %}
+{% if p.tags contains "security" or p.tags contains "privacy" %}
+<div class="col-1-of-3">
+<img src="{{ p.img }}">
+<h3><a href="{{ p.permalink }}">{{ p.title }}</a></h3>
+<p>{{ p.subtitle }}</p>
+</div>
+{% endif %}
+{% endfor %}
+
+
+# Hardware
+{% for proj in site.projects %}
+{% if proj.tags contains "hardware" %}
+<div class="col-1-of-3">
+<img src="{{ proj.img }}">
+<h3><a href="{{ proj.permalink }}">{{ proj.title }}</a></h3>
+<p>{{ proj.subtitle }}</p>
+</div>
+{% endif %}
+{% endfor %}
+
+{% for p in site.posts %}
+{% if p.tags contains "hardware" %}
+<div class="col-1-of-3">
+<img src="{{ p.img }}">
+<h3><a href="{{ p.permalink }}">{{ p.title }}</a></h3>
+<p>{{ p.subtitle }}</p>
+</div>
+{% endif %}
+{% endfor %}
+
+
 <br/>
-
-
-### [SnowWall]()
-#### privacy-oriented visual network monitoring
-Motivated by privacy concerns and the lack of research on privacy on the Windows operating system, SnowWall is a networking tool designed to provide insights and control into the networking activity on a Windows-based system. SnowWall interacts with the operating system, intercepts every inbound and outbound connection, provides information on the connection’s state, lifetime, owning process, and most importantly, remote end point, such as geolocation and ownership information. SnowWall is a powerful tool designed to be user-friendly, which allows anyone to block unwanted connections with high-level firewall rules, such as blocking by country or by owning organization name.
-
-SnowWall is built on top of the Windows Firewall, using low-level networking APIs to gather the required information and interacting with the firewall to block unwanted outbound connections.  If you care about privacy, the layers of the internet, geolocation of internet hosts by IP or the internet topology, have a look at my [thesis](/assets/files/snowwall.pdf).
-
-Currently SnowWall is aiming to become a distributed geolocation network which will be able to use the latest research in IP Geolocation and privacy preserving machine learning to provide the necessary information for implementing geographical security policies while anonymising private users.
 <br/>
-<br/>
-
-
-### [Seek]()
-#### information extraction
-Built in a group project, it's an information retrieval tool capable of analysis with statistical natural language processing techniques on large corpora. It uses latent semantic indexing, similar to many search engines, as well as latent Dirichlet allocation to extract topics from text. The tool is also able to extract relational information from text based on Noam Chomsky's work on transformational grammars.
-
-The tool has been trained on multiple corpora provided by the Stanford NLP team, the whole of English Wikipedia as well as the published papers repository of Imperial College. Furthermore, it supports information acquisition from multiple sources, including a general-purpose scraper written in Ruby, and a set of Python libraries that extract text from various formats such as .doc or .pdf.
-
-Check it out on [github](https://github.com/mearlboro/seek-legacy).
-<br/>
-<br/>
-<br/>
-
 
 # Web & Design projects
 <br/>
@@ -64,7 +90,7 @@ Check it out on [github](https://github.com/mearlboro/seek-legacy).
 </div>
 <div class="col-2-of-3">
 	<h3>Cinematographer portfolio</h3>
-	<p><a href="http://andreipacuraru.com" target="_blank">andreipacuraru.com</a></p>
+	<p><a href="http://andreisas.com" target="_blank">andreisas.com</a></p>
 	<p>An uber-clean minimal Jekyll site to display cinematography work, be it stills, videos or show reels.</p>
 </div>
 
@@ -103,4 +129,19 @@ Check it out on [github](https://github.com/mearlboro/seek-legacy).
 	<p><a href="http://pureeros.com" target="_blank">pureeros.com</a></p>
 	<p>An e-boutique dedicated to the empowering of women and the expression of their sexuality.</p>
 </div>
+
+<br/>
+<br/>
+
+# List of articles
+
+{% assign sorted = site.posts | sort: 'title' %}
+{% for p in sorted %}
+<h3 style="{{ p.hidetitle }}"><br/><a>{{ p.title }}</a></h3>
+<p><a href="{{ p.url }}" target="_blank">{{ p.subtitle }}</a><br/></p>
+<p>{{ p.description }}</p>
+{% endfor %}
+<br/>
+
+
 
