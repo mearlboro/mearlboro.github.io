@@ -240,6 +240,21 @@ strong {
     width: 100%;
 }
 
+.caution-box {
+  display: block;
+  padding: 10px;
+  color: #de0700;
+  border: 1px solid #de0700;
+}
+
+blockquote {
+    border-left: 4px solid #e8e8e8;
+    padding-left: 15px;
+    font-size: 13px;
+    letter-spacing: 0;
+    font-style: italic;
+}
+
 /* Colours
  * ----------------------------------------------
  */
