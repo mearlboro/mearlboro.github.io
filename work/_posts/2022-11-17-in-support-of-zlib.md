@@ -18,8 +18,10 @@ sections:
     url: '#z-library'
   - title: Library Genesis
     url: '#library-genesis'
-  - title: Sci-Hub
-    url: '#sci-hub'
+  - title: SciHub
+    url: '#scihub'
+  - title: Anna's Archive
+    url: '#annas-archive'
 - title: Why is this important?
   url: '#why-is-this-important'
   nested:
@@ -54,7 +56,7 @@ Since the beginning of this month (Nov 2022), many Z-Library domains were seized
 ### About Z-library
 
 If you don't know about Library Genesis, or its most popular mirror today, Z-library, hopefully it is not too late to be introduced to it now.
-It is the largest open digital library in the world, since, unlike the [Internet Archive](https://archive.org){:target="_blank" rel="noopener noreferrer"} or [Project Gutenberg](https://www.gutenberg.org/){:target="_blank" rel="noopener noreferrer"}, it also contains titles that are protected by copyright or owned by publishers, most importantly recent titles, especially relevant in academia and journalism.
+It is a [shadow library](https://wikiless.org/wiki/Shadow_library), the largest open digital library in the world, since, unlike the [Internet Archive](https://archive.org){:target="_blank" rel="noopener noreferrer"} or [Project Gutenberg](https://www.gutenberg.org/){:target="_blank" rel="noopener noreferrer"}, it also contains titles that are protected by copyright or owned by publishers, most importantly recent titles, especially relevant in academia and journalism.
 
 It has a great history too, linked to the [_samizdat_](https://wikiless.org/wiki/Samizdat?lang=en){:target="_blank" rel="noopener noreferrer"} culture in the Soviet Union, which consisted in illegal underground networks of homebrewn publishing and information sharing. These people didn't have access to printers or typewriters without official registration, and would go through great risks to find, hide, and share these banned books, these censored ideas.
 An archive which was later to become LibGen/ZLib started as an expression of this culture on RuNet, the early 90s Russian internet.
@@ -166,7 +168,7 @@ A great resource is the [LibGen wiki](https://www.teddit.net/r/libgen/wiki/index
 <br/>
 
 #### SciHub
-SciHub, the youngest of these sites, focuses mostly on scientific articles, and it's extremely useful to many academics. I checked all the official mirrors and they work:
+SciHub, the youngest of these sites, focuses mostly on scientific articles, and it's extremely useful to many academics. It was created by [Alexandra Elbakyan](https://wikiless.org/wiki/Alexandra_Elbakyan) (who sometimes smiles and waves at us on the SciHub site!) I checked all the official mirrors and they work:
 
 * [sci-hub.ru](https://sci-hub.ru){:target="_blank" rel="noopener noreferrer"}
 * [sci-hub.st](https://sci-hub.st){:target="_blank" rel="noopener noreferrer"}
@@ -174,6 +176,15 @@ SciHub, the youngest of these sites, focuses mostly on scientific articles, and 
 
 
 You may be interested to find out (like I did!) they have a Telegram bot too, [t.me/scihubot](https://telegram.me/scihubot){:target="_blank" rel="noopener noreferrer"}, a [Zotero plugin](https://github.com/ethanwillis/zotero-scihub/){:target="_blank" rel="noopener noreferrer"}, and a [Reddit community](https://www.teddit.net/r/scihub/){:target="_blank" rel="noopener noreferrer"}.
+
+<br/>
+
+#### Anna's Archive
+
+**UPDATE (22/11/22)**
+
+[Anna's Archive](https://annas-archive.org/) has just been launched in response to the takedown of ZLib, sometime this month! Anna's Archive is to the three sites above what [metager.de](https://metager.de) is to other seacrh engines. It is a catalogue, that aims to cataogue and link to every book, without actually hosting any of the material.
+The group creating the site claims to be a lot more serious about security and leaving no trace - so I'm looking forward to them never getting caught. Maybe the best way to hit the shadow library links I presented above _is_ to just use this site.
 
 <br/>
 
@@ -233,6 +244,8 @@ Don't be complacent, be angry. Spread the word to the world. If you're American,
 
 Talk to your grandma about information freedom. The next jury member in a trial condemning internet freedom may be someone who has learned why open access to knowledge is so important, may be someone who has heard of Aaron Swartz, may be someone who understands the absurd costs of knowledge development.
 
+Catalogue! Contribute to any of these open libraries by helping them build a catalogue of all books.
+
 Vote Pirate! If you can't, start a pirate party in your constituency! Sweden was first, founding it in 2006, the US have one founded in the same year, now most EU contries have them, and there's a [European Pirate Party](https://european-pirateparty.eu/){:target="_blank" rel="noopener noreferrer"}, and Pirates without borders!
 
 (That being said, I live in the UK, where the Pirate party est 2009 was dissolved in 2020. Work always begins in one's back yard.)
@@ -248,6 +261,8 @@ I'll leave you with their closing paragraph:
 
 
 ### Footnotes and references
+Aaron Swartz is also the author of the Guerrilla Open Access Manifesto which you should read [here](https://archive.org/stream/GuerillaOpenAccessManifesto/Goamjuly2008_djvu.txt).
+
 [^1]: The student poverty rate map is taken from an [interactive dataviz](https://http://viz.edbuild.org/maps/2016/cola/resource-inequality/natl-average.html){:target="_blank" rel="noopener noreferrer"} by a research company called EdBuild. Census.gov explains [median household income](https://www.census.gov/quickfacts/fact/note/US/INC110220){:target="_blank" rel="noopener noreferrer"}. <br/><br/> The World Bank also has an interesting article and dataset regarding the relationship between [poverty and education](https://datatopics.worldbank.org/sdgatlas/goal-4-quality-education/){:target="_blank" rel="noopener noreferrer"}. They observe that in recent years the gap between school enrollment rates between lower and higher-income countries has been reducing, which only further supports the need of free educational resources to actually support all these children going to school in economically challenged places.
 
 [^2]: The worldwide median income map is from an [interactive dataviz](https://worldpopulationreview.com/country-rankings/median-income-by-country){:target="_blank" rel="noopener noreferrer"} by the website and based on [data from the World Bank](https://data.worldbank.org/country/XP){:target="_blank" rel="noopener noreferrer"}.<br/><br/>I am, of course, aware that it isn't easy to construct these maps, and that there are plenty statistics that can go wrong. I am not claiming to put numbers to someone's human condition, but rather to show how much of a spread there is in income, and how it is easy to forget in the first world how many people still need free access to knowledge because they simply _cannot afford it otherwise_.
