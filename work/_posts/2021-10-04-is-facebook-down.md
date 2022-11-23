@@ -4,7 +4,7 @@ title: "Defacebook"
 subtitle: Is facebook really down?
 description: "We interrupt this programme to bring you... the collapse of society as we know it"
 hidetitle: "display:block"
-categories: [blog]
+categories: [blog, internet-tales]
 permalink: "is-facebook-down"
 ---
 

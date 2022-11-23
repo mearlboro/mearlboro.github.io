@@ -4,7 +4,7 @@ title: "Is Google down?"
 subtitle: When all your eggs are in the Google basket
 description: "Thank Google it's not friday"
 hidetitle: "display:block"
-categories: [blog]
+categories: [blog, internet-tales]
 permalink: "is-google-down"
 sections:
  - title: investigation
@@ -74,8 +74,5 @@ This is a global issue, and it impacts all email providers trying to send email 
 Later the emails started working again, but this was quite shocking nontheless. An email provider to get such a big issue that is causing cascading errors to other providers.
 
 The incidents are documented in the [Google status updates](https://www.google.com/appsstatus#hl=en&v=issue&sid=1&iid=a8b67908fadee664c68c240ff9f529ab).
-
-
-### Alternatives part 2
 
 
