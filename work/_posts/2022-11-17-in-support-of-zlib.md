@@ -129,17 +129,21 @@ The only official clearnet ZLib site online is [singlelogin.me](https://singlelo
 I won't link the sites because they **should not be accessed via clearnet**. Before using any of these sites, please inform yourself about [Tor](https://www.torproject.org/){:target="_blank" rel="noopener noreferrer"} or [I2P](https://github.com/PurpleI2P/i2pdbrowser/releases/tag/1.3.2){:target="_blank" rel="noopener noreferrer"}.
 
 <p class='caution-box'>
-Sometimes clones of ebook sites are used by malicious actors. For example, they may invite you to install browser extensions, or to download Tor from an unofficial source. It's likely that this takedown of ZLib may cause a lot of these sites to mushroom so be careful and only use verified links.
-Similarly, some people are sending around Android APKs to install ZLib. <b>Do not install any unofficial unverified app on your phone!</b> It is likely malware or Trojan.
+Sometimes clones of ebook sites are used by malicious actors. For example, they may invite you to install browser extensions, or to download Tor or I2P browser from an unofficial source. It's likely that this takedown of ZLib may cause a lot of these sites to mushroom so be careful and only use verified links.
+Similarly, some people are sending around Android APKs to install ZLib. <b>Do not install any unofficial unverified app on your phone or program on your computer!</b> It is likely malware or Trojan.
 </p>
 
-So **do not use** <u>z-lib.is</u>, it's broken and it asks you to download a browser extension.
+Also **do not use** <u>z-lib.is</u>, it's broken and it asks you to download a browser extension.
 
 **UPDATES (22/11/22)**
 
-A glorious [community member](https://www.reddit.com/user/ciurana/) published a flow chart for how to access Z-Library via Tor, which I reproduce here:
+A glorious [community member](https://www.reddit.com/user/ciurana/) published a flow chart for how to access Z-Library via I2P and Tor, which I reproduce here:
+
+![](https://preview.redd.it/ct8ccd2fnp1a1.png?width=893&format=png&auto=webp&s=4b95c3ebf194b6e6c06f4d95b07295d22bc44337)
 
 ![](https://preview.redd.it/wbds5jaenp1a1.png?width=894&format=png&auto=webp&s=a18d5780becd416ad6a1c304ee29d619b52438d6)
+
+Note that the Tor version was down recently, causing lots of distress in the community, but the I2P version was available all day yesterday, so if the Tor one fails for you, use the other.
 
 <br/>
 
