@@ -2,6 +2,15 @@
 layout: page
 title: bildungsroman
 permalink: /experience/
+sections:
+    - title: Teaching
+      url: '#teaching-experience'
+    - title: Work
+      url: '#work-experience'
+    - title: Awards
+      url: '#awards--grants'
+    - title: Education
+      url: #education
 ---
 
 <br/>
@@ -17,6 +26,49 @@ _(For the novella version, have a look at my [CV](/assets/files/mis.pm-cv.pdf){:
 <br/>
 
 
+# Teaching Experience
+
+
+### [Ethics, Privacy, AI in society, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses/70052/){:target="_blank" rel="noopener noreferrer"}
+##### Jan 2023 - present
+#### Lab helper
+Helping students with tutorials in Python on AI fairness.
+
+Supervisors: [Dr. Novi Quadrianto](https://profiles.sussex.ac.uk/p335583-novi-quadrianto){:target="_blank" rel="noopener noreferrer"}, [Prof. Michael Huth](https://www.imperial.ac.uk/people/m.huth){:target="_blank" rel="noopener noreferrer"}
+<br/>
+<br/>
+
+### [Complexity & Networks, Department of Physics](https://www.imperial.ac.uk/media/imperial-college/faculty-of-natural-sciences/department-of-physics/public/students/current-students/course-list/L6-CN-2021-22.pdf){:target="_blank" rel="noopener noreferrer"}
+##### Jan 2021 - present
+#### Lab demonstrator
+Helping students with Python-based simulations of the Oslo sandpile model and Barabasi-Albert network model.
+
+Supervisors: [Prof. Kim Christensen](https://www.imperial.ac.uk/people/k.christensen){:target="_blank" rel="noopener noreferrer"}, [Dr Tim Evans](https://www.imperial.ac.uk/people/t.evans){:target="_blank" rel="noopener noreferrer"}
+<br/>
+<br/>
+
+### [Cryptography Engineering, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses/70009/){:target="_blank" rel="noopener noreferrer"}
+##### Jan 2021 - present
+#### Teaching Assistant
+Participating in (and occasionally running) tutorials. Creating Jupyter notebooks with practical exercises and examples of cryptographic protocols, as well as the history of cryptography.
+
+Supervisor: [Prof. Michael Huth](https://www.imperial.ac.uk/people/m.huth){:target="_blank" rel="noopener noreferrer"}
+<br/>
+<br/>
+
+### [Net & Web Security, Department of Computing](331.cybersec.fun/){:target="_blank" rel="noopener noreferrer"}
+##### Jan 2021 - Apr 2021
+#### Teaching Assistant
+Answering students’ questions on course content during tutorials.
+
+Supervisor: [Dr Sergio Maffeis](https://www.imperial.ac.uk/people/sergio.maffeis){:target="_blank" rel="noopener noreferrer"}
+
+<br/>
+<br/>
+<br/>
+
+
+
 # work experience
 
 ### [Netcraft](https://netcraft.com){:target="_blank" rel="noopener noreferrer"}
@@ -26,10 +78,18 @@ Started with content filtering, then moved on to phishing site detection on the
 web or social platforms, automated security examination of networks, and automated countermeasures against
 internet fraud. Sometimes I would follow up where the automated systems were limited, doing detective work
 to track down institutions or people all over the internet in order to let them know their website has been compromised.
-
 I have also run the Netcraft Web Server Survey, which collects comprehensive statistics about websites and hosts on the internet, and lead the redesign of the website.
 <br/>
 <br/>
+
+### Freelance
+##### 2017 - Present
+#### Cybersecurity consultant
+Advising SMEs on privacy, security policy and cyber-attack mitigation, using my personal custom investigative software tools.
+Malware detection and attack tracking. Forensics. Collaboration with consultancy firm [Remora](https://remora.co.uk){:target="_blank" rel="noopener noreferrer"}.
+<br/>
+<br/>
+
 
 ### [King's Clinical Trials Unit](http://ctu.co.uk){:target="_blank" rel="noopener noreferrer"}
 ##### Dec 2014 - Dec 2016
@@ -48,7 +108,7 @@ My work in clinical trials, especially focusing on
 mental health, have stimulated my interest in neuroscience and psychiatric research. During this time
 I have become acquainted with the [Maudsley Psychedelic Society](https://www.youtube.com/channel/UCRh1HFc0_bZZh4MA4d-BqoA){:target="_blank" rel="noopener noreferrer"} and have attended most of their talks.
 
-Supervisor: Dr. Evangelos Georgiou
+Supervisor: Dr Evangelos Georgiou
 <br/>
 <br/>
 
@@ -61,7 +121,7 @@ created a technical specification of Red-Black Trees which guarantees
 correct concurrent behaviour. Also implemented a prototype of such a concurrent data
 structure in Haskell.
 
-Supervisors: [Dr. Philippa Gardner](http://www.doc.ic.ac.uk/~pg/){:target="_blank" rel="noopener noreferrer"}, [Dr. Julian Sutherland](https://www.doc.ic.ac.uk/~jhs110/){:target="_blank" rel="noopener noreferrer"}
+Supervisors: [Dr Philippa Gardner](http://www.doc.ic.ac.uk/~pg/){:target="_blank" rel="noopener noreferrer"}, [Dr Julian Sutherland](https://www.doc.ic.ac.uk/~jhs110/){:target="_blank" rel="noopener noreferrer"}
 <br/>
 <br/>
 
@@ -69,38 +129,6 @@ Supervisors: [Dr. Philippa Gardner](http://www.doc.ic.ac.uk/~pg/){:target="_blan
 ##### Jun 2014 - Sep 2014
 #### Software Engineering Intern
 Front-end and back-end development for user settings in Java using dependency injection.
-
-<br/>
-<br/>
-<br/>
-
-
-# Teaching Experience
-
-### [Complexity & Networks, Department of Physics](https://www.imperial.ac.uk/media/imperial-college/faculty-of-natural-sciences/department-of-physics/public/students/current-students/course-list/L6-CN-2021-22.pdf){:target="_blank" rel="noopener noreferrer"}
-##### Jan 2021 - present
-#### Lab demonstrator
-Helping students with Python-based simulations of the Oslo sandpile model and Barabasi-Albert network model.
-
-Supervisors: [Prof. Kim Christensen](https://www.imperial.ac.uk/people/k.christensen){:target="_blank" rel="noopener noreferrer"}, [Dr. Tim Evans](https://www.imperial.ac.uk/people/t.evans){:target="_blank" rel="noopener noreferrer"}
-<br/>
-<br/>
-
-### [Cryptography Engineering, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses/70009/){:target="_blank" rel="noopener noreferrer"}
-##### Jan 2021 - present
-#### Teaching Assistant
-Participating in (and occasionally running) tutorials. Creating Jupyter notebooks with practical exercises and examples of cryptographic protocols, as well as the history of cryptography.
-
-Supervisor: [Prof. Michael Huth](https://www.imperial.ac.uk/people/m.huth){:target="_blank" rel="noopener noreferrer"}
-<br/>
-<br/>
-
-### [Net & Web Security, Department of Computing](331.cybersec.fun/){:target="_blank" rel="noopener noreferrer"}
-##### Jan 2021 - Apr 2021
-#### Teaching Assistant
-Answering students’ questions on course content during tutorials.
-
-Supervisor: [Dr. Sergio Maffeis](https://www.imperial.ac.uk/people/sergio.maffeis){:target="_blank" rel="noopener noreferrer"}
 
 <br/>
 <br/>
@@ -149,7 +177,7 @@ Awarded Best Project in its category, Best Presentation and Best Website.
 #### PhD Complexity Science
 Exploring the emergence of self-organised collective behaviour at multiple scales using tools from complexity science, information theory, neuroscience and psychedelic science, signal processing, network science, statistical mechanics, and computer science. Building hardware for experiments as well as simulations. Multiple interdisciplinary collaborations with musicians, neuroscientists, psychologists and social scientists.
 
-Supervisors: [Prof Henrik J. Jensen](https://www.ma.imperial.ac.uk/~hjjens/){:target="_blank" rel="noopener noreferrer"}, [Prof William J. Knottenbelt](https://www.doc.ic.ac.uk/~wjk/){:target="_blank" rel="noopener noreferrer"}, [Dr. Fernando E. Rosas](https://www.imperial.ac.uk/people/f.rosas){:target="_blank" rel="noopener noreferrer"}
+Supervisors: [Prof Henrik J. Jensen](https://www.ma.imperial.ac.uk/~hjjens/){:target="_blank" rel="noopener noreferrer"}, [Prof William J. Knottenbelt](https://www.doc.ic.ac.uk/~wjk/){:target="_blank" rel="noopener noreferrer"}, [Dr Fernando E. Rosas](https://www.imperial.ac.uk/people/f.rosas){:target="_blank" rel="noopener noreferrer"}
 <br/>
 <br/>
 
@@ -160,7 +188,7 @@ Supervisors: [Prof Henrik J. Jensen](https://www.ma.imperial.ac.uk/~hjjens/){:ta
 Investigating the relationship between the internet's architecture, firewalls, and privacy, and building a tool in C# which communicates with the Windows networking interfaces to allow users to visualise the flow of outbound data. The project was awarded a distinction by Imperial College, was presented at the London Met Cybercrime Unit, and was a finalist of [HutZero](https://www.hutzero.co.uk/){:target="_blank" rel="noopener noreferrer"} 2018, a cyber-security start-up incubator. It was also used, successfully, to catch the bad guys - more than once!
 
 Supervisor: [Prof William J. Knottenbelt](https://www.doc.ic.ac.uk/~wjk/){:target="_blank" rel="noopener noreferrer"}<br/>
-Thesis: "SnowWall: A visual firewall for the surveillance society" [[link]](/assets/files/snowwall.pdf)<br/>
+Thesis: "SnowWall: A visual firewall for the surveillance society" [[link]](/assets/files/snowwall.pdf)
 <br/>
 <br/>
 
@@ -169,7 +197,7 @@ Thesis: "SnowWall: A visual firewall for the surveillance society" [[link]](/ass
 #### BEng Computing
 Courses & interests:
 - Computing: Computational Neuroscience, Information Theory & Codes, Cryptography Engineering, Networks & Communication, Net & Web Security, Privacy Enhancing Techniques, Software Reliability, Models of Computation, Functional Programming, Natual Language Processing
-- Humanities: Philosophy of Science (with Dr. Scott Biagi), Aesthetics (with Dr. Scott Biagi), Philosophy of Mind (with Dr. Greg Artus)
+- Humanities: Philosophy of Science (with Dr Scott Biagi), Aesthetics (with Dr Scott Biagi), Philosophy of Mind (with Dr Greg Artus)
 
 Group Projects:
 - 2016 [Seek](https://github.com/mearlboro/seek-legacy){:target="_blank" rel="noopener noreferrer"}: An Information Retrieval tool written in Python for natural language processing on large corpora. Can extract, with good accuracy, topics, names, and summaries from unstructured text.
