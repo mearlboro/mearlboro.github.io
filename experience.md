@@ -26,48 +26,6 @@ _(For the novella version, have a look at my [CV](/assets/files/mis.pm-cv.pdf){:
 <br/>
 
 
-# Teaching Experience
-
-
-### [Ethics, Privacy, AI in society, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses/70052/){:target="_blank" rel="noopener noreferrer"}
-##### Jan 2023 - present
-#### Lab helper
-Helping students with tutorials in Python on AI fairness.
-
-Supervisors: [Dr. Novi Quadrianto](https://profiles.sussex.ac.uk/p335583-novi-quadrianto){:target="_blank" rel="noopener noreferrer"}, [Prof. Michael Huth](https://www.imperial.ac.uk/people/m.huth){:target="_blank" rel="noopener noreferrer"}
-<br/>
-<br/>
-
-### [Complexity & Networks, Department of Physics](https://www.imperial.ac.uk/media/imperial-college/faculty-of-natural-sciences/department-of-physics/public/students/current-students/course-list/L6-CN-2021-22.pdf){:target="_blank" rel="noopener noreferrer"}
-##### Jan 2021 - present
-#### Lab demonstrator
-Helping students with Python-based simulations of the Oslo sandpile model and Barabasi-Albert network model.
-
-Supervisors: [Prof. Kim Christensen](https://www.imperial.ac.uk/people/k.christensen){:target="_blank" rel="noopener noreferrer"}, [Dr Tim Evans](https://www.imperial.ac.uk/people/t.evans){:target="_blank" rel="noopener noreferrer"}
-<br/>
-<br/>
-
-### [Cryptography Engineering, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses/70009/){:target="_blank" rel="noopener noreferrer"}
-##### Jan 2021 - present
-#### Teaching Assistant
-Participating in (and occasionally running) tutorials. Creating Jupyter notebooks with practical exercises and examples of cryptographic protocols, as well as the history of cryptography.
-
-Supervisor: [Prof. Michael Huth](https://www.imperial.ac.uk/people/m.huth){:target="_blank" rel="noopener noreferrer"}
-<br/>
-<br/>
-
-### [Net & Web Security, Department of Computing](331.cybersec.fun/){:target="_blank" rel="noopener noreferrer"}
-##### Jan 2021 - Apr 2021
-#### Teaching Assistant
-Answering students’ questions on course content during tutorials.
-
-Supervisor: [Dr Sergio Maffeis](https://www.imperial.ac.uk/people/sergio.maffeis){:target="_blank" rel="noopener noreferrer"}
-
-<br/>
-<br/>
-<br/>
-
-
 
 # work experience
 
@@ -84,9 +42,10 @@ I have also run the Netcraft Web Server Survey, which collects comprehensive sta
 
 ### Freelance
 ##### 2017 - Present
-#### Cybersecurity consultant
+#### Software engineering & Cybersecurity consultant
 Advising SMEs on privacy, security policy and cyber-attack mitigation, using my personal custom investigative software tools.
 Malware detection and attack tracking. Forensics. Collaboration with consultancy firm [Remora](https://remora.co.uk){:target="_blank" rel="noopener noreferrer"}.
+Custom software development and quantitative research.
 <br/>
 <br/>
 
@@ -133,6 +92,48 @@ Front-end and back-end development for user settings in Java using dependency in
 <br/>
 <br/>
 <br/>
+
+# Teaching Experience
+
+
+### [Ethics, Privacy, AI in society, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses/70052/){:target="_blank" rel="noopener noreferrer"}
+##### Jan 2023 - present
+#### Lab helper
+Helping students with tutorials in Python on AI fairness.
+
+Supervisors: [Dr. Novi Quadrianto](https://profiles.sussex.ac.uk/p335583-novi-quadrianto){:target="_blank" rel="noopener noreferrer"}, [Prof. Michael Huth](https://www.imperial.ac.uk/people/m.huth){:target="_blank" rel="noopener noreferrer"}
+<br/>
+<br/>
+
+### [Complexity & Networks, Department of Physics](https://www.imperial.ac.uk/media/imperial-college/faculty-of-natural-sciences/department-of-physics/public/students/current-students/course-list/L6-CN-2021-22.pdf){:target="_blank" rel="noopener noreferrer"}
+##### Jan 2021 - present
+#### Lab demonstrator
+Helping students with Python-based simulations of the Oslo sandpile model and Barabasi-Albert network model.
+
+Supervisors: [Prof. Kim Christensen](https://www.imperial.ac.uk/people/k.christensen){:target="_blank" rel="noopener noreferrer"}, [Dr Tim Evans](https://www.imperial.ac.uk/people/t.evans){:target="_blank" rel="noopener noreferrer"}
+<br/>
+<br/>
+
+### [Cryptography Engineering, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses/70009/){:target="_blank" rel="noopener noreferrer"}
+##### Jan 2021 - present
+#### Teaching Assistant
+Participating in (and occasionally running) tutorials. Creating Jupyter notebooks with practical exercises and examples of cryptographic protocols, as well as the history of cryptography.
+
+Supervisor: [Prof. Michael Huth](https://www.imperial.ac.uk/people/m.huth){:target="_blank" rel="noopener noreferrer"}
+<br/>
+<br/>
+
+### [Net & Web Security, Department of Computing](331.cybersec.fun/){:target="_blank" rel="noopener noreferrer"}
+##### Jan 2021 - Apr 2021
+#### Teaching Assistant
+Answering students’ questions on course content during tutorials.
+
+Supervisor: [Dr Sergio Maffeis](https://www.imperial.ac.uk/people/sergio.maffeis){:target="_blank" rel="noopener noreferrer"}
+
+<br/>
+<br/>
+<br/>
+
 
 
 # AWARDS & GRANTS
