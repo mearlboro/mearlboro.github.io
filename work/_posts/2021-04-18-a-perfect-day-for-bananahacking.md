@@ -323,4 +323,13 @@ Title of this post is a ref to Salinger's short story [_A perfect day for banana
 I first found out about most of this Banana Hacker stuff from Luxferre's [webpage](http://831337.xyz/) and other [webpage](https://luxferre.top).
 The Banana Hackers are on [google sites](https://sites.google.com/view/bananahackers/) and on [youtube](https://www.youtube.com/channel/UCwe7iCNm4ZJpP9wN_Y02kbA). They also have the [Banana Hackers wiki](https://wiki.bananahackers.net/)
 
-[A guide for sideloading apps to KaiOS](https://kaptein.me/blog/sideloading-and-deploying-apps-to-kai-os/) and [a guide for installing Gerda](https://kaptein.me/blog/installing-gerda-os-on-nokia-8110-tutorial/) on Martin Kaptein's site
+[A guide for sideloading apps to KaiOS](https://kaptein.me/blog/sideloading-and-deploying-apps-to-kai-os/) and [a guide for installing Gerda](https://kaptein.me/blog/installing-gerda-os-on-nokia-8110-tutorial/) on Martin Kaptein's site.
+
+#### Update - Jan 2024
+
+The KaiOS community has been working hard on app development and there are even more hackers than ever engaging with the ecosystem. Therefore I am sharing two new important resources, thanks to [Tom Barasso](https://barrasso.me/):
+
+- the development blog [KaiOS.dev](https://kaios.dev/)
+- landing page with lots of KaiOS apps [KaiOS.app](https://kaios.app/)
+
+
