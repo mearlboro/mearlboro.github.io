@@ -1,0 +1,39 @@
+---
+layout: page
+---
+
+
+<h1>{{ page.title }}</h1>
+{% if page.authors %}
+<h4>{{ page.authors }}</h4>
+{% endif %}
+
+{% if page.paper %}
+	<a href="{{ page.paper }}" target="_blank">DOWNLOAD</a>&nbsp;&nbsp;
+{% endif %}
+{% if page.arxiv %}
+	<a href="{{ page.arxiv }}" target="_blank">{{ page.arxiv_display }}</a>&nbsp;&nbsp;
+{% endif %}
+{% if page.doi %}
+	<a href="{{ page.doi }}" target="_blank">{{ page.doi_display }}</a>&nbsp;&nbsp;
+{% endif %}
+
+</br>
+</br>
+
+<p class="justify"><i>Abstract</i>. {{ page.abstract }}</p>
+
+</br>
+</br>
+
+<img src="{{ page.img }}" width="100%" class="white-bg">
+<p><img src="{{ page.img_caption }}"></p>
+
+{{ page.content }}
+
+</br>
+</br>
+</br>
+</br>
+
+

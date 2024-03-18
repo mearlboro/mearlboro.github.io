@@ -117,6 +117,10 @@ h2, h2 a, h4, h4 a {
   font-weight: 900;
 }
 
+h4, h4 a {
+  font-size: 18px;
+}
+
 h3, h3 a, h3 a.post-link {
   font-family: Baskerville, serif;
   margin-top:10px;
@@ -284,4 +288,8 @@ body, header, footer {
 
 .grey, h5 {
   color: #999;
+}
+
+.white-bg {
+  background-color: #fff;
 }
