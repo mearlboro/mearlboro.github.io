@@ -4,6 +4,7 @@ title: SnowWall
 subtitle: MEng software project - building a front-end for investigating outbound connections and privacy invasion on MS Windows
 web: https://snowwall.tech
 thesis: /assets/files/mis.pm-snowwall-thesis.pdf
+talk: /talks/2017-snowwall
 img: /assets/img/proj/snowwall.png
 permalink: /projects/snowwall
 tags: security , privacy , software

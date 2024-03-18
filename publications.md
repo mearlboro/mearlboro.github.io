@@ -8,7 +8,7 @@ conferences:
     date: 29-30 Nov 2023
     where: Zeppelin University, Friedrichshaven, Germany
     url: "https://future-of-the-concert.org/?lang=en"
-    poster: /assets/img/pub/poster_Sync_Improv_FoC23.pdf
+    poster: /assets/img/pub/poster_Sync_Improv_FoC23.png
     programme: "https://future-of-the-concert.org/programm/?lang=en"
   - name: ASSC26
     description: The 26th annual meeting of the Association for the Scientific Study of Consciousness.
