@@ -25,9 +25,67 @@ _(For the novella version, have a look at my [CV](/assets/files/mis.pm-cv.pdf){:
 <br/>
 <br/>
 
+# Teaching Experience
+
+### [Statistical information theory, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses//){:target="_blank" rel="noopener noreferrer"}
+##### Oct 2023 - present
+#### Teaching Assistant
+Developing the practical coding side of the tutorials in the form of Python notebooks with coding and decoding challenges, as well as participating in tutorials.
+
+Supervisors: [Dr Pedro Mediano](){:target="_blank" rel="noopener noreferrer"}
+<br/>
+<br/>
+
+
+### [Ethics, Privacy, AI in society, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses/70052/){:target="_blank" rel="noopener noreferrer"}
+##### Jan 2023 - present
+#### Teaching Assistant
+Helping students with tutorials in Python on AI fairness.
+
+Supervisors: [Dr Novi Quadrianto](https://profiles.sussex.ac.uk/p335583-novi-quadrianto){:target="_blank" rel="noopener noreferrer"}, [Prof Michael Huth](https://www.imperial.ac.uk/people/m.huth){:target="_blank" rel="noopener noreferrer"}
+<br/>
+<br/>
+
+### [Complexity & Networks, Department of Physics](https://www.imperial.ac.uk/media/imperial-college/faculty-of-natural-sciences/department-of-physics/public/students/current-students/course-list/L6-CN-2021-22.pdf){:target="_blank" rel="noopener noreferrer"}
+##### Jan 2021 - present
+#### Lab demonstrator
+Helping students with Python-based simulations of the Oslo sandpile model and Barabasi-Albert network model.
+
+Supervisors: [Prof Kim Christensen](https://www.imperial.ac.uk/people/k.christensen){:target="_blank" rel="noopener noreferrer"}, [Dr Tim Evans](https://www.imperial.ac.uk/people/t.evans){:target="_blank" rel="noopener noreferrer"}
+<br/>
+<br/>
+
+### [Cryptography Engineering, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses/70009/){:target="_blank" rel="noopener noreferrer"}
+##### Jan 2021 - present
+#### Teaching Assistant
+Participating in (and occasionally running) tutorials. Creating Jupyter notebooks with practical exercises and examples of cryptographic protocols, as well as the history of cryptography.
+
+Supervisor: [Prof Michael Huth](https://www.imperial.ac.uk/people/m.huth){:target="_blank" rel="noopener noreferrer"}
+<br/>
+<br/>
+
+### [Net & Web Security, Department of Computing](331.cybersec.fun/){:target="_blank" rel="noopener noreferrer"}
+##### Jan 2021 - Apr 2021
+#### Teaching Assistant
+Answering students’ questions on course content during tutorials.
+
+Supervisor: [Dr Sergio Maffeis](https://www.imperial.ac.uk/people/sergio.maffeis){:target="_blank" rel="noopener noreferrer"}
+
+<br/>
+<br/>
+<br/>
+
 
 
 # work experience
+
+### [Imperial College London](https://imperial.ac.uk){:target="_blank" rel="noopener noreferrer"}
+##### Feb 2021 - present
+#### PhD Student Teaching Assistant
+Supporting lectures and tutorials, creating study materials for courses in the departments of computing & physics.
+<br/>
+<br/>
+
 
 ### [Netcraft](https://netcraft.com){:target="_blank" rel="noopener noreferrer"}
 ##### Oct 2017 - Feb 2020
@@ -43,8 +101,7 @@ I have also run the Netcraft Web Server Survey, which collects comprehensive sta
 ### Freelance
 ##### 2017 - Present
 #### Software engineering & Cybersecurity consultant
-Advising SMEs on privacy, security policy and cyber-attack mitigation, using my personal custom investigative software tools.
-Malware detection and attack tracking. Forensics. Collaboration with consultancy firm [Remora](https://remora.co.uk){:target="_blank" rel="noopener noreferrer"}.
+Advising SMEs on privacy, security policy and cyber-attack mitigation, malware detection and attack tracking. Forensics. Collaboration with consultancy firm [Remora](https://remora.co.uk){:target="_blank" rel="noopener noreferrer"}.
 Custom software development and quantitative research.
 <br/>
 <br/>
@@ -56,16 +113,13 @@ Custom software development and quantitative research.
 I started by designing and building the website, then progressed to test, debug, and develop applications for clinical
 trials data collection and automatically randomising treatment assigned to patients to maximise
 statistical power of the trial.
-I completed [Good Clinical Practice](https://www.nihr.ac.uk/health-and-care-professionals/learning-and-support/good-clinical-practice.htm) training, joined some trial management meetings an
-worked on validation of data and trial design.
-
-Here I have received an accreditation for .NET Development and learned iOS development in Swift.
+Here I completed [Good Clinical Practice](https://www.nihr.ac.uk/health-and-care-professionals/learning-and-support/good-clinical-practice.htm) training, received an accreditation for .NET Development and learned iOS development in Swift.
 Some of the most intriguing technical tasks I tackled here were reverse engineering and
 low-level operating system management in Windows.
 
 My work in clinical trials, especially focusing on
 mental health, have stimulated my interest in neuroscience and psychiatric research. During this time
-I have become acquainted with the [Maudsley Psychedelic Society](https://www.youtube.com/channel/UCRh1HFc0_bZZh4MA4d-BqoA){:target="_blank" rel="noopener noreferrer"} and have attended most of their talks.
+I have become acquainted with the [Maudsley Psychedelic Society](https://www.youtube.com/channel/UCRh1HFc0_bZZh4MA4d-BqoA){:target="_blank" rel="noopener noreferrer"} and have attended most of their meetings.
 
 Supervisor: Dr Evangelos Georgiou
 <br/>
@@ -88,47 +142,6 @@ Supervisors: [Dr Philippa Gardner](http://www.doc.ic.ac.uk/~pg/){:target="_blank
 ##### Jun 2014 - Sep 2014
 #### Software Engineering Intern
 Front-end and back-end development for user settings in Java using dependency injection.
-
-<br/>
-<br/>
-<br/>
-
-# Teaching Experience
-
-
-### [Ethics, Privacy, AI in society, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses/70052/){:target="_blank" rel="noopener noreferrer"}
-##### Jan 2023 - present
-#### Lab helper
-Helping students with tutorials in Python on AI fairness.
-
-Supervisors: [Dr. Novi Quadrianto](https://profiles.sussex.ac.uk/p335583-novi-quadrianto){:target="_blank" rel="noopener noreferrer"}, [Prof. Michael Huth](https://www.imperial.ac.uk/people/m.huth){:target="_blank" rel="noopener noreferrer"}
-<br/>
-<br/>
-
-### [Complexity & Networks, Department of Physics](https://www.imperial.ac.uk/media/imperial-college/faculty-of-natural-sciences/department-of-physics/public/students/current-students/course-list/L6-CN-2021-22.pdf){:target="_blank" rel="noopener noreferrer"}
-##### Jan 2021 - present
-#### Lab demonstrator
-Helping students with Python-based simulations of the Oslo sandpile model and Barabasi-Albert network model.
-
-Supervisors: [Prof. Kim Christensen](https://www.imperial.ac.uk/people/k.christensen){:target="_blank" rel="noopener noreferrer"}, [Dr Tim Evans](https://www.imperial.ac.uk/people/t.evans){:target="_blank" rel="noopener noreferrer"}
-<br/>
-<br/>
-
-### [Cryptography Engineering, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses/70009/){:target="_blank" rel="noopener noreferrer"}
-##### Jan 2021 - present
-#### Teaching Assistant
-Participating in (and occasionally running) tutorials. Creating Jupyter notebooks with practical exercises and examples of cryptographic protocols, as well as the history of cryptography.
-
-Supervisor: [Prof. Michael Huth](https://www.imperial.ac.uk/people/m.huth){:target="_blank" rel="noopener noreferrer"}
-<br/>
-<br/>
-
-### [Net & Web Security, Department of Computing](331.cybersec.fun/){:target="_blank" rel="noopener noreferrer"}
-##### Jan 2021 - Apr 2021
-#### Teaching Assistant
-Answering students’ questions on course content during tutorials.
-
-Supervisor: [Dr Sergio Maffeis](https://www.imperial.ac.uk/people/sergio.maffeis){:target="_blank" rel="noopener noreferrer"}
 
 <br/>
 <br/>
@@ -186,31 +199,14 @@ Supervisors: [Prof Henrik J. Jensen](https://www.ma.imperial.ac.uk/~hjjens/){:ta
 ##### 2016 - 2017
 #### MEng Computing (distinction)
 
-Investigating the relationship between the internet's architecture, firewalls, and privacy, and building a tool in C# which communicates with the Windows networking interfaces to allow users to visualise the flow of outbound data. The project was awarded a distinction by Imperial College, was presented at the London Met Cybercrime Unit, and was a finalist of [HutZero](https://www.hutzero.co.uk/){:target="_blank" rel="noopener noreferrer"} 2018, a cyber-security start-up incubator. It was also used, successfully, to catch the bad guys - more than once!
+Investigating the relationship between the internet's architecture, firewalls, and privacy, and building a tool in C# which communicates with the Windows networking interfaces to allow users to visualise and manage the flow of outbound data. The project was awarded a distinction by Imperial College, was presented at the London Met Cybercrime Unit, and was a finalist of [HutZero](https://www.hutzero.co.uk/){:target="_blank" rel="noopener noreferrer"} 2018, a cyber-security start-up incubator. It was also used, successfully, to catch the bad guys - more than once!
 
 Supervisor: [Prof William J. Knottenbelt](https://www.doc.ic.ac.uk/~wjk/){:target="_blank" rel="noopener noreferrer"}<br/>
 Thesis: "SnowWall: A visual firewall for the surveillance society" [[link]](/assets/files/snowwall.pdf)
-<br/>
-<br/>
 
-### [Department of Computing, Imperial College London](https://www.imperial.ac.uk/computing/){:target="_blank" rel="noopener noreferrer"}
-##### 2013 - 2016
-#### BEng Computing
 Courses & interests:
 - Computing: Computational Neuroscience, Information Theory & Codes, Cryptography Engineering, Networks & Communication, Net & Web Security, Privacy Enhancing Techniques, Software Reliability, Models of Computation, Functional Programming, Natual Language Processing
-- Humanities: Philosophy of Science (with Dr Scott Biagi), Aesthetics (with Dr Scott Biagi), Philosophy of Mind (with Dr Greg Artus)
-
-Group Projects:
-- 2016 [Seek](https://github.com/mearlboro/seek-legacy){:target="_blank" rel="noopener noreferrer"}: An Information Retrieval tool written in Python for natural language processing on large corpora. Can extract, with good accuracy, topics, names, and summaries from unstructured text.
-- 2016 [Scanalysis](https://github.com/mearlboro/srtool){:target="_blank" rel="noopener noreferrer": }: A static analysis tool written in Scala which parses a piece of code and transforms it into a logic statement, verifying against a set of pre and post-conditions whether the code is correct
-- 2015 [Doodlr.js](https://github.com/mearlboro/doodlr.js){:target="_blank" rel="noopener noreferrer"}: A Javascript application with real-time collaborative digital painting features. It displays a wall of all canvases, where users can pick one and join in collaborative drawing. Built on top of Meteor and Parse, so unfortunately defunct.
-- 2015 [PintOS](https://web.stanford.edu/class/cs140/projects/pintos/pintos_1.html){:target="_blank" rel="noopener noreferrer"}: a version of the Standford operating systems exercise in C. Contributed implementations of system calls, memory management, thread synchronisation and interruptions.
-- 2014 [WHack](https://github.com/mearlboro/whack){:target="_blank" rel="noopener noreferrer"}: A compiler written from scratch in Haskell for a simplified C-like language called WACC.
-- 2014 [RaspberryDots](https://github.com/mearlboro/ARM11){:target="_blank" rel="noopener noreferrer"}: An assembler and emulator for ARM architecture. Fully implemented in C, the system was then deployed on a Raspberry Pi and used to encode a sequence of characters into blinks of LEDs.
-- 2013 [Computational Morality](): a research project on logic models for computational morality and their use for AI applied to decision-making for trolley problems.
-
-Individual Projects:
-- 2015 [Enigma](https://github.com/mearlboro/enigma){:target="_blank" rel="noopener noreferrer"}: an enigma machine simulation in C++.
+- Humanities: Philosophy of Science, Aesthetics, Philosophy of Mind
 <br/>
 <br/>
 
@@ -230,7 +226,6 @@ Participated in local and national competitions:
 - National Applied Informatics Contest 2011 (CIA) - Ranked #6
 - County Mathematics Olympiad 2010 (OJM) - Second prize
 - National Physics Olympiad 2009 (ONF) - Ranked #12
-
 
 <br/>
 <br/>

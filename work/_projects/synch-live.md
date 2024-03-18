@@ -4,6 +4,7 @@ title: Synch.Live
 subtitle: Building and using an open technology framework to explore collective emergent behaviour in humans.
 authors: with Hillary Leone, Dr. Pedro Mediano, Dr. Fernando Rosas, Dr. Daniel Bor, Andrei Sas
 talk: /talks/2022-synchlive
+paper: "https://osf.io/preprints/psyarxiv/e8j39"
 web: "https://synch.live"
 permalink: /synch-live
 img: /assets/img/talks/2022-synchlive.png

@@ -25,7 +25,6 @@ place devoted to the imagination. There are various types of imaginaria, centers
 {% endif %}
 {% endfor %}
 
-
 # Hacking
 {% for proj in site.projects %}
 {% if proj.tags contains "security" or proj.tags contains "privacy" or proj.tags contains "hardware" %}
@@ -51,66 +50,6 @@ place devoted to the imagination. There are various types of imaginaria, centers
 <br/>
 
 
-# Web & Design projects
-<br/>
-<br/>
-<div class="col-1-of-3">
-	<a href="/assets/img/proj/netcraft.png" target="_blank"><img src="/assets/img/proj/netcraft.png"></a><br/>
-</div>
-<div class="col-2-of-3">
-	<h3>Netcraft</h3>
-	<p><a href="http://netcraft.com" target="_blank">netcraft.com</a></p>
-	<p>During my employment with Netcraft, aside from the cyber-security work, I had the great opportunity to act as the graphics and web designer for the iconic rainbow brand.</p>
-</div>
-
-<div class="col-1-of-3">
-	<a href="/assets/img/proj/apdop.png" target="_blank"><img src="/assets/img/proj/apdop.png"></a><br/>
-</div>
-<div class="col-2-of-3">
-	<h3>Cinematographer portfolio</h3>
-	<p><a href="http://andreisas.com" target="_blank">andreisas.com</a></p>
-	<p>An uber-clean minimal Jekyll site to display cinematography work, be it stills, videos or show reels.</p>
-</div>
-
-<div class="col-1-of-3">
-    <a href="/assets/img/proj/ratstales.png" target="_blank"><img src="/assets/img/proj/ratstales.png"></a><br/>
-</div>
-<div class="col-2-of-3">
-	<h3>Rat's Tales</h3>
-	<p><a href="http://ratstales.co.uk" target="_blank">ratstales.co.uk</a></p>
-	<p>Did you know you’re never more than 10ft away from a rat, but more than 100ft away from a book? We want to rectify this by sellotaping books to rats. </p>
-</div>
-
-<div class="col-1-of-3">
-	<a href="/assets/img/proj/shepherdtone.png" target="_blank"><img src="/assets/img/proj/shepherdtone.png"></a><br/>
-</div>
-<div class="col-2-of-3">
-	<h3>ShepherdTone</h3>
-	<p><a href="http://shepherdtone.co.uk" target="_blank">shepherdtone.co.uk</a></p>
-	<p>A a group of artists and media professionals banded together to tell the most compelling stories.</p>
-</div>
-
-<div class="col-1-of-3">
-	<a href="/assets/img/proj/kctu.png" target="_blank"><img src="/assets/img/proj/kctu.png"></a><br/>
-</div>
-<div class="col-2-of-3">
-	<h3>KCTU</h3>
-	<p><a href="http://ctu.co.uk" target="_blank">ctu.co.uk</a></p>
-	<p>The King’s Clinical Trials Unit (KCTU) offers a range of services to support researchers conducting non-commercial trials</p>
-</div>
-
-<div class="col-1-of-3">
-	<a href="/assets/img/proj/pureeros.png" target="_blank"><img src="/assets/img/proj/pureeros.png"></a><br/>
-</div>
-<div class="col-2-of-3">
-    <h3>Pureros</h3>
-	<p><a href="http://pureeros.com" target="_blank">pureeros.com</a></p>
-	<p>An e-boutique dedicated to the empowering of women and the expression of their sexuality.</p>
-</div>
-
-<br/>
-<br/>
-
 # List of articles
 
 {% assign sorted = site.posts | sort: 'title' | reverse %}
@@ -122,4 +61,21 @@ place devoted to the imagination. There are various types of imaginaria, centers
 <br/>
 
 
+# Bonus: University projects
+A list of my university coursework and projects:
+### Group projects
+- 2016 [Seek](https://github.com/mearlboro/seek-legacy){:target="_blank" rel="noopener noreferrer"}: An Information Retrieval tool written in Python for natural language processing on large corpora. Can extract, with good accuracy, topics, names, and summaries from unstructured text.
+- 2016 [Scanalysis](https://github.com/mearlboro/srtool){:target="_blank" rel="noopener noreferrer": }: A static analysis tool written in Scala which parses a piece of code and transforms it into a logic statement, verifying against a set of pre and post-conditions whether the code is correct
+- 2015 [Doodlr.js](https://github.com/mearlboro/doodlr.js){:target="_blank" rel="noopener noreferrer"}: A Javascript application with real-time collaborative digital painting features. It displays a wall of all canvases, where users can pick one and join in collaborative drawing. Built on top of Meteor and Parse, so unfortunately defunct.
+- 2015 [PintOS](https://web.stanford.edu/class/cs140/projects/pintos/pintos_1.html){:target="_blank" rel="noopener noreferrer"}: a version of the Standford operating systems exercise in C. Contributed implementations of system calls, memory management, thread synchronisation and interruptions.
+- 2014 [WHack](https://github.com/mearlboro/whack){:target="_blank" rel="noopener noreferrer"}: A compiler written from scratch in Haskell for a simplified C-like language called WACC.
+- 2014 [RaspberryDots](https://github.com/mearlboro/ARM11){:target="_blank" rel="noopener noreferrer"}: An assembler and emulator for ARM architecture. Fully implemented in C, the system was then deployed on a Raspberry Pi and used to encode a sequence of characters into blinks of LEDs.
+- 2013 [Computational Morality](): a research project on logic models for computational morality and their use for AI applied to decision-making for trolley problems.
 
+### Individual Projects
+- 2015 [Enigma](https://github.com/mearlboro/enigma){:target="_blank" rel="noopener noreferrer"}: an enigma machine simulation in C++.
+
+<br/>
+<br/>
+<br/>
+<br/>
