@@ -11,3 +11,6 @@ img: /assets/img/talks/2020-comonadic-eca.png
 
 _Abstract._ Cellular automata (CA) is one of the prime examples of artificial life, as well as the emergence of complex structures at the systemic level from simple interactions between the individual parts of the system. Moreover, CA are defined iteratively over time, and manifest such complex properties even when their definition is fully deterministic. Elementary CA (ECA), introduced by Stephen Wolfram in [[1]](#1), provide the most simple, uni-dimensional example of CA which still manifest complex patterns and are fully defined through bitwise operations. In spite of popular appeal and large bodies of work on the behaviour of CA, there is little research on computational primitives that can be used to implement CA intuitively, by abstracting away the procedural or object-oriented implementation details. In this talk, I present how to use comonadic computations in Haskell to define iterative computations on infinite lists.
 
+[[1]]() Stephen Wolfram, _A New Kind of Science_. Wolfram Media, Champaign, IL, 2002. ISBN 1-57955-008-8.
+Available for free [here](https://www.wolframscience.com/nks/){:target="_blank" rel="noopener noreferrer"}
+
