@@ -15,7 +15,7 @@ I have approximate knowledge of many things, so if you ever feel like talking ab
 * Email: *madalina.sas [@] pm.me*
 * PGP key: [download](/assets/files/mis.asc)
 * RSS: [feed](/feed.xml)
-* CV: [download](/assets/files/mis.pm-cv.pdf)
+* CV: [download](/assets/files/mis.pm-cv-2025.pdf)
 </div>
 
 

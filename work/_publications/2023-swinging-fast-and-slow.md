@@ -1,12 +1,13 @@
 ---
 layout: publication
 title: "Swinging, Fast and Slow: Multiscale Synchronisation Dynamics Reveals the Impact of an Improvisatory Approach to Performance on Music Experience"
-authors: "Takayuki Nozawa, Madalina I. Sas, David Dolan, Hardik Rajpal, Fernando E. Rosas, Christopher Timmermann, Pedro A.M. Mediano, Keigo Honda, Shunnichi Amano, Yoshihiro Miyake, and Henrik J. Jensen"
-paper: "https://osf.io/cqxya/download/"
+authors: "Takayuki Nozawa*, Madalina I Sas*, David Dolan, Hardik Rajpal, Fernando E Rosas, Christopher Timmermann, Pedro AM Mediano, Keigo Honda, Shunnichi Amano, Yoshihiro Miyake, and Henrik J Jensen"
+journal: Scientific Reports 15, 10097 (2025)
+paper: "https://www.nature.com/articles/s41598-025-90271-1"
 arxiv: "https://osf.io/preprints/psyarxiv/cqxya"
 arxiv_display: "psyarxiv/cqxya"
-doi: "https://doi.org/10.31234/osf.io/cqxya"
-doi_display: "10.31234/osf.io/cqxya"
+doi: "https://www.nature.com/articles/s41598-025-90271-1"
+doi_display: "10.1038/s41598-025-90271-1"
 date: 30 August 2023
 permalink: /publications/2023-swinging-fast-and-slow
 img: /assets/img/pub/swinging-fast-and-slow.png
