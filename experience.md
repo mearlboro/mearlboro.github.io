@@ -20,16 +20,23 @@ n.<br/>
 A novel whose principal subject is the moral, psychological, and intellectual development of a usually youthful main character. <br/>
 From German, *bildung*, formation, education + *roman*, novel.
 <br/>
-_(For the novella version, have a look at my [CV](/assets/files/mis.pm-cv.pdf){:target="_blank"})_
+_(For the novella version, have a look at my [CV](/assets/files/mis.pm-cv-2025.pdf){:target="_blank"})_
 
 <br/>
 <br/>
 
 # Teaching Experience
 
+### [Cryptography Engineering, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses//){:target="_blank" rel="noopener noreferrer"}
+##### Spring 2025
+#### Lecturer 
+Module leader for the Cryptography Engineering course, including lectures, tutorials and assessment.
+<br/>
+<br/>
+
 ### [Statistical information theory, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses//){:target="_blank" rel="noopener noreferrer"}
-##### Oct 2023 - present
-#### Teaching Assistant
+##### Autumn 2023
+#### Graduate Teaching Assistant
 Developing the practical coding side of the tutorials in the form of Python notebooks with coding and decoding challenges, as well as participating in tutorials.
 
 Supervisors: [Dr Pedro Mediano](){:target="_blank" rel="noopener noreferrer"}
@@ -38,8 +45,8 @@ Supervisors: [Dr Pedro Mediano](){:target="_blank" rel="noopener noreferrer"}
 
 
 ### [Ethics, Privacy, AI in society, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses/70052/){:target="_blank" rel="noopener noreferrer"}
-##### Jan 2023 - present
-#### Teaching Assistant
+##### Spring 2023
+#### Graduate Teaching Assistant
 Helping students with tutorials in Python on AI fairness.
 
 Supervisors: [Dr Novi Quadrianto](https://profiles.sussex.ac.uk/p335583-novi-quadrianto){:target="_blank" rel="noopener noreferrer"}, [Prof Michael Huth](https://www.imperial.ac.uk/people/m.huth){:target="_blank" rel="noopener noreferrer"}
@@ -47,7 +54,7 @@ Supervisors: [Dr Novi Quadrianto](https://profiles.sussex.ac.uk/p335583-novi-qua
 <br/>
 
 ### [Complexity & Networks, Department of Physics](https://www.imperial.ac.uk/media/imperial-college/faculty-of-natural-sciences/department-of-physics/public/students/current-students/course-list/L6-CN-2021-22.pdf){:target="_blank" rel="noopener noreferrer"}
-##### Jan 2021 - present
+##### Spring 2021 - Spring 2023 
 #### Lab demonstrator
 Helping students with Python-based simulations of the Oslo sandpile model and Barabasi-Albert network model.
 
@@ -56,8 +63,8 @@ Supervisors: [Prof Kim Christensen](https://www.imperial.ac.uk/people/k.christen
 <br/>
 
 ### [Cryptography Engineering, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses/70009/){:target="_blank" rel="noopener noreferrer"}
-##### Jan 2021 - present
-#### Teaching Assistant
+##### Spring 2021 - Spring 2023
+#### Graduate Teaching Assistant
 Participating in (and occasionally running) tutorials. Creating Jupyter notebooks with practical exercises and examples of cryptographic protocols, as well as the history of cryptography.
 
 Supervisor: [Prof Michael Huth](https://www.imperial.ac.uk/people/m.huth){:target="_blank" rel="noopener noreferrer"}
@@ -65,8 +72,8 @@ Supervisor: [Prof Michael Huth](https://www.imperial.ac.uk/people/m.huth){:targe
 <br/>
 
 ### [Net & Web Security, Department of Computing](331.cybersec.fun/){:target="_blank" rel="noopener noreferrer"}
-##### Jan 2021 - Apr 2021
-#### Teaching Assistant
+##### Spring 2021
+#### Graduate Teaching Assistant
 Answering students’ questions on course content during tutorials.
 
 Supervisor: [Dr Sergio Maffeis](https://www.imperial.ac.uk/people/sergio.maffeis){:target="_blank" rel="noopener noreferrer"}
@@ -79,17 +86,40 @@ Supervisor: [Dr Sergio Maffeis](https://www.imperial.ac.uk/people/sergio.maffeis
 
 # work experience
 
+### [FairOnChain consortium](https://faironchain.org){:target="_blank" rel="noopener noreferrer"}
+##### 2024 - present 
+#### Researcher 
+FairOnChain is an ambitious European collaboration aiming to develop a publicly accessible infrastructure that enables easy access and searchability of blockchain data in accordance with the FAIR principles of open science.
+<br/>
+<br/>
+
+### Freelance
+##### 2017 - Present
+#### Software Engineering & Cybersecurity Consultant
+Advising SMEs on privacy, security policy and cyber-attack mitigation, malware detection and attack tracking. Forensics. Collaboration with consultancy firm [Remora](https://remora.co.uk){:target="_blank" rel="noopener noreferrer"}.
+Custom software development, web development, and quantitative research.
+<br/>
+<br/>
+
+
 ### [Imperial College London](https://imperial.ac.uk){:target="_blank" rel="noopener noreferrer"}
-##### Feb 2021 - present
-#### PhD Student Teaching Assistant
+##### Jan 2021 - Dec 2023
+#### Graduate Teaching Assistant
 Supporting lectures and tutorials, creating study materials for courses in the departments of computing & physics.
+<br/>
+<br/>
+
+### [Synch.Live](https://synch.live){:target="_blank" rel="noopener noreferrer"}
+##### Jun 2020 - Present
+#### System Architect & Researcher 
+Designing, building and operating a free-open source framework for collective intelligence research  in humans using RaspberryPi.
 <br/>
 <br/>
 
 
 ### [Netcraft](https://netcraft.com){:target="_blank" rel="noopener noreferrer"}
 ##### Oct 2017 - Feb 2020
-#### Internet services developer
+#### Internet Services Developer
 Started with content filtering, then moved on to phishing site detection on the
 web or social platforms, automated security examination of networks, and automated countermeasures against
 internet fraud. Sometimes I would follow up where the automated systems were limited, doing detective work
@@ -97,15 +127,6 @@ to track down institutions or people all over the internet in order to let them 
 I have also run the Netcraft Web Server Survey, which collects comprehensive statistics about websites and hosts on the internet, and lead the redesign of the website.
 <br/>
 <br/>
-
-### Freelance
-##### 2017 - Present
-#### Software engineering & Cybersecurity consultant
-Advising SMEs on privacy, security policy and cyber-attack mitigation, malware detection and attack tracking. Forensics. Collaboration with consultancy firm [Remora](https://remora.co.uk){:target="_blank" rel="noopener noreferrer"}.
-Custom software development and quantitative research.
-<br/>
-<br/>
-
 
 ### [King's Clinical Trials Unit](http://ctu.co.uk){:target="_blank" rel="noopener noreferrer"}
 ##### Dec 2014 - Dec 2016
@@ -187,11 +208,15 @@ Awarded Best Project in its category, Best Presentation and Best Website.
 # Education
 
 ### [Centre for Complexity Science, Imperial College London](https://www.imperial.ac.uk/complexity-science){:target="_blank" rel="noopener noreferrer"}
-##### 2020 - present
+##### 2020 - 2025 
 #### PhD Complexity Science
 Exploring the emergence of self-organised collective behaviour at multiple scales using tools from complexity science, information theory, neuroscience and psychedelic science, signal processing, network science, statistical mechanics, and computer science. Building hardware for experiments as well as simulations. Multiple interdisciplinary collaborations with musicians, neuroscientists, psychologists and social scientists.
 
-Supervisors: [Prof Henrik J. Jensen](https://www.ma.imperial.ac.uk/~hjjens/){:target="_blank" rel="noopener noreferrer"}, [Prof William J. Knottenbelt](https://www.doc.ic.ac.uk/~wjk/){:target="_blank" rel="noopener noreferrer"}, [Dr Fernando E. Rosas](https://www.imperial.ac.uk/people/f.rosas){:target="_blank" rel="noopener noreferrer"}
+
+Supervisors: [Prof Henrik J. Jensen](https://www.ma.imperial.ac.uk/~hjjens/){:target="_blank" rel="noopener noreferrer"}, [Prof William J. Knottenbelt](https://www.doc.ic.ac.uk/~wjk/){:target="_blank" rel="noopener noreferrer"}, [Dr Fernando E. Rosas](https://www.imperial.ac.uk/people/f.rosas){:target="_blank" rel="noopener noreferrer"} <br/>
+Thesis: "Together, but not the same: quantifying emergence in self-organising collective behaviour"
+
+Examiners: [Dr Adam Barrett](https://profiles.sussex.ac.uk/p156234-adam-barrett/){:target="_blank" rel="noopener noreferrer"} and [Dr Tim Evans](https://profiles.imperial.ac.uk/t.evans){:target="_blank" rel="noopener noreferrer"}
 <br/>
 <br/>
 
@@ -202,7 +227,7 @@ Supervisors: [Prof Henrik J. Jensen](https://www.ma.imperial.ac.uk/~hjjens/){:ta
 Investigating the relationship between the internet's architecture, firewalls, and privacy, and building a tool in C# which communicates with the Windows networking interfaces to allow users to visualise and manage the flow of outbound data. The project was awarded a distinction by Imperial College, was presented at the London Met Cybercrime Unit, and was a finalist of [HutZero](https://www.hutzero.co.uk/){:target="_blank" rel="noopener noreferrer"} 2018, a cyber-security start-up incubator. It was also used, successfully, to catch the bad guys - more than once!
 
 Supervisor: [Prof William J. Knottenbelt](https://www.doc.ic.ac.uk/~wjk/){:target="_blank" rel="noopener noreferrer"}<br/>
-Thesis: "SnowWall: A visual firewall for the surveillance society" [[link]](/assets/files/snowwall.pdf)
+Thesis: "SnowWall: a visual firewall for the surveillance society" [[link]](/assets/files/snowwall.pdf)
 
 Courses & interests:
 - Computing: Computational Neuroscience, Information Theory & Codes, Cryptography Engineering, Networks & Communication, Net & Web Security, Privacy Enhancing Techniques, Software Reliability, Models of Computation, Functional Programming, Natual Language Processing
