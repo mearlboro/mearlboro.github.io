@@ -1,8 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.7.0)
-      public_suffix (>= 2.0.2, < 5.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     colorator (1.1.0)
     concurrent-ruby (1.1.9)
     em-websocket (0.5.2)
@@ -21,7 +21,7 @@ GEM
       i18n (~> 0.7)
       jekyll-sass-converter (~> 1.0)
       jekyll-watch (~> 2.0)
-      kramdown-parser-gfm
+      kramdown (>= 1.17, < 3)
       liquid (~> 4.0)
       mercenary (~> 0.3.3)
       pathutil (~> 0.9)
@@ -37,8 +37,6 @@ GEM
       listen (~> 3.0)
     kramdown (2.3.1)
       rexml
-    kramdown-parser-gfm (1.1.0)
-      kramdown (~> 2.0)
     liquid (4.0.3)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -50,7 +48,7 @@ GEM
       jekyll-seo-tag (~> 2.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    public_suffix (4.0.6)
+    public_suffix (5.0.0)
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
