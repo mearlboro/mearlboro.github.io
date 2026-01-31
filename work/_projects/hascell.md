@@ -4,6 +4,7 @@ title: Hascell
 subtitle: Using comonadic computation to implement various cellular automata in Haskell.
 authors: with Julian Sutherland
 permalink: /hascell
+paper: /publications/2025-comonadic-ca
 talk: /talks/2020-comonadic-eca-haskell
 img: /assets/img/proj/hascell.png
 tags: science

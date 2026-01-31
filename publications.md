@@ -3,6 +3,26 @@ layout: page
 title: publications
 permalink: /publications
 conferences:
+  - name: "Granada Seminar on Computational and Statistical Physics"
+    date: 16-20 Sep 2025
+    url: https://granadaseminar.com/
+    description: The 18th Granada seminar on new tools and methods for complex system research, from molecules to living and intelligent systems.
+    where: Facultad de Ciencias, Granada, Spain 
+    programme: "https://granadaseminar.com/wp-content/uploads/2025/09/program_tentative.pdf"
+
+  - name: "Embracing Complexity: Principles and Practical Approaches to Emergence"
+    date: 23-28 Jun 2025
+    url: https://ifisc.uib-csic.es/en/events/conferences/embracing-complexity-25/
+    where: IFISC, Palma de Mallorca, Spain
+    description: The workshop offers a comprehensive and interdisciplinary perspective on the applications of emergence in examining various real-world systems, including its use in understanding high-order interactions and complexity across diverse biological and ecological scales.
+    programme: "https://ifisc.uib-csic.es/documents/1616/embracing-complexity-v3.png"
+
+  - name: "Emergence & Collective Dynamics Colloquium"
+    date: 30 May 2025
+    where: Institute du Cerveau (ICM), Paris, France
+    description: A symposium about higher-order dynamics and information-theoretic methods in the study of complex systems, with a focus on neuroscience and collective intelligence.
+    url: /assets/img/talks/collective-dyn-symp2025.jpg
+
   - name: 5th Conference on Autonomous Computing and Self-Organising Systems (ACSOS2024)
     description: The IEEE international conference on Autonomic Computing and Self-Organising Systems is the leading forum to share the latest research results, ideas and experiences in autonomic computing, self-adaptation and self-organization. 
     date: 16-20 Sep 2024 

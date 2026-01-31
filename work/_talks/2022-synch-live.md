@@ -2,9 +2,9 @@
 layout: project
 title: "Synch.Live: Emergent art. New science."
 subtitle: Building and using an open technology framework to explore collective emergent behaviour in humans.
-event: Data Natives Conference
-location: City University London
-date: "6 May 2022, 12:25"
+event: Engagement Day Conference 
+location: Imperial College London, UK 
+date: "22 Apr 2022, 14:30"
 slides: /assets/files/mis.pm-synchlive.pdf
 web: "https://synch.live"
 video: "https://www.youtube.com/watch?v=2L5KlpFCoDw&t=768s"
@@ -28,12 +28,12 @@ Synch.Live explores non-verbal communication and exercises deep attention to oth
 <div class="row">
   <div class="col-1-of-2">
     <video width="100%" preload="auto" autoplay="autoplay" muted="muted" loop="">
-        <source src="/assets/files/synchlive-simulate.ogv" type="video/ogg">
+        <source src="/assets/files/synchlive-simulate.mp4" type="video/mp4">
     </video>
   </div>
   <div class="col-1-of-2">
     <video width="100%" preload="auto" autoplay="autoplay" muted="muted" loop="" style="border:1px solid #fff">
-        <source src="/assets/files/synchlive-footage.ogv" type="video/ogg">
+        <source src="/assets/files/synchlive-footage.mp4" type="video/mp4">
     </video>
 </div>
 <p>Fig 1. (a) The results of simulating a Kuramoto-Vicsek self-propelled particles model, in the attempt of modelling the collective behaviour and synchrony in Synch.Live, for the purpose of quantifying emergent features with information theory tools. (b) The recorded footage of a group of people playing Synch.Live.</p>
@@ -44,9 +44,34 @@ Synch.Live explores non-verbal communication and exercises deep attention to oth
 <a name="1">[1]</a> Fernando Rosas, Pedro Mediano, Henrik Jensen, Anil Seth, Adam Barrett, Robin Carhart-Harris, Daniel Bor (2020). Reconciling emergences: An information-theoretic approach to identify causal emergence in multivariate data. PLoS Computational Biology 16(12).
 
 
+<p>&nbsp;</p>
+<p class="text-center">
+The authors are grateful to all the venues where Synch.Live was presented:
+</p>
+<p>&nbsp;</p>
 
 <p class="text-center">
-<b>When: 22 Apr 2022, 14:30</b> <br/>
-<b>Where:</b> Engagement Day Conference, Imperial College London<br/>
+<b>When: 25 Jun 2025</b> <br/>
+<b>Where:</b> Embracing Complexity: Principles and Practical Approaches to Emergence @ IFISC, Palma de Mallorca, Spain<br/><br/>
+</p>
+<p class="text-center">
+<b>When: 30 May 2025</b> <br/>
+<b>Where:</b> Emergence and Collective Dynamics Colloquium @ Institut du Cerveau (ICM), Paris, France<br/><br/>
+</p>
+<p class="text-center">
+<b>When: 09 Dec 2024</b> <br/>
+<b>Where:</b> TEDx @ Rutlish School, London, UK<br/><br/>
+</p>
+<p class="text-center">
+<b>When: 23 June 2024</b> <br/>
+<b>Where:</b> Enhanced By Engineering @ International Women In Engineering Day, Imperial College, London, UK<br/><br/>
+</p>
+<p class="text-center">
+<b>When: 18 Oct 2022, 12:45</b> <br/>
+<b>Where:</b> Conference on Complex Systems @ IFISC, Palma de Mallorca, Spain<br/><br/>
+</p>
+<p class="text-center">
+<b>When: 6 May 2022, 12:25</b> <br/>
+<b>Where:</b> Data Natives Conference @ City University, London, UK<br/><br/>
 </p>
 

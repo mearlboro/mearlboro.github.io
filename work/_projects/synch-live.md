@@ -32,7 +32,27 @@ Synch.Live is an experimental in-person game designed to spark human connection 
 # Events
 <br/>
 <div class="row">
-<div class="col-1-of-3"><img src="assets/img/proj/gerf.svg"></div>
+<div class="col-1-of-3"><img src="/assets/img/talks/ppae-2025.jpg"></div>
+<div class="col-2-of-3">
+<h3><a>Embracing Complexity</a></h3>
+<h4> 26 June 2025 ⚪ IFISC, Palma de Mallorca, Spain</h4>
+<p>Experience playing a game inspired by emergence with emergence scientists!</p>
+<p><a href=""https://ifisc.uib-csic.es/en/events/conferences/embracing-complexity-25/ target="_blank" rel="noopener noreferrer">[website]</a></p>
+</div>
+</div-->
+
+<div class="row">
+<div class="col-1-of-3"><img src="/assets/img/proj/icm+same-neuroid.png"></div>
+<div class="col-2-of-3">
+<h3><a>Synch.Live Hyperscanning Pilot @ ICM Paris</a></h3>
+<h4> 31 May 2025 ⚪ Entrance Hall, Institut du Cerveau, Paris</h4>
+<p>In this new iteration of the Synch.Live experiment, we try out new games and test participants' state of mind with hyperscanning EEG, thanks to the support and collaboration of ICM and Same-NeuroID.</p>
+<p><a href="https://forms.gle/AHwazQtQfPMvVXim8" target="_blank" rel="noopener noreferred">[register]</a></p>
+</div>
+</div>
+
+<div class="row">
+<div class="col-1-of-3"><img src="/assets/img/proj/gerf.svg"></div>
 <div class="col-2-of-3">
 <h3><a href="https://www.greatexhibitionroadfestival.co.uk" target="_blank" rel="noopener noreferrer">Great Exhibition Road Festival</a></h3>
 <h4> 18-19 Jun 2022 ⚪ Great Hall, Imperial College London</h4>
@@ -42,7 +62,7 @@ Synch.Live is an experimental in-person game designed to spark human connection 
 </div>
 
 <div class="row">
-<div class="col-1-of-3"><img src="assets/img/proj/qmul-foc.png"></div>
+<div class="col-1-of-3"><img src="/assets/img/proj/qmul-foc.png"></div>
 <div class="col-2-of-3">
 <h3><a href="https://www.qmul.ac.uk/festival/about/" target="_blank" rel="noopener noreferrer">Festival of Communities</a></h3>
 <h4>12 Jun 2022 ⚪ People's Palace, Queen Mary University of London</h4>
