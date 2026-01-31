@@ -29,7 +29,7 @@ _(For the novella version, have a look at my [CV](/assets/files/mis.pm-cv-2025.p
 
 ### [Cryptography Engineering, Department of Computing](https://www.imperial.ac.uk/computing/current-students/courses//){:target="_blank" rel="noopener noreferrer"}
 ##### Spring 2025
-#### Lecturer 
+#### Guest Lecturer 
 Module leader for the Cryptography Engineering course, including lectures, tutorials and assessment.
 <br/>
 <br/>
@@ -86,8 +86,16 @@ Supervisor: [Dr Sergio Maffeis](https://www.imperial.ac.uk/people/sergio.maffeis
 
 # work experience
 
+### [IO Global](https://iog.io){:target="_blank" rel="noopener noreferrer"}
+##### 2025 - present
+#### Research Engineer
+Game theory, agent-based modelling and complexity of micro-economic models for token systems.
+<br/>
+<br/>
+
+
 ### [FairOnChain consortium](https://faironchain.org){:target="_blank" rel="noopener noreferrer"}
-##### 2024 - present 
+##### 2024 - 2025 
 #### Researcher 
 FairOnChain is an ambitious European collaboration aiming to develop a publicly accessible infrastructure that enables easy access and searchability of blockchain data in accordance with the FAIR principles of open science.
 <br/>

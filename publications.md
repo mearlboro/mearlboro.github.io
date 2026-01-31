@@ -49,7 +49,7 @@ conferences:
     url: "https://ccs2022.org"
     description: The CCS is the largest and most important annual meeting of the international complex systems community. It comes under the auspices of the Complex Systems Society.
     talk: /talks/2022-synchlive
-    programme: "https://ccs2022.org/index.php/programme/programme-at-a-glance"
+    programme: "https://web.archive.org/web/20221011115505/https://ccs2022.org/index.php/programme/programme-at-a-glance"
 
   - name: IEEE Computing in Cardiology (CinC), 2020 
     where: Rimini, Italy 

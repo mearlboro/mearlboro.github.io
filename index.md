@@ -7,7 +7,7 @@ layout: home
 **madalina sas**<br/>
 **/m&#601;d&#601;'l&#618;na s&#593;:s/**<br/>
 n.<br/>
-I'm a scientist, engineer and artist from Romania, currently based in London. I have a computer engineering master's from Imperial College and just completed a PhD at Imperial's [Centre for Complexity Science](https://www.imperial.ac.uk/complexity-science){:target="_blank" rel="noopener noreferrer"}, during which I researched the emergence of self-organised collective behaviour, from the microscopic to the social scale, using information theory and signal processing.
+Scientist / engineer / artist from Romania, currently based in London. I have a computer engineering master's from Imperial College and a PhD from Imperial's [Centre for Complexity Science](https://www.imperial.ac.uk/complexity-science){:target="_blank" rel="noopener noreferrer"}, during which I researched the emergence of self-organised collective behaviour, from the microscopic to the social scale, using information theory and signal processing.
 
 My other technical interests are in network science, cryptography, functional programming, automation, and ethical artificial intelligence.
 I am the creator of [SnowWall](https://snowwall.tech){:target="_blank" rel="noopener noreferrer"}, a privacy-oriented networking tool for Windows, and I harangue whoever would listen about security, privacy and digital sovereignty.
