@@ -3,8 +3,11 @@ layout: nil
 align: text-center
 ---
 
+![](/assets/img/hackerman.gif)
 
-![](/assets/img/party2026.png){:width="50%"}
+presents
+
+<img class="col-1-of-2" src="/assets/img/party2026.png">
 
 Please use this page to get updates on the party in real time.
 
@@ -22,7 +25,7 @@ Location below (google map link). Will be updated on the day as we arrive there,
 [![](/assets/img/here.gif)](https://www.google.com/maps/place/51%C2%B028'49.4%22N+0%C2%B009'29.8%22W/@51.480396,-0.1589187,254m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d51.480396!4d-0.158275?entry=ttu&g_ep=EgoyMDI2MDQwNy4wIKXMDSoASAFQAw%3D%3D){:target="_blank"}
 
 ![](/assets/img/exclamation.gif) **If weather is bad we meet directly at the Rave Cave** ![](/assets/img/exclamation.gif)  
-Please check this page for real-time updates.
+
 
 <h1 class="text-center"><img src="/assets/img/disco.gif">8 PM @ Rave Cave<img src="/assets/img/disco.gif"> </h1>
 
