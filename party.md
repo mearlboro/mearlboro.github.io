@@ -30,7 +30,7 @@ Please check this page for real-time updates.
 
 **Food**: Around 8-830 we plan to get take-away **pizzas** from the [Libertine](https://thelibertine.co.uk/). See [menu](https://thelibertine.co.uk/food-and-drink) and let me know if you have allergies or dietary requirements, we take this very seriously.
 
-**Drink**: Please see [cocktail menu](). If you'd like anything specific, bring the ingredients and I will make it for you.
+**Drink**: Please see [cocktail menu](/assets/cocktails.pdf). If you'd like anything specific, bring the ingredients and I will make it for you.
  
 <br/>
 <br/>
