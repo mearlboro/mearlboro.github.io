@@ -1,0 +1,17 @@
+---
+---
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body onload="randomColour()">
+
+    <div class="wrapper {{ page.align }}">
+      {{ content }}
+    </div>
+
+    <script type="text/javascript" src="{{ "assets/js/colour.js" | relative_url }}"></script>
+
+  </body>
+</html>
