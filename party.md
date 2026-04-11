@@ -28,6 +28,8 @@ Let's party like it's 2001!~~
 
 <h1 class="text-center"><img src="/assets/img/disco.gif">5 PM till late @ Rave Cave<img src="/assets/img/disco.gif"> </h1>
 
+From 5PM we will be more chill, with records, games and snacks. Rave proper starts after sundown.
+
 **Address**: 8 Lefroy House, SE1 1QE, London (nearest tubes Borough, Southwark, Elephant & Castle) 
 
 **Food**: Around 8-830 we plan to get take-away **pizzas** from the [Libertine](https://thelibertine.co.uk/). See [menu](https://thelibertine.co.uk/food-and-drink) and let me know if you have allergies or dietary requirements, we take this very seriously.
